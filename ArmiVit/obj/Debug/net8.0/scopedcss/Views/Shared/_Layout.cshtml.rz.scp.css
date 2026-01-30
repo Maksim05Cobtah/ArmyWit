@@ -1,33 +1,33 @@
-﻿body {
+body[b-3c1coeu120] {
     margin: 0 !important;
 }
 
-html {
+html[b-3c1coeu120] {
     height: 100%;
 }
 
-.page-wrapper {
+.page-wrapper[b-3c1coeu120] {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
-.content {
+.content[b-3c1coeu120] {
     flex: 1 0 auto;
 }
 
-.custom-footer {
+.custom-footer[b-3c1coeu120] {
     margin-top: auto;
     background: linear-gradient(90deg, #E6E1F7, #FFF6E5);
     padding: 30px 0 20px;
     border-radius: 18px 18px 0 0;
     box-shadow: 0 -8px 20px rgba(140, 120, 190, 0.15);
     opacity: 0;
-    animation: footerFadeUp 1s ease forwards;
+    animation: footerFadeUp-b-3c1coeu120 1s ease forwards;
 }
 
 /* FOOTER ANIMATION */
-@keyframes footerFadeUp {
+@keyframes footerFadeUp-b-3c1coeu120 {
     from {
         opacity: 0;
         transform: translateY(40px);
@@ -38,7 +38,7 @@ html {
     }
 }
 
-.soft-text {
+.soft-text[b-3c1coeu120] {
     color: #5A4B81;
     font-weight: 500;
     letter-spacing: 0.4px;
@@ -46,37 +46,37 @@ html {
     transition: color 0.35s ease, transform 0.35s ease;
 }
 
-.soft-text:hover {
+.soft-text:hover[b-3c1coeu120] {
     color: #7A68B6;
     transform: translateY(-1px);
 }
 
-.soft-title {
+.soft-title[b-3c1coeu120] {
     color: #5A4B81;
     font-weight: 700;
     letter-spacing: 1px;
     transition: transform 0.4s ease, color 0.4s ease;
 }
 
-.soft-title:hover {
+.soft-title:hover[b-3c1coeu120] {
     color: #7A68B6;
     transform: scale(1.04);
 }
 
-.custom-navbar {
+.custom-navbar[b-3c1coeu120] {
     background: linear-gradient(90deg, #E6E1F7, #FFF6E5);
     border-radius: 14px;
     padding: 12px 20px;
     box-shadow: 0 8px 20px rgba(140, 120, 190, 0.2);
 }
 
-.footer-links a {
+.footer-links a[b-3c1coeu120] {
     display: inline-block;
     margin: 0 10px;
     position: relative;
 }
 
-.footer-links a::after {
+.footer-links a[b-3c1coeu120]::after {
     content: "";
     position: absolute;
     left: 50%;
@@ -88,17 +88,17 @@ html {
     transition: width 0.45s cubic-bezier(.25,.8,.25,1);
 }
 
-.footer-links a:hover::after {
+.footer-links a:hover[b-3c1coeu120]::after {
     width: 100%;
 }
 
-.social-icons {
+.social-icons[b-3c1coeu120] {
     display: flex;
     justify-content: center;
     gap: 14px;
 }
 
-.social-icons a {
+.social-icons a[b-3c1coeu120] {
     width: 44px;
     height: 44px;
     border-radius: 50%;
@@ -114,28 +114,28 @@ html {
         background 0.4s ease;
 }
 
-.social-icons .instagram:hover {
+.social-icons .instagram:hover[b-3c1coeu120] {
     background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
     color: #fff;
     transform: translateY(-4px) scale(1.08);
     box-shadow: 0 8px 20px rgba(221, 42, 123, 0.35);
 }
 
-.social-icons .telegram:hover {
+.social-icons .telegram:hover[b-3c1coeu120] {
     background: #2AABEE;
     color: #fff;
     transform: translateY(-4px) scale(1.08);
     box-shadow: 0 8px 20px rgba(42, 171, 238, 0.35);
 }
 
-.social-icons .facebook:hover {
+.social-icons .facebook:hover[b-3c1coeu120] {
     background: #3b5998;
     color: #fff;
     transform: translateY(-4px) scale(1.08);
     box-shadow: 0 8px 20px rgba(59, 89, 152, 0.35);
 }
 
-.social-icons .viber:hover {
+.social-icons .viber:hover[b-3c1coeu120] {
     background: #665cac;
     color: #fff;
     transform: translateY(-4px) scale(1.08);
@@ -143,19 +143,19 @@ html {
 }
 
 
-.copyright {
+.copyright[b-3c1coeu120] {
     font-size: 0.9rem;
     color: #6B5E91;
 }
 
 
 @media (max-width: 576px) {
-    .footer-links a {
+    .footer-links a[b-3c1coeu120] {
         display: block;
         margin: 6px 0;
     }
 
-    .social-icons {
+    .social-icons[b-3c1coeu120] {
         margin-top: 10px;
     }
 }

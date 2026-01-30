@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/cobtahacademy2/Documents/ArmiVit/ArmiVit/ArmiVit.csproj": {}
+    "/home/cobtahacademy3/Documents/ArmyWit/ArmiVit/ArmiVit.csproj": {}
   },
   "projects": {
-    "/home/cobtahacademy2/Documents/ArmiVit/ArmiVit/ArmiVit.csproj": {
+    "/home/cobtahacademy3/Documents/ArmyWit/ArmiVit/ArmiVit.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/cobtahacademy2/Documents/ArmiVit/ArmiVit/ArmiVit.csproj",
+        "projectUniqueName": "/home/cobtahacademy3/Documents/ArmyWit/ArmiVit/ArmiVit.csproj",
         "projectName": "ArmiVit",
-        "projectPath": "/home/cobtahacademy2/Documents/ArmiVit/ArmiVit/ArmiVit.csproj",
-        "packagesPath": "/home/cobtahacademy2/.nuget/packages/",
-        "outputPath": "/home/cobtahacademy2/Documents/ArmiVit/ArmiVit/obj/",
+        "projectPath": "/home/cobtahacademy3/Documents/ArmyWit/ArmiVit/ArmiVit.csproj",
+        "packagesPath": "/home/cobtahacademy3/.nuget/packages/",
+        "outputPath": "/home/cobtahacademy3/Documents/ArmyWit/ArmiVit/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/cobtahacademy2/.nuget/NuGet/NuGet.Config"
+          "/home/cobtahacademy3/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
