@@ -17,6 +17,9 @@ ArmiVit/obj/Debug/net8.0/ArmiVit.assets.cache
 ArmiVit/obj/Debug/net8.0/ArmiVit.csproj.CoreCompileInputs.cache
 ArmiVit/obj/Debug/net8.0/ArmiVit.csproj.FileListAbsolute.txt
 ArmiVit/obj/Debug/net8.0/ArmiVit.GeneratedMSBuildEditorConfig.editorconfig
+ArmiVit/obj/Debug/net8.0/apphost
+ArmiVit/obj/Debug/net8.0/ArmiVit.csproj.CoreCompileInputs.cache
+ArmiVit/obj/Debug/net8.0/ArmiVit.csproj.FileListAbsolute.txt
 ArmiVit/obj/Debug/net8.0/ArmiVit.dll
 ArmiVit/obj/Debug/net8.0/ArmiVit.genruntimeconfig.cache
 ArmiVit/obj/Debug/net8.0/ArmiVit.MvcApplicationPartsAssemblyInfo.cache
@@ -24,11 +27,14 @@ ArmiVit/obj/Debug/net8.0/ArmiVit.pdb
 ArmiVit/obj/Debug/net8.0/ArmiVit.sourcelink.json
 ArmiVit/obj/Debug/net8.0/staticwebassets.development.json
 ArmiVit/obj/Debug/net8.0/staticwebassets.build.json
+ArmiVit/obj/Debug/net8.0/staticwebassets.build.json
+ArmiVit/obj/Debug/net8.0/staticwebassets.development.json
 ArmiVit/obj/Debug/net8.0/staticwebassets.pack.json
 ArmiVit/obj/Debug/net8.0/ref/ArmiVit.dll
 ArmiVit/obj/Debug/net8.0/refint/ArmiVit.dll
 ArmiVit/obj/Debug/net8.0/scopedcss/bundle/ArmiVit.styles.css
 ArmiVit/obj/Debug/net8.0/scopedcss/projectbundle/ArmiVit.bundle.scp.css
+ArmiVit/obj/Debug/net8.0/scopedcss/Views/Shared/_Layout.cshtml.rz.scp.css
 ArmiVit/obj/Debug/net8.0/staticwebassets/msbuild.ArmiVit.Microsoft.AspNetCore.StaticWebAssets.props
 ArmiVit/obj/Debug/net8.0/staticwebassets/msbuild.build.ArmiVit.props
 ArmiVit/obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.ArmiVit.props
