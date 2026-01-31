@@ -1,0 +1,32 @@
+@{
+    ViewData["Title"] = "Додати новий товар";
+}
+
+@model ArmiVit.Models.ViewModels.ProductViewModel
+
+<div class="container mt-5">
+    <h1 class="mb-4">Додати новий товар</h1>
+    <form id="productForm" asp-controller="Product" asp-action="AddProductToTable" method="post">
+        <div class="mb-3">
+            <label class="form-label">Назва:</label>
+            <input type="text" class="form-control" asp-for="ProductName" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Опис:</label>
+            <textarea class="form-control" asp-for="ProductDescription" rows="4" required></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Ціна:</label>
+            <input type="number" class="form-control" asp-for="Price" required min="0" step="0.01">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Відправити</button>
+    </form>
+</div>
+
+<hr />
+
+<h2 class="mt-5 mb-4">Список товарів</h2>
+
