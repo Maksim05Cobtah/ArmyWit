@@ -1,0 +1,123 @@
+/* ===== ЗАГАЛЬНІ НАЛАШТУВАННЯ ===== */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+
+    background-color: #ebe4f6; /* світло-фіолетовий фон */
+    color: #3f354f;
+}
+
+/* ===== КОНТЕЙНЕР "ПРО МЕНЕ" ===== */
+.about-container {
+    max-width: 960px;
+    margin: 80px auto 60px;
+    padding: 48px 52px;
+
+    background-color: #f3e0b8; /* виразний кремовий */
+    border-radius: 24px;
+
+    box-shadow:
+        0 20px 40px rgba(100, 70, 140, 0.25);
+}
+
+/* ===== ЗАГОЛОВОК H1 ===== */
+.about-container h1 {
+    font-size: 34px;
+    text-align: center;
+    margin-bottom: 36px;
+
+    color: #6a4ea0;
+    letter-spacing: 0.5px;
+}
+
+/* ===== ТЕКСТ ===== */
+.about-container p {
+    font-size: 18px;
+    line-height: 1.75;
+    margin-bottom: 20px;
+}
+
+/* ===== АКЦЕНТИ ===== */
+.accent {
+    color: #7a5cc7;
+    font-weight: 600;
+}
+
+/* ===== БЛОК ОСВІТИ ===== */
+.info-box {
+    margin: 32px 0;
+    padding: 28px 32px;
+
+    background-color: #ead3a2;
+    border-radius: 18px;
+
+    position: relative;
+}
+
+.info-box::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: -6px;
+
+    width: 6px;
+    height: calc(100% - 40px);
+    background-color: #b9a1dc;
+    border-radius: 3px;
+}
+
+/* ===== СЕКЦІЯ ДОСВІД ===== */
+.experience-section {
+    max-width: 960px;
+    margin: 0 auto 80px;
+    padding: 48px 52px;
+
+    background-color: #f6e6c9; /* окремий кремовий блок */
+    border-radius: 24px;
+
+    box-shadow:
+        0 18px 36px rgba(100, 70, 140, 0.22);
+}
+
+/* ===== ЗАГОЛОВОК H2 ===== */
+.experience-section h2 {
+    font-size: 28px;
+    margin-bottom: 28px;
+
+    color: #6a4ea0;
+}
+
+/* ===== ТЕКСТ У СЕКЦІЇ ===== */
+.experience-section p {
+    font-size: 18px;
+    line-height: 1.75;
+    margin-bottom: 20px;
+}
+
+/* ===== АКЦЕНТНИЙ БЛОК ЗІ СПИСКОМ ===== */
+.experience-box {
+    margin-top: 30px;
+    padding: 30px 34px;
+
+    background-color: #e2cfa5;
+    border-radius: 20px;
+}
+
+.experience-box p {
+    font-size: 19px;
+    font-weight: 600;
+    margin-bottom: 14px;
+}
+
+/* ===== СПИСОК ===== */
+.experience-box ul {
+    margin: 0;
+    padding-left: 22px;
+}
+
+.experience-box li {
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
