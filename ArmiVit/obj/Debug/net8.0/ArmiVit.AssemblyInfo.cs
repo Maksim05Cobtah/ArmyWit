@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ArmiVit")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+087ef4d0eb0712b4a3b60ebdf7de3d2935027acb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8e2ad829e207fe8d4fa55f5115884a138cef51f7")]
 [assembly: System.Reflection.AssemblyProductAttribute("ArmiVit")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ArmiVit")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

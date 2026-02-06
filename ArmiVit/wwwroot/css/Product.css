@@ -1,0 +1,89 @@
+.product-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f5f0ff, #fff6e5);
+}
+
+.product-card {
+    background: #ffffffcc;
+    backdrop-filter: blur(8px);
+    padding: 30px;
+    width: 360px;
+    border-radius: 18px;
+    box-shadow: 0 20px 40px rgba(120, 90, 160, 0.2);
+    animation: fadeIn 0.8s ease;
+}
+
+.product-card h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #6b5b95;
+}
+
+.field {
+    margin-bottom: 18px;
+    animation: slideUp 0.6s ease forwards;
+}
+
+.field:nth-child(1) { animation-delay: 0.1s; }
+.field:nth-child(2) { animation-delay: 0.2s; }
+.field:nth-child(3) { animation-delay: 0.3s; }
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    color: #7a6fa1;
+    font-size: 14px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid #dcd3f0;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #a18cd1;
+    box-shadow: 0 0 0 3px rgba(161, 140, 209, 0.2);
+}
+
+textarea {
+    resize: none;
+    height: 80px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(161, 140, 209, 0.4);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
