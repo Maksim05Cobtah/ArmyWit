@@ -1,4 +1,6 @@
-namespace ProductApi.Models
+using ArmiVit.Models;
+using ProductApi.Models;
+namespace ArmiVit.Models.ViewsModel
 {
     public class ProductViewModel
     {
@@ -6,5 +8,7 @@ namespace ProductApi.Models
         public string Name { get; set; }
         public decimal Price { get; set; }
         public int Quantity { get; set; }
+
+        public List<Product> Products { get; set; }
     }
 }
