@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/cobtahacademy3/Documents/ArmyWit/ArmiVit/ArmiVit.csproj": {}
+    "/home/cobtahacademy1/Documents/ArmyWit/ArmiVit/ArmiVit.csproj": {}
   },
   "projects": {
-    "/home/cobtahacademy3/Documents/ArmyWit/ArmiVit/ArmiVit.csproj": {
+    "/home/cobtahacademy1/Documents/ArmyWit/ArmiVit/ArmiVit.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/cobtahacademy3/Documents/ArmyWit/ArmiVit/ArmiVit.csproj",
+        "projectUniqueName": "/home/cobtahacademy1/Documents/ArmyWit/ArmiVit/ArmiVit.csproj",
         "projectName": "ArmiVit",
-        "projectPath": "/home/cobtahacademy3/Documents/ArmyWit/ArmiVit/ArmiVit.csproj",
-        "packagesPath": "/home/cobtahacademy3/.nuget/packages/",
-        "outputPath": "/home/cobtahacademy3/Documents/ArmyWit/ArmiVit/obj/",
+        "projectPath": "/home/cobtahacademy1/Documents/ArmyWit/ArmiVit/ArmiVit.csproj",
+        "packagesPath": "/home/cobtahacademy1/.nuget/packages/",
+        "outputPath": "/home/cobtahacademy1/Documents/ArmyWit/ArmiVit/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/cobtahacademy3/.nuget/NuGet/NuGet.Config"
+          "/home/cobtahacademy1/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -37,6 +37,18 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

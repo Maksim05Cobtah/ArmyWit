@@ -22,7 +22,15 @@
                 <label>Опис</label>
                 <textarea name="Description" placeholder="Короткий опис"></textarea>
             </div>
-
+                <div class="field">
+                    <label>Категорія</label>
+                    <select name="CategoryId">
+                        <option value="">Виберіть категорію</option>
+                        @foreach (var category in Model.Categories ?? new List<Categories>())
+                        {
+                            <option value="@category.Id">@category.Name</option>
+                        }
+                    </select>
             <button type="submit">Зберегти</button>
         </form>
     </div>

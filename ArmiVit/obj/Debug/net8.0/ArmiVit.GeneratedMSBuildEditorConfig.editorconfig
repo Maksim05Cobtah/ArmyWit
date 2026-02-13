@@ -18,6 +18,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /home/cobtahacademy1/Documents/ArmyWit/ArmiVit
 build_property._RazorSourceGeneratorDebug = 
 
+[/home/cobtahacademy1/Documents/ArmyWit/ArmiVit/Views/Categories/AddCategories.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2F0ZWdvcmllcy9BZGRDYXRlZ29yaWVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/home/cobtahacademy1/Documents/ArmyWit/ArmiVit/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

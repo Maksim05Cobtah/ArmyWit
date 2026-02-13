@@ -17,9 +17,11 @@ namespace Controllers
     public IActionResult AddProducts()
     {
         var products2 = _context.Products.ToList();
+        var categories = _context.Categories.ToList();
         var model = new ProductViewModel
         {
-            Products = products2
+            Products = products2,
+            Categories = categories
         };
 
 
@@ -34,7 +36,8 @@ namespace Controllers
             {
                 Name = model.Name,
                 Price = model.Price,
-                Quantity = model.Quantity
+                Quantity = model.Quantity,
+                CategoryId = model.CategoryId
             };  
         
             _context.Products.Add(product);
