@@ -1,3 +1,4 @@
+using ArmiVit.Models;
 using Microsoft.EntityFrameworkCore;
 using ProductApi.Models;
 
@@ -9,5 +10,7 @@ namespace ProductApi.Data
             : base(options) { }
 
         public DbSet<Product> Products { get; set; }
+
+        public DbSet<Categories> Categories { get; set; }
     }
 }
