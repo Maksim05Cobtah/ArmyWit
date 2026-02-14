@@ -8,30 +8,35 @@
         <h2>Додати продукт</h2>
 
         <form method="post" asp-action="AddProduct">
+            @Html.AntiForgeryToken()
+
             <div class="field">
                 <label>Імʼя</label>
-                <input type="text" name="Name" placeholder="Назва продукту" />
+                <input asp-for="Name" class="form-control" />
             </div>
 
             <div class="field">
                 <label>Ціна</label>
-                <input type="number" step="0.01" name="Price" placeholder="₴ 0.00" />
+                <input asp-for="Price" type="number" value="" step="0.01" placeholder="₴ 0.00" class="form-control" />
             </div>
 
             <div class="field">
-                <label>Опис</label>
-                <textarea name="Description" placeholder="Короткий опис"></textarea>
+                <label>Кількість</label>
+                <input asp-for="Quantity" value="" placeholder="0" type="number" class="form-control" />
             </div>
-                <div class="field">
-                    <label>Категорія</label>
-                    <select name="CategoryId">
-                        <option value="">Виберіть категорію</option>
-                        @foreach (var category in Model.Categories ?? new List<Categories>())
-                        {
-                            <option value="@category.Id">@category.Name</option>
-                        }
-                    </select>
-            <button type="submit">Зберегти</button>
+
+            <div class="field">
+                <label>Категорія</label>
+                <select asp-for="CategoryId" class="form-control">
+                    <option value="">Виберіть категорію</option>
+                    @foreach (var category in Model.Categories ?? new List<Categories>())
+                    {
+                        <option value="@category.Id">@category.Name</option>
+                    }
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary mt-2">Зберегти</button>
         </form>
     </div>
 </section>
