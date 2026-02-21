@@ -26,6 +26,14 @@
             </div>
 
             <div class="field">
+                <label>Опис</label>
+                <textarea asp-for="Description" class="form-control"></textarea>
+            </div>
+            <div class="field">
+                <label>Фото продукту</label>
+                <input asp-for="ImageFile" type="file" class="form-control" accept="image/*" />
+            </div>
+            <div class="field">
                 <label>Категорія</label>
                 <select asp-for="CategoryId" class="form-control">
                     <option value="">Виберіть категорію</option>
@@ -45,11 +53,23 @@
 
         @foreach (var item in Model.Products)
         {
+
             <div class="col-md-4">
                 <div class="card shadow-sm h-100">
 
+                    @if (!string.IsNullOrEmpty(item.ImagePath))
+                    {
+                        <img src="~/images/@item.ImagePath"
+                             class="card-img-top"
+                             style="height:220px; object-fit:cover;" />
+                    }
+
                     <div class="card-body text-center">
                         <h5 class="card-title">@item.Name</h5>
+
+                        <p class="card-text">
+                            @item.Description
+                        </p>
 
                         <p class="card-text">
                             <strong>Ціна:</strong> @item.Price ₴
