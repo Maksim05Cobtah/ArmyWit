@@ -1,21 +1,17 @@
-
-
 /* БАЗА З ТЕКСТУРОЮ */
 body {
     font-family: "Montserrat", sans-serif;
     color: #4f4d63;
     line-height: 1.7;
-
-    /* КРЕМОВИЙ ТЕКСТУРНИЙ ФОН */
-    background-color: #efe5d8; /* темніший кремовий базовий колір */
-    background-image: url('/images/cream-paper-texture.jpg'); /* пом’ята папір */
+    background-color: #efe5d8;
+    background-image: url('/images/cream-paper-texture.jpg');
     background-repeat: repeat;
     background-size: cover;
 }
 
 /* ОБГОРТКА СТОРІНКИ */
 .about-page {
-    background: transparent; /* фон body вже текстурований */
+    background: transparent;
 }
 
 /* КОНТЕЙНЕР */
@@ -24,6 +20,7 @@ body {
     margin: 0 auto;
     padding: 0 20px;
 }
+
 section {
     padding: 90px 0;
 }
@@ -42,10 +39,10 @@ section {
     border-radius: 4px;
 }
 
-/* КАРТКИ / ВІКОНЦЯ З ТЕКСТОМ */
+/* КАРТКИ */
 .section-about .container,
 .section-experience .container {
-    background: rgba(255, 255, 255, 0.95); /* трохи прозора біла картка */
+    background: rgba(255, 255, 255, 0.95);
     border-radius: 20px;
     padding: 60px 60px;
     box-shadow: 0 18px 45px rgba(63, 61, 86, 0.12);
@@ -79,7 +76,7 @@ section {
     font-family: 'Oswald', sans-serif;
     max-width: 700px;
     margin: 50px auto;
-    background: #c8c3e6; /* світло-фіолетовий акцент */
+    background: #c8c3e6;
     border-radius: 18px;
     padding: 34px 40px;
     box-shadow: 0 14px 35px rgba(63, 61, 86, 0.15);
@@ -87,131 +84,130 @@ section {
     color: #5a5870;
 }
 
-.quote-box p {
-    margin: 0;
-    color: #3f3d56;
-    font-weight: 400;
-}
+    .quote-box p {
+        margin: 0;
+        color: #3f3d56;
+        font-weight: 400;
+    }
 
-/* БЛОК ПОСЛУГИ */
-.services-section {
-    max-width: 500px; /* ширина блоку як на фото */
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fffbea; /* світлий фон, як на фото */
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    font-family: 'Montserrat', sans-serif;
-}
+/* ============================= */
+/* ====== PROGRAM SECTION ====== */
+/* ============================= */
 
-/* Заголовок ПОСЛУГИ */
-.services-title {
+.program-section {
     text-align: center;
-    font-size: 42px;
+    margin: 90px 0;
+    position: relative;
+}
+
+.program-title {
+    font-size: 52px;
     font-weight: 700;
+    letter-spacing: 6px;
     color: #c8c3e6;
-    margin-bottom: 25px;
+    margin-bottom: 60px;
     position: relative;
 }
 
-/* Лінія під ПОСЛУГИ на всю ширину */
-.services-title::after {
-    content: "";
-    display: block;
+    .program-title::after {
+        content: "";
+        position: absolute;
+        bottom: -25px;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background-color: #c8c3e6;
+    }
+    
+.programs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+    .programs::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        width: 2px;
+        background-color: #c8c3e6;
+        transform: translateX(-50%);
+    }
+
+.program-card {
+    padding: 40px 60px 90px 60px;
+    position: relative;
+    text-align: left;
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
     width: 100%;
-    height: 4px;
-    background-color: #c8c3e6;
-    margin: 12px 0 20px 0;
 }
 
-/* ПОГЛИБЛЕНА КОНСУЛЬТАЦІЯ */
-.service-name-box {
-    text-align: center;
+    .program-card:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+    .program-card h2 {
+        text-align: center;
+        font-size: 22px;
+        letter-spacing: 2px;
+        color: #b3afc4;
+        margin-bottom: 30px;
+    }
+
+.program-content p strong {
+    display: inline-block;
+    border: 2px solid #4f4d63;
+    padding: 6px 22px;
+    border-radius: 40px;
+    font-weight: 600;
     margin-bottom: 15px;
-    position: relative;
 }
 
-.service-name {
-    display: inline-block;
-    padding: 10px 25px;
-    font-size: 24px;
+.program-content p {
     font-weight: 700;
-    color: #8d7ccf;
-    background-color: #fff;
-    border: 3px solid #8d7ccf;
-    border-radius: 50px;
-}
-
-/* Час консультації */
-.service-time {
-    display: inline-block;
-    font-size: 24px;
-    font-weight: 700;
-    color: #fff;
-    background-color: #8d7ccf;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    line-height: 60px;
-    text-align: center;
-    margin-left: 15px;
-}
-
-/* Опис послуги */
-.service-description {
-    margin-top: 10px;
-    font-size: 16px;
-    color: #5a5870;
-    text-align: center;
-}
-
-/* Блок ТИ ОТРИМАЄШ */
-.receive-box,
-.result-box {
-    background-color: #e5e0f7; /* світло-фіолетовий блок */
-    border-radius: 10px;
-    padding: 15px;
-    margin: 15px 0;
-}
-
-.receive-title,
-.result-title {
-    font-size: 24px;
-    color: #8d7ccf;
-    font-weight: 700;
-    margin-top: 0;
+    margin-top: 20px;
     margin-bottom: 10px;
-    text-align: center;
 }
 
-.receive-box ul,
-.result-box ul {
-    padding-left: 20px;
+.program-content ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 18px;
 }
 
-.receive-box li,
-.result-box li {
-    font-size: 18px;
-    color: #5a5870;
+.program-content li {
+    font-size: 16px;
+    color: #4f4d63;
     margin-bottom: 8px;
 }
 
-/* Ціна */
-.service-price {
-    text-align: center;
-    font-size: 20px;
+.price {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #c8c3e6;
+    color: #000;
     font-weight: 700;
-    color: #fff;
-    background-color: #8d7ccf;
-    border-radius: 50px;
-    padding: 10px 25px;
-    margin-top: 20px;
-    display: inline-block;
+    font-size: 20px;
+    text-align: center;
+    padding: 14px 0;
+    letter-spacing: 1px;
 }
 
+/* ============================= */
+/* ========= АДАПТИВ =========== */
+/* ============================= */
 
-/* АДАПТИВ */
 @media (max-width: 900px) {
+
     .about-grid {
         grid-template-columns: 1fr;
         text-align: center;
@@ -226,91 +222,67 @@ section {
         margin-left: auto;
         margin-right: auto;
     }
-
-.program-section {
-  text-align: center;
-  margin: 50px 0;
 }
 
-.program-title {
-  font-family: "Montserrat", sans-serif;
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #4f4d63;
-  margin-bottom: 40px;
+@media (max-width: 768px) {
+
+    .programs {
+        grid-template-columns: 1fr;
+    }
+
+        .programs::before {
+            display: none;
+        }
+
+    .program-card {
+        padding: 30px 25px 80px 25px;
+    }
+
+    .program-title {
+        font-size: 38px;
+    }
 }
 
-.programs {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
+/* ====== CERTIFICATES SECTION ====== */
+
+.certificates-section {
+    padding: 90px 0;
 }
 
-.program-card {
-  background-color: #fdfcfb;
-  padding: 40px 30px;
-  border-radius: 15px;
-  width: 300px;
-  text-align: left;
-  font-family: "Montserrat", sans-serif;
-  color: #4f4d63;
-  box-shadow: 0 0 0 1px #e0dde6;
-  transition: transform 0.3s, box-shadow 0.3s;
+.certificates-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 70px 60px;
+    /* БІЛЕ "ВІКНО" */
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 18px 45px rgba(63, 61, 86, 0.12);
+    text-align: center;
 }
 
-.program-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+/* Верхній заголовок */
+.certificates-title {
+    display: inline-block;
+    background-color: #c8c3e6;
+    color: #3f3d56;
+    padding: 15px 50px;
+    font-size: 42px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    border-radius: 6px;
+    margin-bottom: 60px;
 }
 
-.program-card h2 {
-  text-align: center;
-  color: #b3afc4;
-  font-weight: 700;
-  font-size: 1.6rem;
-  margin-bottom: 20px;
-}
-
-.program-content p {
-  font-weight: 600;
-  margin: 12px 0 6px;
-  font-size: 1.05rem;
-}
-
-.program-content ul {
-  list-style: none;
-  padding-left: 0;
-  margin: 0 0 12px;
-}
-
-.program-content li {
-  margin-bottom: 6px;
-  font-size: 1rem;
-}
-
-.price {
-  text-align: center;
-  font-weight: 700;
-  font-size: 1.4rem;
-  margin-top: 20px;
-  color: #b3afc4;
-}
-
-/* Адаптивність для мобільних */
-@media (max-width: 700px) {
-  .programs {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .program-card {
-    width: 90%;
-    padding: 35px 20px;
-  }
-
-  .program-title {
-    font-size: 2rem;
-  }
-}
+/* Нижній текст */
+.certificates-note {
+    display: inline-block;
+    background-color: #c8c3e6;
+    color: #3f3d56;
+    padding: 20px 40px;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 6px;
+    line-height: 1.6;
+    max-width: 700px;
 }
