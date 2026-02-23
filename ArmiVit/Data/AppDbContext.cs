@@ -12,5 +12,8 @@ namespace ProductApi.Data
         public DbSet<Product> Products { get; set; }
 
         public DbSet<Categories> Categories { get; set; }
+        public DbSet<AboutEditor> AboutMePage { get; set; }
+
+        
     }
 }
