@@ -1,10 +1,19 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using ArmiVit.Models;
+using ArmiVit.Models.ViewsModel;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using ProductApi.Data;
 
 namespace ArmiVit.Controllers
 {
     public class AdminController : Controller
     {
+        private readonly AppDbContext _context;
+
+        public AdminController(AppDbContext context)
+        {
+            _context = context;
+        }
         public ActionResult AboutAdmin()
         {
             return View();
@@ -25,9 +34,15 @@ namespace ArmiVit.Controllers
         // POST: HomeController1/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult TextUpdate(IFormCollection collection)
+        public ActionResult TextUpdate(AboutEditorViewModel aboutEditorViewModel)
         {
-            return RedirectToAction("Index", "Home");
+            var saveEx=new AboutEditor { AboutMeText1 = aboutEditorViewModel.AboutMeText1 ,
+            AboutMeText2 = aboutEditorViewModel.AboutMeText2 ,
+            };
+            _context.AboutMePage.Add(saveEx);
+            _context.SaveChanges();
+
+            return RedirectToAction("AboutAdmin", "Admin");
         }
 
         // GET: HomeController1/Edit/5

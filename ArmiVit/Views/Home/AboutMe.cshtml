@@ -1,6 +1,8 @@
 @{
     ViewData["Title"] = "Про мене";
 }
+@model AboutEditor
+
 <div class="about-page">
 
     <head>
@@ -24,12 +26,11 @@
                 <div class="about-text">
                     <h2 class="section-title">ПРО МЕНЕ</h2>
                     <p>
-                        Мене звати Анжеліка, мені 37 років, я мама двох доньок і
-                        медична фахівчиня з багаторічним досвідом.
+                        @Model.AboutMeText1
                     </p>
                     <p>
-                        У 2003–2007 роках навчалася в медичному коледжі
-                        за спеціальністю лікувальна справа.
+                        @Model.AboutMeText2
+                     
                     </p>
                 </div>
             </div>

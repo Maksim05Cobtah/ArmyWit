@@ -1,16 +1,18 @@
-using System.Diagnostics;
-using Microsoft.AspNetCore.Mvc;
 using ArmiVit.Models;
+using Microsoft.AspNetCore.Mvc;
+using ProductApi.Data;
+using System.Diagnostics;
 
 namespace ArmiVit.Controllers;
 
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
+    private readonly AppDbContext _context;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(AppDbContext context)
     {
-        _logger = logger;
+        _context = context;
     }
 
     public IActionResult Index()
@@ -19,7 +21,9 @@ public class HomeController : Controller
     }
   public IActionResult AboutMe()
     {
-        return View();
+       var List= _context.AboutMePage.ToList().Last();
+        
+        return View(List);
     }
     public IActionResult Privacy()
     {
