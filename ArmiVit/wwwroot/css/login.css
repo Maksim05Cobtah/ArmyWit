@@ -1,0 +1,140 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #bde0ff, #e0c3fc);
+    overflow: hidden;
+}
+
+/* Фонові орби */
+.background {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.5;
+    animation: float 12s infinite ease-in-out;
+}
+
+.orb1 {
+    width: 300px;
+    height: 300px;
+    background: #8ec5fc;
+    top: 15%;
+    left: 20%;
+}
+
+.orb2 {
+    width: 250px;
+    height: 250px;
+    background: #d4a5ff;
+    bottom: 15%;
+    right: 20%;
+    animation-delay: 5s;
+}
+
+@keyframes float {
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-40px);
+    }
+}
+
+/* GLASS CARD */
+.glass-card {
+    position: relative;
+    z-index: 2;
+    width: 380px;
+    padding: 50px;
+    border-radius: 30px;
+    background: rgba(255,255,255,0.25);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(255,255,255,0.5);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+    overflow: hidden; /* 🔥 ВАЖЛИВО */
+}
+
+/* Shine тільки всередині */
+.shine {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+    .shine::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient( 120deg, transparent, rgba(255,255,255,0.7), transparent );
+        transform: skewX(-20deg);
+        animation: shineMove 4s infinite;
+    }
+
+@keyframes shineMove {
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 150%;
+    }
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: white;
+    text-shadow: 0 0 20px rgba(255,255,255,0.8);
+}
+
+input {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    background: rgba(255,255,255,0.6);
+    transition: 0.3s;
+}
+
+    input:focus {
+        background: rgba(255,255,255,0.9);
+        box-shadow: 0 0 20px rgba(255,255,255,0.8);
+    }
+
+button {
+    width: 100%;
+    padding: 15px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(135deg, #6dd5fa, #c471f5);
+    transition: 0.3s ease;
+}
+
+    button:hover {
+        transform: translateY(-3px);
+    }

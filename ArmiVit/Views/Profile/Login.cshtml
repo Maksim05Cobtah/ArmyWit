@@ -1,0 +1,36 @@
+﻿@page
+@model Microsoft.AspNetCore.Mvc.RazorPages.PageModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+
+    <link rel="stylesheet" href="~/css/login.css" />
+</head>
+<body>
+
+    <div class="background">
+        <div class="orb orb1"></div>
+        <div class="orb orb2"></div>
+        <div class="light"></div>
+    </div>
+
+    <div class="glass-card">
+        <div class="shine"></div>
+        <h2>Вхід</h2>
+
+        <form method="post">
+            <input type="email" name="Email" placeholder="Email" required />
+            <input type="password" name="Password" placeholder="Пароль" required />
+            <button type="submit">Увійти</button>
+        </form>
+    </div>
+
+</body>
+</html>
