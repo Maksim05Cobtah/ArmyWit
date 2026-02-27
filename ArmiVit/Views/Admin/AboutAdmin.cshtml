@@ -1,7 +1,8 @@
 ﻿@{
     ViewData["Title"] = "Про мене";
 }
-@model ArmiVit.Models.ViewsModel.AboutEditorViewModel
+@model ArmiVit.Models.ViewsModel.AboutEditorViewModel   
+
 <div class="about-page">
 
     <head>
@@ -24,10 +25,10 @@
 
             <form class="about-text" asp-controller="Admin" asp-action="TextUpdate">
                 <h2 class="section-title">ПРО МЕНЕ</h2>
-                <input asp-for="@Model.AboutMeText1" type="text">
+                <textarea asp-for="AboutMeText1" class="form-control" rows="4"></textarea>s
 
                 <br />
-                <input asp-for="@Model.AboutMeText2" type="text">
+                <textarea asp-for="AboutMeText1" class="form-control" rows="4"></textarea>
                 <br />
                 <input type="submit" value="Зберегти" />
 

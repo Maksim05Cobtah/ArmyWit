@@ -16,7 +16,14 @@ namespace ArmiVit.Controllers
         }
         public ActionResult AboutAdmin()
         {
-            return View();
+            var LastUpdate = _context.AboutMePage.ToList().Last();
+            var editor = new AboutEditorViewModel
+            {
+                AboutMeText1 = LastUpdate.AboutMeText1
+               ,
+                AboutMeText2 = LastUpdate.AboutMeText2
+            };
+            return View(editor);
         }
 
         // GET: HomeController1/Details/5
