@@ -1,6 +1,5 @@
-﻿@page
-@model Microsoft.AspNetCore.Mvc.RazorPages.PageModel
-@{
+﻿@{
+    ViewData["Title"] = "Авторизація";
     Layout = null;
 }
 
@@ -9,28 +8,94 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
+    <title>Авторизація</title>
 
     <link rel="stylesheet" href="~/css/login.css" />
 </head>
 <body>
 
-    <div class="background">
-        <div class="orb orb1"></div>
-        <div class="orb orb2"></div>
-        <div class="light"></div>
-    </div>
+    <div class="login-container">
+        <h2>Вхід до системи</h2>
 
-    <div class="glass-card">
-        <div class="shine"></div>
-        <h2>Вхід</h2>
+        <form method="post" asp-action="Login">
+            <div class="input-group">
+                <input type="email" name="Email" placeholder="Email" required />
+            </div>
 
-        <form method="post">
-            <input type="email" name="Email" placeholder="Email" required />
-            <input type="password" name="Password" placeholder="Пароль" required />
-            <button type="submit">Увійти</button>
+            <div class="input-group">
+                <input type="password" name="Password" placeholder="Пароль" required />
+            </div>
+
+            <button type="button" class="btn-login">
+                Увійти
+                <span class="eye left-eye"></span>
+                <span class="eye right-eye"></span>
+            </button>
+
+            <div class="extra-links">
+                <p><a href="#">Забули пароль?</a></p>
+                <p><a href="#">Створити акаунт</a></p>
+            </div>
         </form>
     </div>
+
+    <!-- 3D Tilt + Interactive Button Script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const card = document.querySelector(".login-container");
+            if (!card) return;
+
+            const maxTilt = 25;
+
+            /* ---- CARD TILT ---- */
+            card.addEventListener("mousemove", function (e) {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const percentX = (x - centerX) / centerX;
+                const percentY = (y - centerY) / centerY;
+                const rotateY = percentX * maxTilt;
+                const rotateX = -percentY * maxTilt;
+                card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.03)`;
+                card.classList.add("tilt-active");
+            });
+
+            card.addEventListener("mouseleave", function () {
+                card.style.transform = "rotateX(0deg) rotateY(0deg) scale(1)";
+                card.classList.remove("tilt-active");
+            });
+
+            /* ---- BUTTON EYES + ESCAPE ---- */
+            const btn = document.querySelector(".btn-login");
+            const eyes = btn.querySelectorAll(".eye");
+
+            btn.addEventListener("mousemove", function(e){
+                const rect = btn.getBoundingClientRect();
+                const btnX = rect.left + rect.width/2;
+                const btnY = rect.top + rect.height/2;
+                const deltaX = e.clientX - btnX;
+                const deltaY = e.clientY - btnY;
+
+                // рух очей
+                eyes.forEach(eye => {
+                    eye.style.transform = `translate(${deltaX*0.05}px, ${deltaY*0.05}px)`;
+                });
+
+                // кнопка тікає
+                const escapeStrength = 15; // сила втечі
+                const moveX = -deltaX/rect.width * escapeStrength;
+                const moveY = -deltaY/rect.height * escapeStrength;
+                btn.style.transform = `translate(${moveX}px, ${moveY}px)`;
+            });
+
+            btn.addEventListener("mouseleave", function(){
+                eyes.forEach(eye => eye.style.transform = `translate(0,0)`);
+                btn.style.transform = `translate(0,0)`;
+            });
+        });
+    </script>
 
 </body>
 </html>
