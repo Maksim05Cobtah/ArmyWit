@@ -14,6 +14,7 @@
 
 
     </head>
+            <form class="about-text" asp-controller="Admin" asp-action="TextUpdate">
 
     <!-- ПРО МЕНЕ -->
     <section class="section section-about">
@@ -23,17 +24,15 @@
                 <img src="~/images/angelika.jpg" alt="Анжеліка">
             </div>
 
-            <form class="about-text" asp-controller="Admin" asp-action="TextUpdate">
                 <h2 class="section-title">ПРО МЕНЕ</h2>
-                <textarea asp-for="AboutMeText1" class="form-control" rows="4"></textarea>s
+                <textarea asp-for="AboutMeText1" class="form-control" rows="4"></textarea>
 
                 <br />
-                <textarea asp-for="AboutMeText1" class="form-control" rows="4"></textarea>
+                <textarea asp-for="AboutMeText2" class="form-control" rows="4"></textarea>
                 <br />
                 <input type="submit" value="Зберегти" />
 
 
-            </form>
         </div>
     </section>
 
@@ -42,10 +41,15 @@
         <div class="container">
             <h2 class="section-title center">ДОСВІД</h2>
 
-            <input type="text">
+           
                
 
-            <input type="text">
+                <textarea asp-for="ExpirienceText1" class="form-control" rows="4"></textarea>
+
+                <input type="submit" value="Зберегти" />
+
+
+    
                 
             
 
@@ -162,6 +166,7 @@
     </section>
 
 
+    </form>
 
 
 

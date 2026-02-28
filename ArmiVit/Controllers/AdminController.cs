@@ -45,8 +45,9 @@ namespace ArmiVit.Controllers
         {
             var saveEx=new AboutEditor { AboutMeText1 = aboutEditorViewModel.AboutMeText1 ,
             AboutMeText2 = aboutEditorViewModel.AboutMeText2 ,
+            ExpirienceText1 = aboutEditorViewModel.ExpirienceText1 
             };
-            _context.AboutMePage.Add(saveEx);
+            _context.AboutMePage.Update(saveEx);
             _context.SaveChanges();
 
             return RedirectToAction("AboutAdmin", "Admin");
