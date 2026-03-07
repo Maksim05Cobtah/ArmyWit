@@ -27,6 +27,15 @@ namespace Controllers
 
         return View(model);
     }
+
+        public IActionResult Delete(int id)
+        {
+            var category = _context.Categories.Find(id);
+
+            _context.Categories.Remove(category);
+            _context.SaveChanges();
+           return RedirectToAction("AddCategories");
+        }
  
         [HttpPost]
         public async Task<IActionResult> AddCategory(CategoryViewModel model)
