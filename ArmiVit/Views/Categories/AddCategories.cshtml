@@ -5,8 +5,8 @@
 }
 
 <section class="product-section">
-    <div class="product-card">
-        <h2>Додати категорію</h2>
+    <div class="glass-card form-glass">
+        <h2 class="title">Додати категорію</h2>
 
         <form method="post" asp-action="AddCategory">
             <div class="field">
@@ -14,13 +14,15 @@
                 <input asp-for="Name" class="form-control" placeholder="Назва категорії" />
             </div>
 
-            <button type="submit" class="btn btn-primary mt-2">Зберегти</button>
+            <button type="submit" class="glass-btn">
+                Зберегти
+            </button>
         </form>
     </div>
 </section>
 
-<section class="container mt-4">
-    <div class="row g-4">
+<section class="products-container">
+    <div class="products-grid">
 
         @foreach (var item in Model.Categories)
         {
