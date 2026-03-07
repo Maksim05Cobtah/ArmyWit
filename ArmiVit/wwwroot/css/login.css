@@ -1,0 +1,192 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #bda4ff, #f3ddc3);
+    overflow: hidden;
+    position: relative;
+    perspective: 1800px;
+}
+
+    body::before {
+        content: "";
+        position: absolute;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle at 20% 30%, rgba(130, 90, 255, 0.6), transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 210, 160, 0.5), transparent 40%);
+        animation: moveBackground 20s infinite alternate ease-in-out;
+        z-index: -1;
+    }
+
+@keyframes moveBackground {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    100% {
+        transform: translate(-10%, -10%) scale(1.15);
+    }
+}
+
+/* Glass Card */
+.login-container {
+    width: 520px;
+    padding: 60px;
+    border-radius: 30px;
+    transform-style: preserve-3d;
+    transition: transform 0.1s ease-out, box-shadow 0.2s ease;
+    backdrop-filter: blur(35px);
+    -webkit-backdrop-filter: blur(35px);
+    background: linear-gradient(135deg, rgba(255,255,255,0.25), rgba(255,255,255,0.10), rgba(255,255,255,0.25));
+    background-size: 200% 200%;
+    animation: gradientShift 6s ease infinite;
+    border: 1px solid rgba(255,255,255,0.4);
+    box-shadow: 0 25px 80px rgba(100, 70, 200, 0.5), inset 0 0 30px rgba(255,255,255,0.25);
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.login-container::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(120deg, transparent 40%, rgba(255,255,255,0.35), transparent 60%);
+    transform: rotate(25deg);
+    animation: shine 6s infinite linear;
+}
+
+@keyframes shine {
+    0% {
+        transform: translateX(-100%) rotate(25deg);
+    }
+
+    100% {
+        transform: translateX(100%) rotate(25deg);
+    }
+}
+
+.login-container h2,
+.login-container form {
+    transform: translateZ(70px);
+}
+
+.login-container.tilt-active {
+    box-shadow: 0 45px 100px rgba(100, 70, 200, 0.7), inset 0 0 35px rgba(255,255,255,0.3);
+}
+
+/* CONTENT */
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 35px;
+    color: #3e267a;
+    font-size: 26px;
+}
+
+.input-group {
+    margin-bottom: 25px;
+}
+
+    .input-group input {
+        width: 100%;
+        padding: 16px 20px;
+        border-radius: 18px;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        outline: none;
+        background: rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(10px);
+        color: #2f1e66;
+        font-size: 15px;
+        transition: all 0.3s ease;
+    }
+
+        .input-group input:focus {
+            background: rgba(255, 255, 255, 0.5);
+            box-shadow: 0 0 25px rgba(160, 120, 255, 0.9);
+        }
+
+.btn-login {
+    width: 100%;
+    padding: 16px;
+    border-radius: 18px;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(135deg, #a882ff, #ffcfa8);
+    color: #2f1e66;
+    font-weight: 600;
+    font-size: 15px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+    /* Очі */
+    .btn-login .eye {
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        background: #2f1e66;
+        border-radius: 50%;
+        top: 50%;
+        transform: translate(0, -50%);
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.3s, transform 0.1s;
+    }
+
+    .btn-login .left-eye {
+        left: 25%;
+    }
+
+    .btn-login .right-eye {
+        right: 25%;
+    }
+
+    /* Поява очей при hover */
+    .btn-login:hover .eye {
+        opacity: 1;
+    }
+
+    .btn-login:hover {
+        box-shadow: 0 15px 40px rgba(130, 90, 255, 0.6);
+    }
+
+.extra-links {
+    margin-top: 22px;
+    text-align: center;
+    font-size: 14px;
+}
+
+    .extra-links a {
+        text-decoration: none;
+        color: #4c2fa8;
+        transition: 0.3s;
+    }
+
+        .extra-links a:hover {
+            color: #9b6dff;
+        }
