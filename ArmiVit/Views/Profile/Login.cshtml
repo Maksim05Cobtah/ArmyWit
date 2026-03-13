@@ -26,16 +26,11 @@
                 <input type="password" name="Password" placeholder="Пароль" required />
             </div>
 
-            <button type="button" class="btn-login">
+            <button type="submit" class="btn-login">
                 Увійти
                 <span class="eye left-eye"></span>
                 <span class="eye right-eye"></span>
             </button>
-
-            <div class="extra-links">
-                <p><a href="#">Забули пароль?</a></p>
-                <p><a href="#">Створити акаунт</a></p>
-            </div>
         </form>
     </div>
 
@@ -78,13 +73,11 @@
                 const deltaX = e.clientX - btnX;
                 const deltaY = e.clientY - btnY;
 
-                // рух очей
                 eyes.forEach(eye => {
                     eye.style.transform = `translate(${deltaX*0.05}px, ${deltaY*0.05}px)`;
                 });
 
-                // кнопка тікає
-                const escapeStrength = 15; // сила втечі
+                const escapeStrength = 15;
                 const moveX = -deltaX/rect.width * escapeStrength;
                 const moveY = -deltaY/rect.height * escapeStrength;
                 btn.style.transform = `translate(${moveX}px, ${moveY}px)`;
