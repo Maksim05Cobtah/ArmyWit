@@ -41,7 +41,7 @@ using (var scope = app.Services.CreateScope())
     string adminPassword = "Admin123!";
 
     // створення ролі
-    if (!await roleManager.RoleExistsAsync("Admin"))
+    if (!await roleManager.RoleExistsAsync("Admin")) ;
     {
         await roleManager.CreateAsync(new IdentityRole("Admin"));
     }

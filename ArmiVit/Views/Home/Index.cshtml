@@ -1,6 +1,8 @@
-﻿@{
+﻿@using ArmiVit.Models.ViewsModel
+@{
     ViewData["Title"] = "HealthMarket";
 }
+@model ProductViewModel
 
 <div class="hero">
     <div class="hero-text">
@@ -13,49 +15,54 @@
 <div class="container">
 
     <h2 class="section-title">Категорії</h2>
+
     <div class="categories">
-        <div class="category-card">Вітаміни</div>
-        <div class="category-card">Імунітет</div>
-        <div class="category-card">Серце</div>
-        <div class="category-card">Сустави</div>
-        <div class="category-card">Нервова система</div>
-        <div class="category-card">Краса</div>
+
+        @foreach (var category in Model.Categories)
+        {
+            <div class="category-card">
+                @category.Name
+            </div>
+        }
+
     </div>
 
+
     <h2 class="section-title">Популярні товари</h2>
+
     <div class="products">
 
-        <div class="product-card">
-            <div class="img-placeholder">Фото</div>
-            <h3>Назва товару</h3>
-            <p>Короткий опис продукту</p>
-            <div class="price">000 грн</div>
-            <button>Купити</button>
-        </div>
+        @foreach (var product in Model.Products)
+        {
 
-        <div class="product-card">
-            <div class="img-placeholder">Фото</div>
-            <h3>Назва товару</h3>
-            <p>Короткий опис продукту</p>
-            <div class="price">000 грн</div>
-            <button>Купити</button>
-        </div>
+            <div class="product-card">
 
-        <div class="product-card">
-            <div class="img-placeholder">Фото</div>
-            <h3>Назва товару</h3>
-            <p>Короткий опис продукту</p>
-            <div class="price">000 грн</div>
-            <button>Купити</button>
-        </div>
+                <div class="img-placeholder">
 
-        <div class="product-card">
-            <div class="img-placeholder">Фото</div>
-            <h3>Назва товару</h3>
-            <p>Короткий опис продукту</p>
-            <div class="price">000 грн</div>
-            <button>Купити</button>
-        </div>
+                    @if (!string.IsNullOrEmpty(product.ImagePath))
+                    {
+                        <img src="~/images/@product.ImagePath" />
+                    }
+
+                </div>
+
+                <h3>@product.Name</h3>
+
+                <p>
+                    @product.Description
+                </p>
+
+                <div class="price">
+                    @product.Price ₴
+                </div>
+
+                <button>
+                    Купити
+                </button>
+
+            </div>
+
+        }
 
     </div>
 
