@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ArmiVit")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3622a15c246da665fea57706c69f334959903a5f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c81dff1072ae696743e5a2d772009f09f89b3352")]
 [assembly: System.Reflection.AssemblyProductAttribute("ArmiVit")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ArmiVit")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

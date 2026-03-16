@@ -12,8 +12,8 @@ using ProductApi.Data;
 namespace ArmiVit.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20260307141707_AddIdentity")]
-    partial class AddIdentity
+    [Migration("20260316151733_adae")]
+    partial class adae
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -250,6 +250,12 @@ namespace ArmiVit.Migrations
 
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImagePath")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()

@@ -9,18 +9,13 @@ namespace ArmiVit.Controllers;
 
 public class HomeController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
 
     private readonly AppDbContext _context;
-      public HomeController(AppDbContext context, IWebHostEnvironment webHostEnvironment)
+      public HomeController(AppDbContext context)
         {
             _context = context;
         }
 
-    public HomeController(ILogger<HomeController> logger)
-    {
-        _logger = logger;
-    }
 
     public IActionResult Index()
     {
@@ -28,7 +23,7 @@ public class HomeController : Controller
     var products = _context.Products.ToList();
         var Categories = _context.Categories.ToList();
         var Model = new ProductViewModel { Categories = Categories, Products = products };
-        return View();
+        return View(Model);
 
     }
     public IActionResult AboutMe()
