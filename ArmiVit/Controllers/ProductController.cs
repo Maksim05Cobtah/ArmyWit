@@ -1,11 +1,12 @@
 using ArmiVit.Models.ViewsModel;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ProductApi.Data;
 using ProductApi.Models;
 
 namespace Controllers
 {
-    
+    [Authorize(Roles = "Admin")]
     public class ProductsController : Controller
     {
         private readonly AppDbContext _context;
