@@ -1,8 +1,9 @@
 ﻿@using ArmiVit.Models.ViewsModel
+@model ProductViewModel
+
 @{
     ViewData["Title"] = "HealthMarket";
 }
-@model ProductViewModel
 
 <div class="hero">
     <div class="hero-text">
@@ -17,40 +18,33 @@
     <h2 class="section-title">Категорії</h2>
 
     <div class="categories">
-
         @foreach (var category in Model.Categories)
         {
-            <div class="category-card">
-                @category.Name
-            </div>
+            <a asp-controller="Home" asp-action="Category" asp-route-id="@category.Id">
+                <div class="category-card">
+                    @category.Name
+                </div>
+            </a>
         }
-
     </div>
-
 
     <h2 class="section-title">Популярні товари</h2>
 
     <div class="products">
-
         @foreach (var product in Model.Products)
         {
-
             <div class="product-card">
 
                 <div class="img-placeholder">
-
                     @if (!string.IsNullOrEmpty(product.ImagePath))
                     {
                         <img src="~/images/@product.ImagePath" />
                     }
-
                 </div>
 
                 <h3>@product.Name</h3>
 
-                <p>
-                    @product.Description
-                </p>
+                <p>@product.Description</p>
 
                 <div class="price">
                     @product.Price ₴
@@ -61,9 +55,7 @@
                 </button>
 
             </div>
-
         }
-
     </div>
 
     <p class="disclaimer">

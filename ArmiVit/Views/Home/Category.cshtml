@@ -1,0 +1,42 @@
+﻿@using ArmiVit.Models.ViewsModel
+@model ProductViewModel
+
+@{
+    ViewData["Title"] = "Категорія";
+}
+
+<h2 class="section-title">
+    @ViewBag.CategoryName
+</h2>
+
+<div class="container">
+
+    <div class="products">
+        @foreach (var product in Model.Products)
+        {
+            <div class="product-card">
+
+                <div class="img-placeholder">
+                    @if (!string.IsNullOrEmpty(product.ImagePath))
+                    {
+                        <img src="~/images/@product.ImagePath" />
+                    }
+                </div>
+
+                <h3>@product.Name</h3>
+
+                <p>@product.Description</p>
+
+                <div class="price">
+                    @product.Price ₴
+                </div>
+
+                <button>
+                    Купити
+                </button>
+
+            </div>
+        }
+    </div>
+
+</div>
