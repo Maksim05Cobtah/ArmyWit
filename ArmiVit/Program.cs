@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.WebHost.UseUrls("http://localhost:5099");
+builder.WebHost.UseUrls("http://localhost:9999");
 // Add services to the container.
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
@@ -41,11 +41,14 @@ using (var scope = app.Services.CreateScope())
     string adminPassword = "Admin123!";
 
     // створення ролі
-    if (!await roleManager.RoleExistsAsync("Admin")) ;
+    if (!await roleManager.RoleExistsAsync("Admin"))
     {
         await roleManager.CreateAsync(new IdentityRole("Admin"));
     }
+    app.UseRouting();
 
+    app.UseAuthentication();
+    app.UseAuthorization();
     // створення користувача
     var admin = await userManager.FindByEmailAsync(adminEmail);
 

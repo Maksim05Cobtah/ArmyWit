@@ -33,31 +33,47 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-end">
-                    <ul class="navbar-nav gap-2">
-                        <li class="nav-item">
-                            <a class="nav-link soft-text" asp-controller="Home" asp-action="Index">
-                                Категорії
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link soft-text" asp-controller="Home" asp-action="Privacy">
-                                Про нас
-                            </a>
-                        </li>
-                            </li>
+                    <div class="navbar-collapse collapse d-sm-inline-flex justify-content-end">
+                        <ul class="navbar-nav gap-2">
                             <li class="nav-item">
-                                <a class="nav-link soft-text" asp-controller="Profile" asp-action="login">
+                                <a class="nav-link soft-text" asp-controller="Home" asp-action="Index">
+                                    Категорії
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link soft-text" asp-controller="Home" asp-action="Privacy">
+                                    Про нас
+                                </a>
+                            </li>
+
+                            @if (User.Identity != null && User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link soft-text" asp-controller="Categories" asp-action="AddCategories">
+                                        Додати категорію
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link soft-text" asp-controller="Products" asp-action="AddProducts">
+                                        Додати продукти
+                                    </a>
+                                </li>
+                            }
+
+                            <li class="nav-item">
+                                <a class="nav-link soft-text" asp-controller="Profile" asp-action="Login">
                                     Логін
                                 </a>
                             </li>
+
                             <li class="nav-item">
-                                <a class="nav-link soft-text" asp-controller="Profile" asp-action="Logout" method="post">
-                                    Логін
+                                <a class="nav-link soft-text" asp-controller="Profile" asp-action="Logout">
+                                    Вийти
                                 </a>
                             </li>
-                    </ul>
-                </div>
+                        </ul>
+                    </div>
             </div>
         </nav>
     </header>
