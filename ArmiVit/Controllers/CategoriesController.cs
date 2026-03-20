@@ -3,10 +3,11 @@ using ArmiVit.Models.ViewsModel;
 using Microsoft.AspNetCore.Mvc;
 using ProductApi.Data;
 using ProductApi.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Controllers
 {
-    
+    [Authorize(Roles = "Admin")]
     public class CategoriesController : Controller
     {
         private readonly AppDbContext _context;
