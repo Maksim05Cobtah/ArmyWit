@@ -51,6 +51,45 @@ namespace Controllers
             await _context.SaveChangesAsync();
 
             return RedirectToAction("AddCategories");
+
+
+        }
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            var category = _context.Categories.Find(id);
+
+            if (category == null)
+            {
+                return NotFound();
+            }
+
+            var model = new CategoryViewModel
+            {
+                Id = category.Id,
+                Name = category.Name
+            };
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit(CategoryViewModel model)
+        {
+            var category = _context.Categories.Find(model.Id);
+
+            if (category == null)
+            {
+                return NotFound();
+            }
+
+            category.Name = model.Name;
+
+            _context.Categories.Update(category);
+            _context.SaveChanges();
+
+            return RedirectToAction("AddCategories");
         }
 
     }
