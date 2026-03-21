@@ -15,6 +15,20 @@
 
 <div class="container">
 
+    <div class="search-box">
+        <form id="searchForm" asp-controller="Home" asp-action="Index" method="get" class="search-form">
+            <div class="search-group">
+                <input type="text"
+                       id="searchInput"
+                       name="searchTerm"
+                       value="@Model.SearchTerm"
+                       class="search-input"
+                       placeholder="Введіть назву товару або ключове слово" />
+                <button type="submit" class="search-btn">Пошук</button>
+            </div>
+        </form>
+    </div>
+
     <h2 class="section-title">Категорії</h2>
 
     <div class="categories">
@@ -30,36 +44,60 @@
 
     <h2 class="section-title">Популярні товари</h2>
 
-    <div class="products">
-        @foreach (var product in Model.Products)
-        {
-            <div class="product-card">
+    @if (Model.Products != null && Model.Products.Any())
+    {
+        <div class="products">
+            @foreach (var product in Model.Products)
+            {
+                <div class="product-card">
 
-                <div class="img-placeholder">
-                    @if (!string.IsNullOrEmpty(product.ImagePath))
-                    {
-                        <img src="~/images/@product.ImagePath" />
-                    }
+                    <div class="img-placeholder">
+                        @if (!string.IsNullOrEmpty(product.ImagePath))
+                        {
+                            <img src="~/images/@product.ImagePath" alt="@product.Name" />
+                        }
+                    </div>
+
+                    <h3>@product.Name</h3>
+
+                    <p>@product.Description</p>
+
+                    <div class="price">
+                        @product.Price ₴
+                    </div>
+
+                    <button>
+                        Купити
+                    </button>
+
                 </div>
-
-                <h3>@product.Name</h3>
-
-                <p>@product.Description</p>
-
-                <div class="price">
-                    @product.Price ₴
-                </div>
-
-                <button>
-                    Купити
-                </button>
-
-            </div>
-        }
-    </div>
+            }
+        </div>
+    }
+    else
+    {
+        <p class="search-empty">Товар не знайдено</p>
+    }
 
     <p class="disclaimer">
         ⚠ Інформація на сайті не є медичною консультацією
     </p>
 
 </div>
+
+<script>
+    const searchInput = document.getElementById('searchInput');
+    let searchTimeout;
+
+    if (searchInput) {
+        searchInput.addEventListener('input', function () {
+            clearTimeout(searchTimeout);
+
+            if (this.value.trim() === '') {
+                searchTimeout = setTimeout(() => {
+                    window.location.href = '/Home/Index';
+                }, 300);
+            }
+        });
+    }
+</script>
