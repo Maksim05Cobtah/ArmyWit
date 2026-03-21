@@ -15,20 +15,27 @@ public class HomeController : Controller
         _context = context;
     }
 
-    public IActionResult Index()
+    public IActionResult Index(string? searchTerm)
     {
-        var products = _context.Products.ToList();
+        var productsQuery = _context.Products.AsQueryable();
+
+        if (!string.IsNullOrWhiteSpace(searchTerm))
+        {
+            productsQuery = productsQuery.Where(p => p.Name.Contains(searchTerm) || p.Description.Contains(searchTerm));
+        }
+
+        var products = productsQuery.ToList();
         var categories = _context.Categories.ToList();
 
         var model = new ProductViewModel
         {
             Categories = categories,
-            Products = products
+            Products = products,
+            SearchTerm = searchTerm
         };
 
         return View(model);
     }
-
     public IActionResult Category(int id)
     {
         var category = _context.Categories.FirstOrDefault(c => c.Id == id);
