@@ -18,18 +18,18 @@ namespace Controllers
         }
 
         public IActionResult AddProducts()
-    {
-        var products2 = _context.Products.ToList();
-        var categories = _context.Categories.ToList();
-        var model = new ProductViewModel
         {
-            Products = products2,
-            Categories = categories
-        };
+            var products2 = _context.Products.ToList();
+            var categories = _context.Categories.ToList();
+            var model = new ProductViewModel
+            {
+                Products = products2,
+                Categories = categories
+            };
 
 
-        return View(model);
-    }
+            return View(model);
+        }
 
         [HttpPost]
         public async Task<IActionResult> AddProduct(ProductViewModel model)
@@ -60,12 +60,24 @@ namespace Controllers
                 CategoryId = model.CategoryId,
                 ImagePath = uniqueFileName,
                 Description = model.Description
-            };  
-        
+            };
+
             _context.Products.Add(product);
             await _context.SaveChangesAsync();
 
             return RedirectToAction("AddProducts");
+
         }
+        public IActionResult Delete(int id)
+        {
+            var products = _context.Products.Find(id);
+
+            _context.Products.Remove(products);
+            _context.SaveChanges();
+            return RedirectToAction("AddProducts");
+        }
+
+
+
     }
 }

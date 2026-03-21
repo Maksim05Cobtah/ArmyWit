@@ -75,6 +75,15 @@
                     </div>
                 </div>
 
+                <!-- 🔴 КНОПКА ВИДАЛЕННЯ -->
+                <form method="post" asp-action="Delete" asp-route-id="@item.Id">
+                    @Html.AntiForgeryToken()
+                    <button type="submit" class="glass-btn" style="background:red;"
+                            onclick="return confirm('Точно видалити цей товар?')">
+                        Видалити
+                    </button>
+                </form>
+
             </div>
 
         }
