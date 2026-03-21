@@ -1,0 +1,31 @@
+﻿@model ArmiVit.Models.ViewsModel.CategoryViewModel
+
+@{
+    ViewData["Title"] = "Редагувати категорію";
+}
+
+<section class="product-section">
+    <div class="glass-card form-glass">
+
+        <h2 class="title">Редагувати категорію</h2>
+
+        <form method="post" asp-action="Edit">
+
+            @Html.AntiForgeryToken()
+
+            <!-- прихований Id -->
+            <input type="hidden" asp-for="Id" />
+
+            <div class="field">
+                <label>Назва категорії</label>
+                <input asp-for="Name" />
+            </div>
+
+            <button type="submit" class="glass-btn">
+                Зберегти
+            </button>
+
+        </form>
+
+    </div>
+</section>
