@@ -266,3 +266,81 @@ textarea {
     font-size: 14px;
     color: #444;
 }
+
+/* ================= ACTION BUTTONS (EDIT / DELETE) ================= */
+
+.product-actions {
+    display: flex;
+    gap: 10px;
+    padding: 18px 22px 28px 22px;
+    align-items: center;
+}
+
+.product-actions form {
+    margin: 0; /* remove default form margin so buttons align */
+}
+
+.product-actions .btn-edit,
+.product-actions .btn-delete {
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none; /* for anchor */
+    transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
+}
+
+.product-actions .btn-edit {
+    background: linear-gradient(135deg, #6ee7b7, #3ab0ff);
+    color: #083344;
+    box-shadow: 0 8px 20px rgba(50,170,255,0.15);
+}
+
+.product-actions .btn-edit:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 36px rgba(50,170,255,0.22);
+}
+
+.product-actions .btn-delete {
+    background: linear-gradient(135deg, #ff8a8a, #ff4d6d);
+    color: #3b0213;
+    box-shadow: 0 8px 20px rgba(255,80,110,0.14);
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.product-actions .btn-delete:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 36px rgba(255,80,110,0.22);
+    opacity: 0.98;
+}
+
+/* icon styling inside buttons */
+.product-actions .icon {
+    font-size: 16px;
+    line-height: 1;
+}
+
+/* make sure the anchor looks consistent with button
+   when used as link */
+.product-actions a.btn-edit {
+    display: inline-flex;
+}
+
+/* responsive tweaks */
+@media (max-width: 520px) {
+    .product-actions {
+        gap: 8px;
+        padding: 14px 16px 20px 16px;
+    }
+    .product-actions .btn-edit,
+    .product-actions .btn-delete {
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+}

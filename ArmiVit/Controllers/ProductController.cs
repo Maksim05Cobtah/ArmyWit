@@ -76,7 +76,61 @@ namespace Controllers
             _context.SaveChanges();
             return RedirectToAction("AddProducts");
         }
+        public IActionResult Edit(int id)
+        {
+            var product = _context.Products.Find(id);
 
+            if (product == null)
+                return NotFound();
+
+            var model = new ProductViewModel
+            {
+                Id = product.Id,
+                Name = product.Name,
+                Price = product.Price,
+                Quantity = product.Quantity,
+                CategoryId = product.CategoryId,
+                Description = product.Description,
+                Categories = _context.Categories.ToList()
+            };
+
+            return View("EditProduct",model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(ProductViewModel model)
+        {
+            var product = _context.Products.Find(model.Id);
+
+            if (product == null)
+                return NotFound();
+
+            product.Name = model.Name;
+            product.Price = model.Price;
+            product.Quantity = model.Quantity;
+            product.CategoryId = model.CategoryId;
+            product.Description = model.Description;
+
+            if (model.ImageFile != null)
+            {
+                string uploadsFolder = Path.Combine(_webHostEnvironment.WebRootPath, "images");
+
+                string uniqueFileName = Guid.NewGuid().ToString() + "_" + model.ImageFile.FileName;
+                string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    await model.ImageFile.CopyToAsync(fileStream);
+                }
+
+                product.ImagePath = uniqueFileName;
+            }
+
+            _context.Products.Update(product);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("AddProducts");
+        }
 
 
     }

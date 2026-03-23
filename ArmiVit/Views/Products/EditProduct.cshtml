@@ -1,0 +1,52 @@
+﻿@model ArmiVit.Models.ViewsModel.ProductViewModel
+
+@{
+    ViewData["Title"] = "Редагувати продукт";
+}
+
+<section class="product-section">
+
+    <div class="glass-card form-glass">
+
+        <h2 class="title">Редагувати продукт</h2>
+
+        <form method="post" enctype="multipart/form-data">
+
+            <input type="hidden" asp-for="Id" />
+
+            <div class="field">
+                <label>Імʼя</label>
+                <input asp-for="Name" />
+            </div>
+
+            <div class="field">
+                <label>Ціна</label>
+                <input asp-for="Price" type="number" step="0.01" />
+            </div>
+
+            <div class="field">
+                <label>Фото</label>
+                <input asp-for="ImageFile" type="file" />
+            </div>
+
+            <div class="field">
+                <label>Категорія</label>
+                <select asp-for="CategoryId">
+
+                    @foreach (var category in Model.Categories)
+                    {
+                        <option value="@category.Id">@category.Name</option>
+                    }
+
+                </select>
+            </div>
+
+            <button type="submit" class="glass-btn">
+                Зберегти зміни
+            </button>
+
+        </form>
+
+    </div>
+
+</section>

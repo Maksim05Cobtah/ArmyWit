@@ -12,6 +12,7 @@
 
         <form method="post" asp-action="AddProduct" enctype="multipart/form-data">
 
+
             @Html.AntiForgeryToken()
 
             <div class="field">
@@ -75,14 +76,20 @@
                     </div>
                 </div>
 
-                <!-- 🔴 КНОПКА ВИДАЛЕННЯ -->
-                <form method="post" asp-action="Delete" asp-route-id="@item.Id">
-                    @Html.AntiForgeryToken()
-                    <button type="submit" class="glass-btn" style="background:red;"
-                            onclick="return confirm('Точно видалити цей товар?')">
-                        Видалити
-                    </button>
-                </form>
+                <div class="product-actions">
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn-edit" title="Редагувати">
+                        <span class="icon">✏️</span>
+                        <span>Редагувати</span>
+                    </a>
+
+                    <form method="post" asp-action="Delete" asp-route-id="@item.Id" onsubmit="return confirm('Точно видалити цей товар?')">
+                        @Html.AntiForgeryToken()
+                        <button type="submit" class="btn-delete" title="Видалити">
+                            <span class="icon">🗑️</span>
+                            <span>Видалити</span>
+                        </button>
+                    </form>
+                </div>
 
             </div>
 
