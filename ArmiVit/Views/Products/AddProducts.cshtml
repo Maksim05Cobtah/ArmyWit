@@ -58,8 +58,8 @@
 
         @foreach (var item in Model.Products)
         {
-
-            <div class="product-glass">
+            @if(item.IsDeleted ==false)
+         {   <div class="product-glass">
 
                 @if (!string.IsNullOrEmpty(item.ImagePath))
                 {
@@ -91,7 +91,7 @@
                     </form>
                 </div>
 
-            </div>
+            </div>}
 
         }
 

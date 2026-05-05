@@ -25,8 +25,8 @@
     <div class="products-grid">
 
         @foreach (var item in Model.Categories)
-        {
-            <div class="product-glass">
+         {   @if (item.IsDeleted == false)
+            {<div class="product-glass">
                 <div class="product-content">
                     <h3>@item.Name</h3>
                 </div>
@@ -48,7 +48,7 @@
                         </button>
                     </form>
                 </div>
-            </div>
+            </div>}
         }
 
     </div>
