@@ -1,0 +1,34 @@
+﻿@model ArmiVit.Models.AboutPage
+
+@{
+    ViewData["Title"] = "Редагування сторінки Про мене";
+}
+
+<h2>Редагування сторінки "Про мене"</h2>
+
+<form asp-action="EditAbout" method="post">
+
+    <div>
+        <label>Текст 1</label>
+<textarea asp-for="AboutMeText1" rows="4" class="form-control"></textarea>
+    </div>
+
+    <br>
+
+    <div>
+        <label>Текст 2</label>
+<textarea asp-for="AboutMeText2" rows="4" class="form-control"></textarea>
+    </div>
+
+    <br>
+
+    <div>
+        <label>Досвід</label>
+<textarea asp-for="ExpirienceText1" rows="4" class="form-control"></textarea>
+    </div>
+
+    <br>
+
+    <button type="submit" class="btn btn-success">Зберегти</button>
+
+</form>

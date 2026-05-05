@@ -1,0 +1,48 @@
+﻿@model ArmiVit.Models.Programs
+
+<h2>Редагувати програму</h2>
+
+<form asp-action="EditProgram" method="post">
+
+    <input type="hidden" asp-for="Id" />
+
+    <div>
+        <label>Назва</label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+
+    <br>
+
+    <div>
+        <label>Ціна</label>
+        <input asp-for="Price" class="form-control" />
+    </div>
+
+    <br>
+
+    <button type="submit" class="btn btn-success">Зберегти</button>
+
+</form>
+
+<hr>
+
+<h3>Пункти програми</h3>
+
+<a asp-action="CreateProgramItem" asp-route-programId="@Model.Id">
+    Додати пункт
+</a>
+
+<ul>
+
+    @foreach (var item in Model.Items)
+    {
+        <li>
+
+            @item.Text (@item.Type)
+
+            <a asp-action="DeleteProgramItem" asp-route-id="@item.Id">Видалити</a>
+
+        </li>
+    }
+
+</ul>

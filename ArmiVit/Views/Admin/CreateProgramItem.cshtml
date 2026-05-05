@@ -1,0 +1,33 @@
+﻿@model ArmiVit.Models.ServiceProgramItem
+
+<h2>Додати пункт програми</h2>
+
+<form asp-action="CreateProgramItem" method="post">
+
+    <input type="hidden" asp-for="ProgramId" value="@ViewBag.ProgramId" />
+
+    <div>
+        <label>Текст</label>
+        <input asp-for="Text" class="form-control" />
+    </div>
+
+    <br>
+
+    <div>
+        <label>Тип</label>
+
+        <select asp-for="Type" class="form-control">
+
+            <option value="Program">Program</option>
+
+            <option value="Result">Result</option>
+
+        </select>
+
+    </div>
+
+    <br>
+
+    <button type="submit" class="btn btn-success">Додати</button>
+
+</form>

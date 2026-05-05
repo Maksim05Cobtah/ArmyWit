@@ -1,0 +1,23 @@
+﻿@model ArmiVit.Models.Programs
+
+<h2>Створити програму</h2>
+
+<form asp-action="CreateProgram" method="post">
+
+    <div>
+        <label>Назва</label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+
+    <br>
+
+    <div>
+        <label>Ціна</label>
+        <input asp-for="Price" class="form-control" />
+    </div>
+
+    <br>
+
+    <button type="submit" class="btn btn-success">Створити</button>
+
+</form>
