@@ -3,28 +3,116 @@
   "WorkspaceRootPath": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|c:\\users\\cobtahacademy1\\source\\repos\\armywit\\armivit\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|solutionrelative:armivit\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|c:\\users\\cobtahacademy1\\source\\repos\\armywit\\armivit\\views\\home\\aboutme.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|solutionrelative:armivit\\views\\home\\aboutme.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|c:\\users\\cobtahacademy1\\source\\repos\\armywit\\armivit\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|solutionrelative:armivit\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|c:\\users\\cobtahacademy1\\source\\repos\\armywit\\armivit\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|solutionrelative:armivit\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|c:\\users\\cobtahacademy1\\source\\repos\\armywit\\armivit\\models\\viewsmodel\\aboutpageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|solutionrelative:armivit\\models\\viewsmodel\\aboutpageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|c:\\users\\cobtahacademy1\\source\\repos\\armywit\\armivit\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|solutionrelative:armivit\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|c:\\users\\cobtahacademy1\\source\\repos\\armywit\\armivit\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|solutionrelative:armivit\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|c:\\users\\cobtahacademy1\\source\\repos\\armywit\\armivit\\views\\admin\\services.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|solutionrelative:armivit\\views\\admin\\services.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|c:\\users\\cobtahacademy1\\source\\repos\\armywit\\armivit\\views\\admin\\programs.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|solutionrelative:armivit\\views\\admin\\programs.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|c:\\users\\cobtahacademy1\\source\\repos\\armywit\\armivit\\views\\admin\\editservice.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|solutionrelative:armivit\\views\\admin\\editservice.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|c:\\users\\cobtahacademy1\\source\\repos\\armywit\\armivit\\views\\admin\\editprogram.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|solutionrelative:armivit\\views\\admin\\editprogram.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|c:\\users\\cobtahacademy1\\source\\repos\\armywit\\armivit\\views\\admin\\editabout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|solutionrelative:armivit\\views\\admin\\editabout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|c:\\users\\cobtahacademy1\\source\\repos\\armywit\\armivit\\views\\admin\\createservices.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|solutionrelative:armivit\\views\\admin\\createservices.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|c:\\users\\cobtahacademy1\\source\\repos\\armywit\\armivit\\views\\admin\\createprogram.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|solutionrelative:armivit\\views\\admin\\createprogram.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|c:\\users\\cobtahacademy1\\source\\repos\\armywit\\armivit\\views\\admin\\createprogramitem.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|solutionrelative:armivit\\views\\admin\\createprogramitem.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|c:\\users\\cobtahacademy1\\source\\repos\\armywit\\armivit\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|solutionrelative:armivit\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|c:\\users\\cobtahacademy1\\source\\repos\\armywit\\armivit\\controllers\\profilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|solutionrelative:armivit\\controllers\\profilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|c:\\users\\cobtahacademy1\\source\\repos\\armywit\\armivit\\migrations\\20260323160139_addprograms.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|solutionrelative:armivit\\migrations\\20260323160139_addprograms.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|c:\\users\\cobtahacademy1\\source\\repos\\armywit\\armivit\\controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|solutionrelative:armivit\\controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|c:\\users\\cobtahacademy1\\source\\repos\\armywit\\armivit\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|solutionrelative:armivit\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|c:\\users\\cobtahacademy1\\source\\repos\\armywit\\armivit\\models\\programitems.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|solutionrelative:armivit\\models\\programitems.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|c:\\users\\cobtahacademy1\\source\\repos\\armywit\\armivit\\models\\programitemtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|solutionrelative:armivit\\models\\programitemtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|c:\\users\\cobtahacademy1\\source\\repos\\armywit\\armivit\\models\\programs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|solutionrelative:armivit\\models\\programs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|c:\\users\\cobtahacademy1\\source\\repos\\armywit\\armivit\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|solutionrelative:armivit\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|c:\\users\\cobtahacademy1\\source\\repos\\armywit\\armivit\\models\\serviceresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|solutionrelative:armivit\\models\\serviceresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|c:\\users\\cobtahacademy1\\source\\repos\\armywit\\armivit\\models\\service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|solutionrelative:armivit\\models\\service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|c:\\users\\cobtahacademy1\\source\\repos\\armywit\\armivit\\models\\servicebenefit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|solutionrelative:armivit\\models\\servicebenefit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|c:\\users\\cobtahacademy1\\source\\repos\\armywit\\armivit\\models\\aboutpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|solutionrelative:armivit\\models\\aboutpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|c:\\users\\cobtahacademy1\\source\\repos\\armywit\\armivit\\wwwroot\\css\\aboutme.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|solutionrelative:armivit\\wwwroot\\css\\aboutme.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|c:\\users\\cobtahacademy1\\source\\repos\\armywit\\armivit\\wwwroot\\css\\product.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|solutionrelative:armivit\\wwwroot\\css\\product.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|c:\\users\\cobtahacademy1\\source\\repos\\armywit\\armivit\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|solutionrelative:armivit\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|c:\\users\\cobtahacademy1\\source\\repos\\armywit\\armivit\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|solutionrelative:armivit\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|c:\\users\\cobtahacademy1\\source\\repos\\armywit\\armivit\\views\\products\\addproducts.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -35,40 +123,32 @@
       "RelativeMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|solutionrelative:armivit\\models\\viewsmodel\\productviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Migrations\\20260316151733_adae.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ArmiVit\\Migrations\\20260316151733_adae.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|c:\\users\\cobtahacademy1\\source\\repos\\armywit\\armivit\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|solutionrelative:armivit\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Migrations\\20260316151214_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ArmiVit\\Migrations\\20260316151214_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|c:\\users\\cobtahacademy1\\source\\repos\\armywit\\armivit\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|solutionrelative:armivit\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|c:\\users\\cobtahacademy1\\source\\repos\\armywit\\armivit\\wwwroot\\css\\product.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|solutionrelative:armivit\\wwwroot\\css\\product.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|c:\\users\\cobtahacademy1\\source\\repos\\armywit\\armivit\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|solutionrelative:armivit\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|c:\\users\\cobtahacademy1\\source\\repos\\armywit\\armivit\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|solutionrelative:armivit\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|c:\\users\\cobtahacademy1\\source\\repos\\armywit\\armivit\\models\\viewsmodel\\categoryviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|solutionrelative:armivit\\models\\viewsmodel\\categoryviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|c:\\users\\cobtahacademy1\\source\\repos\\armywit\\armivit\\views\\categories\\addcategories.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|solutionrelative:armivit\\views\\categories\\addcategories.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|c:\\users\\cobtahacademy1\\source\\repos\\armywit\\armivit\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|solutionrelative:armivit\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|c:\\users\\cobtahacademy1\\source\\repos\\armywit\\armivit\\controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|solutionrelative:armivit\\controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|c:\\users\\cobtahacademy1\\source\\repos\\armywit\\armivit\\models\\categories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|solutionrelative:armivit\\models\\categories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|c:\\users\\cobtahacademy1\\source\\repos\\armywit\\armivit\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|solutionrelative:armivit\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|c:\\users\\cobtahacademy1\\source\\repos\\armywit\\armivit\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{ED7DBF4A-2044-4D7A-BDE4-281016668380}|ArmiVit\\ArmiVit.csproj|solutionrelative:armivit\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Migrations\\20260316151214_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ArmiVit\\Migrations\\20260316151214_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -82,151 +162,346 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 25,
               "Title": "Product.css",
               "DocumentMoniker": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\wwwroot\\css\\Product.css",
               "RelativeDocumentMoniker": "ArmiVit\\wwwroot\\css\\Product.css",
               "ToolTip": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\wwwroot\\css\\Product.css",
               "RelativeToolTip": "ArmiVit\\wwwroot\\css\\Product.css",
-              "ViewState": "AgIAAOoAAAAAAAAAAAAswAwBAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAFkAAAAAAAAAAAAAAFkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2026-03-06T14:20:30.063Z",
               "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 28,
               "Title": "AddProducts.cshtml",
               "DocumentMoniker": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Views\\Products\\AddProducts.cshtml",
               "RelativeDocumentMoniker": "ArmiVit\\Views\\Products\\AddProducts.cshtml",
               "ToolTip": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Views\\Products\\AddProducts.cshtml",
               "RelativeToolTip": "ArmiVit\\Views\\Products\\AddProducts.cshtml",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAAAQAAAAxAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-03-06T14:20:35.67Z",
-              "IsPinned": true,
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "ArmiVit\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "ArmiVit\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAADoAAAAAAAAAAAAkwEEAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-09T15:25:59.253Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "ArmiVit\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "ArmiVit\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAswFAAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-07T14:12:55.569Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "ArmiVit\\Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "ArmiVit\\Controllers\\AdminController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKMAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-27T14:14:54.458Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "ArmiVit\\Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "ArmiVit\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAMAAAAAAAAAA==",
+              "Title": "AboutMe.cshtml",
+              "DocumentMoniker": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Views\\Home\\AboutMe.cshtml",
+              "RelativeDocumentMoniker": "ArmiVit\\Views\\Home\\AboutMe.cshtml",
+              "ToolTip": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Views\\Home\\AboutMe.cshtml",
+              "RelativeToolTip": "ArmiVit\\Views\\Home\\AboutMe.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-09T15:24:19.694Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-23T15:41:02.021Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ProductViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Models\\ViewsModel\\ProductViewModel.cs",
-              "RelativeDocumentMoniker": "ArmiVit\\Models\\ViewsModel\\ProductViewModel.cs",
-              "ToolTip": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Models\\ViewsModel\\ProductViewModel.cs",
-              "RelativeToolTip": "ArmiVit\\Models\\ViewsModel\\ProductViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-13T14:25:00.614Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "ArmiVit\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Controllers\\HomeController.cs*",
-              "RelativeToolTip": "ArmiVit\\Controllers\\HomeController.cs*",
-              "ViewState": "AgIAAA0AAAAAAAAAAAA1wBsAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-09T15:25:59.253Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ProfileController.cs",
-              "DocumentMoniker": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Controllers\\ProfileController.cs",
-              "RelativeDocumentMoniker": "ArmiVit\\Controllers\\ProfileController.cs",
-              "ToolTip": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Controllers\\ProfileController.cs",
-              "RelativeToolTip": "ArmiVit\\Controllers\\ProfileController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-16T16:12:00.909Z",
-              "EditorCaption": ""
+              "DocumentIndex": 5,
+              "Title": "Services.cshtml",
+              "DocumentMoniker": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Views\\Admin\\Services.cshtml",
+              "RelativeDocumentMoniker": "ArmiVit\\Views\\Admin\\Services.cshtml",
+              "ToolTip": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Views\\Admin\\Services.cshtml",
+              "RelativeToolTip": "ArmiVit\\Views\\Admin\\Services.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-27T14:29:57.145Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "AboutPageViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Models\\ViewsModel\\AboutPageViewModel.cs",
+              "RelativeDocumentMoniker": "ArmiVit\\Models\\ViewsModel\\AboutPageViewModel.cs",
+              "ToolTip": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Models\\ViewsModel\\AboutPageViewModel.cs",
+              "RelativeToolTip": "ArmiVit\\Models\\ViewsModel\\AboutPageViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-27T14:46:04.415Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Programs.cshtml",
+              "DocumentMoniker": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Views\\Admin\\Programs.cshtml",
+              "RelativeDocumentMoniker": "ArmiVit\\Views\\Admin\\Programs.cshtml",
+              "ToolTip": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Views\\Admin\\Programs.cshtml",
+              "RelativeToolTip": "ArmiVit\\Views\\Admin\\Programs.cshtml",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAAAAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-27T14:33:59.96Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "EditService.cshtml",
+              "DocumentMoniker": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Views\\Admin\\EditService.cshtml",
+              "RelativeDocumentMoniker": "ArmiVit\\Views\\Admin\\EditService.cshtml",
+              "ToolTip": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Views\\Admin\\EditService.cshtml",
+              "RelativeToolTip": "ArmiVit\\Views\\Admin\\EditService.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-27T14:33:21.695Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "EditProgram.cshtml",
+              "DocumentMoniker": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Views\\Admin\\EditProgram.cshtml",
+              "RelativeDocumentMoniker": "ArmiVit\\Views\\Admin\\EditProgram.cshtml",
+              "ToolTip": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Views\\Admin\\EditProgram.cshtml",
+              "RelativeToolTip": "ArmiVit\\Views\\Admin\\EditProgram.cshtml",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAAAAAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-27T14:37:39.367Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "EditAbout.cshtml",
+              "DocumentMoniker": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Views\\Admin\\EditAbout.cshtml",
+              "RelativeDocumentMoniker": "ArmiVit\\Views\\Admin\\EditAbout.cshtml",
+              "ToolTip": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Views\\Admin\\EditAbout.cshtml",
+              "RelativeToolTip": "ArmiVit\\Views\\Admin\\EditAbout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-27T14:28:18.335Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CreateServices.cshtml",
+              "DocumentMoniker": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Views\\Admin\\CreateServices.cshtml",
+              "RelativeDocumentMoniker": "ArmiVit\\Views\\Admin\\CreateServices.cshtml",
+              "ToolTip": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Views\\Admin\\CreateServices.cshtml",
+              "RelativeToolTip": "ArmiVit\\Views\\Admin\\CreateServices.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-27T14:31:28.723Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "CreateProgram.cshtml",
+              "DocumentMoniker": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Views\\Admin\\CreateProgram.cshtml",
+              "RelativeDocumentMoniker": "ArmiVit\\Views\\Admin\\CreateProgram.cshtml",
+              "ToolTip": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Views\\Admin\\CreateProgram.cshtml",
+              "RelativeToolTip": "ArmiVit\\Views\\Admin\\CreateProgram.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-27T14:34:39.132Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "CreateProgramItem.cshtml",
+              "DocumentMoniker": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Views\\Admin\\CreateProgramItem.cshtml",
+              "RelativeDocumentMoniker": "ArmiVit\\Views\\Admin\\CreateProgramItem.cshtml",
+              "ToolTip": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Views\\Admin\\CreateProgramItem.cshtml",
+              "RelativeToolTip": "ArmiVit\\Views\\Admin\\CreateProgramItem.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-27T14:38:28.054Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "20260323160139_AddPrograms.cs",
+              "DocumentMoniker": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Migrations\\20260323160139_AddPrograms.cs",
+              "RelativeDocumentMoniker": "ArmiVit\\Migrations\\20260323160139_AddPrograms.cs",
+              "ToolTip": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Migrations\\20260323160139_AddPrograms.cs",
+              "RelativeToolTip": "ArmiVit\\Migrations\\20260323160139_AddPrograms.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAADIAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T16:01:40.147Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ProgramItems.cs",
+              "DocumentMoniker": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Models\\ProgramItems.cs",
+              "RelativeDocumentMoniker": "ArmiVit\\Models\\ProgramItems.cs",
+              "ToolTip": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Models\\ProgramItems.cs",
+              "RelativeToolTip": "ArmiVit\\Models\\ProgramItems.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T15:58:07.532Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Program.cs",
               "RelativeDocumentMoniker": "ArmiVit\\Program.cs",
               "ToolTip": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Program.cs",
               "RelativeToolTip": "ArmiVit\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAADMAAAAAAAAAAAAAAAYAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-06T14:24:24.767Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-06T14:24:24.767Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 17,
+              "Title": "ProgramItemType.cs",
+              "DocumentMoniker": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Models\\ProgramItemType.cs",
+              "RelativeDocumentMoniker": "ArmiVit\\Models\\ProgramItemType.cs",
+              "ToolTip": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Models\\ProgramItemType.cs",
+              "RelativeToolTip": "ArmiVit\\Models\\ProgramItemType.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T15:59:47.773Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "ArmiVit\\Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "ArmiVit\\Data\\AppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T14:28:44.658Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Programs.cs",
+              "DocumentMoniker": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Models\\Programs.cs",
+              "RelativeDocumentMoniker": "ArmiVit\\Models\\Programs.cs",
+              "ToolTip": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Models\\Programs.cs",
+              "RelativeToolTip": "ArmiVit\\Models\\Programs.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T15:55:23.876Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "ServiceResult.cs",
+              "DocumentMoniker": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Models\\ServiceResult.cs",
+              "RelativeDocumentMoniker": "ArmiVit\\Models\\ServiceResult.cs",
+              "ToolTip": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Models\\ServiceResult.cs",
+              "RelativeToolTip": "ArmiVit\\Models\\ServiceResult.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T15:53:02.66Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "ArmiVit\\Models\\Product.cs",
+              "ToolTip": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Models\\Product.cs",
+              "RelativeToolTip": "ArmiVit\\Models\\Product.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T14:33:45.471Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Service.cs",
+              "DocumentMoniker": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Models\\Service.cs",
+              "RelativeDocumentMoniker": "ArmiVit\\Models\\Service.cs",
+              "ToolTip": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Models\\Service.cs",
+              "RelativeToolTip": "ArmiVit\\Models\\Service.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T15:49:44.183Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "ServiceBenefit.cs",
+              "DocumentMoniker": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Models\\ServiceBenefit.cs",
+              "RelativeDocumentMoniker": "ArmiVit\\Models\\ServiceBenefit.cs",
+              "ToolTip": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Models\\ServiceBenefit.cs",
+              "RelativeToolTip": "ArmiVit\\Models\\ServiceBenefit.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T15:51:18.179Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "AboutPage.cs",
+              "DocumentMoniker": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Models\\AboutPage.cs",
+              "RelativeDocumentMoniker": "ArmiVit\\Models\\AboutPage.cs",
+              "ToolTip": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Models\\AboutPage.cs",
+              "RelativeToolTip": "ArmiVit\\Models\\AboutPage.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T15:49:02.036Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "AboutMe.css",
+              "DocumentMoniker": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\wwwroot\\css\\AboutMe.css",
+              "RelativeDocumentMoniker": "ArmiVit\\wwwroot\\css\\AboutMe.css",
+              "ToolTip": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\wwwroot\\css\\AboutMe.css",
+              "RelativeToolTip": "ArmiVit\\wwwroot\\css\\AboutMe.css",
+              "ViewState": "AgIAAPoAAAAAAAAAAAAcwB8BAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-03-23T15:41:14.34Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
               "Title": "ProductController.cs",
               "DocumentMoniker": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Controllers\\ProductController.cs",
               "RelativeDocumentMoniker": "ArmiVit\\Controllers\\ProductController.cs",
               "ToolTip": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Controllers\\ProductController.cs",
               "RelativeToolTip": "ArmiVit\\Controllers\\ProductController.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABUAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAwDEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-09T15:16:25.162Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-09T15:16:25.162Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "CategoriesController.cs",
-              "DocumentMoniker": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Controllers\\CategoriesController.cs",
-              "RelativeDocumentMoniker": "ArmiVit\\Controllers\\CategoriesController.cs",
-              "ToolTip": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Controllers\\CategoriesController.cs",
-              "RelativeToolTip": "ArmiVit\\Controllers\\CategoriesController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-09T15:25:56.548Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "20260316151733_adae.cs",
-              "DocumentMoniker": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Migrations\\20260316151733_adae.cs",
-              "RelativeDocumentMoniker": "ArmiVit\\Migrations\\20260316151733_adae.cs",
-              "ToolTip": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Migrations\\20260316151733_adae.cs",
-              "RelativeToolTip": "ArmiVit\\Migrations\\20260316151733_adae.cs",
-              "ViewState": "AgIAADQAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-16T15:17:33.56Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "20260316151214_InitialCreate.cs",
-              "DocumentMoniker": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Migrations\\20260316151214_InitialCreate.cs",
-              "RelativeDocumentMoniker": "ArmiVit\\Migrations\\20260316151214_InitialCreate.cs",
-              "ToolTip": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Migrations\\20260316151214_InitialCreate.cs",
-              "RelativeToolTip": "ArmiVit\\Migrations\\20260316151214_InitialCreate.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-16T15:12:15.237Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 26,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\appsettings.json",
               "RelativeDocumentMoniker": "ArmiVit\\appsettings.json",
@@ -234,68 +509,103 @@
               "RelativeToolTip": "ArmiVit\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-03-06T14:29:16.81Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-06T14:29:16.81Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Product.cs",
-              "DocumentMoniker": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Models\\Product.cs",
-              "RelativeDocumentMoniker": "ArmiVit\\Models\\Product.cs",
-              "ToolTip": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Models\\Product.cs",
-              "RelativeToolTip": "ArmiVit\\Models\\Product.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAuAAAAAAAAAA==",
+              "DocumentIndex": 29,
+              "Title": "ProductViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Models\\ViewsModel\\ProductViewModel.cs",
+              "RelativeDocumentMoniker": "ArmiVit\\Models\\ViewsModel\\ProductViewModel.cs",
+              "ToolTip": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Models\\ViewsModel\\ProductViewModel.cs",
+              "RelativeToolTip": "ArmiVit\\Models\\ViewsModel\\ProductViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-13T14:33:45.471Z"
+              "WhenOpened": "2026-03-13T14:25:00.614Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Data\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "ArmiVit\\Data\\AppDbContext.cs",
-              "ToolTip": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Data\\AppDbContext.cs",
-              "RelativeToolTip": "ArmiVit\\Data\\AppDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAxAAAAAAAAAA==",
+              "DocumentIndex": 30,
+              "Title": "CategoryViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Models\\ViewsModel\\CategoryViewModel.cs",
+              "RelativeDocumentMoniker": "ArmiVit\\Models\\ViewsModel\\CategoryViewModel.cs",
+              "ToolTip": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Models\\ViewsModel\\CategoryViewModel.cs",
+              "RelativeToolTip": "ArmiVit\\Models\\ViewsModel\\CategoryViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-13T14:28:44.658Z"
+              "WhenOpened": "2026-03-21T14:42:15.264Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "site.css",
-              "DocumentMoniker": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\wwwroot\\css\\site.css",
-              "RelativeDocumentMoniker": "ArmiVit\\wwwroot\\css\\site.css",
-              "ToolTip": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\wwwroot\\css\\site.css",
-              "RelativeToolTip": "ArmiVit\\wwwroot\\css\\site.css",
-              "ViewState": "AgIAAHYAAAAAAAAAAAAswIYAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2026-03-09T16:05:23.488Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 31,
               "Title": "AddCategories.cshtml",
               "DocumentMoniker": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Views\\Categories\\AddCategories.cshtml",
               "RelativeDocumentMoniker": "ArmiVit\\Views\\Categories\\AddCategories.cshtml",
               "ToolTip": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Views\\Categories\\AddCategories.cshtml",
               "RelativeToolTip": "ArmiVit\\Views\\Categories\\AddCategories.cshtml",
-              "ViewState": "AgIAAAcAAAAAAAAAAADwvycAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAADQAAAAAAAAAAIBJwDEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-03-07T14:43:25.496Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "ArmiVit\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "ArmiVit\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAMAAAAAAAAAAIBJwB4AAAAyAAAAAAAAAA==",
+              "DocumentIndex": 32,
+              "Title": "CategoriesController.cs",
+              "DocumentMoniker": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Controllers\\CategoriesController.cs",
+              "RelativeDocumentMoniker": "ArmiVit\\Controllers\\CategoriesController.cs",
+              "ToolTip": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Controllers\\CategoriesController.cs",
+              "RelativeToolTip": "ArmiVit\\Controllers\\CategoriesController.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAswFQAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-09T15:25:56.548Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "Categories.cs",
+              "DocumentMoniker": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Models\\Categories.cs",
+              "RelativeDocumentMoniker": "ArmiVit\\Models\\Categories.cs",
+              "ToolTip": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Models\\Categories.cs",
+              "RelativeToolTip": "ArmiVit\\Models\\Categories.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-21T14:12:22.074Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "ArmiVit\\wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "ArmiVit\\wwwroot\\css\\site.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-03-09T16:05:23.488Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "ArmiVit\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "ArmiVit\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAEAAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-07T14:12:55.569Z"
+              "WhenOpened": "2026-03-09T15:24:19.694Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "20260316151214_InitialCreate.cs",
+              "DocumentMoniker": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Migrations\\20260316151214_InitialCreate.cs",
+              "RelativeDocumentMoniker": "ArmiVit\\Migrations\\20260316151214_InitialCreate.cs",
+              "ToolTip": "C:\\Users\\CobtahAcademy1\\source\\repos\\ArmyWit\\ArmiVit\\Migrations\\20260316151214_InitialCreate.cs",
+              "RelativeToolTip": "ArmiVit\\Migrations\\20260316151214_InitialCreate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-16T15:12:15.237Z"
             }
           ]
         }

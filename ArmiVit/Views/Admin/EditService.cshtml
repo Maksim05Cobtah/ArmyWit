@@ -1,0 +1,39 @@
+﻿@model ArmiVit.Models.Service
+
+<h2>Редагувати послугу</h2>
+
+<form asp-action="EditService" method="post">
+
+    <input type="hidden" asp-for="Id" />
+
+    <div>
+        <label>Назва</label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+
+    <br>
+
+    <div>
+        <label>Опис</label>
+<textarea asp-for="Description" class="form-control"></textarea>
+    </div>
+
+    <br>
+
+    <div>
+        <label>Час (хв)</label>
+        <input asp-for="Time" class="form-control" />
+    </div>
+
+    <br>
+
+    <div>
+        <label>Ціна</label>
+        <input asp-for="Price" class="form-control" />
+    </div>
+
+    <br>
+
+    <button type="submit" class="btn btn-success">Зберегти</button>
+
+</form>

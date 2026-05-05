@@ -1,0 +1,39 @@
+﻿@model List<ArmiVit.Models.Programs>
+
+<h2>Програми</h2>
+
+<a asp-action="CreateProgram" class="btn btn-primary">Додати програму</a>
+
+<table class="table">
+
+    <thead>
+        <tr>
+            <th>Назва</th>
+            <th>Ціна</th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach (var program in Model)
+        {
+            <tr>
+
+                <td>@program.Name</td>
+                <td>@program.Price грн</td>
+
+                <td>
+
+                    <a asp-action="EditProgram" asp-route-id="@program.Id">Редагувати</a> |
+
+                    <a asp-action="DeleteProgram" asp-route-id="@program.Id">Видалити</a>
+
+                </td>
+
+            </tr>
+        }
+
+    </tbody>
+
+</table>

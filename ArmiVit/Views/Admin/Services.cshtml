@@ -1,0 +1,45 @@
+﻿@model List<ArmiVit.Models.Service>
+
+@{
+    ViewData["Title"] = "Послуги";
+}
+
+<h2>Послуги</h2>
+
+<a asp-action="CreateService" class="btn btn-primary">Додати послугу</a>
+
+<table class="table">
+
+    <thead>
+        <tr>
+            <th>Назва</th>
+            <th>Час</th>
+            <th>Ціна</th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach (var service in Model)
+        {
+            <tr>
+
+                <td>@service.Name</td>
+                <td>@service.Time хв</td>
+                <td>@service.Price грн</td>
+
+                <td>
+
+                    <a asp-action="EditService" asp-route-id="@service.Id">Редагувати</a> |
+
+                    <a asp-action="DeleteService" asp-route-id="@service.Id">Видалити</a>
+
+                </td>
+
+            </tr>
+        }
+
+    </tbody>
+
+</table>
