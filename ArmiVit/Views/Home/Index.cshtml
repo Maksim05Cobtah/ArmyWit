@@ -44,6 +44,34 @@
 
     <h2 class="section-title">Популярні товари</h2>
 
+    <!-- ФІЛЬТР ПО ЦІНІ -->
+    <div class="price-filter">
+        <form asp-controller="Home" asp-action="Index" method="get" class="price-form">
+
+            <input type="text"
+                   name="searchTerm"
+                   value="@Model.SearchTerm"
+                   hidden />
+
+            <input type="number"
+                   name="minPrice"
+                   class="price-input"
+                   placeholder="Ціна від" />
+
+            <input type="number"
+                   name="maxPrice"
+                   class="price-input"
+                   placeholder="Ціна до" />
+
+            <button type="submit" class="search-btn">
+                Фільтр
+            </button>
+
+        </form>
+    </div>
+
+
+
     @if (Model.Products != null && Model.Products.Any())
     {
         <div class="products">
