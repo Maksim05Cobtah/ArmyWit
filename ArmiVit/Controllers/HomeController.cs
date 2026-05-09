@@ -1,7 +1,7 @@
 using ArmiVit.Models;
 using ArmiVit.Models.ViewsModel;
 using Microsoft.AspNetCore.Mvc;
-using ProductApi.Data;
+using Data;
 using System.Diagnostics;
 
 namespace ArmiVit.Controllers;
@@ -15,13 +15,25 @@ public class HomeController : Controller
         _context = context;
     }
 
-    public IActionResult Index(string? searchTerm)
+    public IActionResult Index(string? searchTerm, decimal? minPrice, decimal? maxPrice)
     {
         var productsQuery = _context.Products.AsQueryable();
 
         if (!string.IsNullOrWhiteSpace(searchTerm))
         {
             productsQuery = productsQuery.Where(p => p.Name.Contains(searchTerm) || p.Description.Contains(searchTerm));
+        }
+
+        // ФІЛЬТР ПО ЦІНІ ВІД
+        if (minPrice.HasValue)
+        {
+            productsQuery = productsQuery.Where(p => p.Price >= minPrice.Value);
+        }
+
+        // ФІЛЬТР ПО ЦІНІ ДО
+        if (maxPrice.HasValue)
+        {
+            productsQuery = productsQuery.Where(p => p.Price <= maxPrice.Value);
         }
 
         var products = productsQuery.ToList();
@@ -36,6 +48,7 @@ public class HomeController : Controller
 
         return View(model);
     }
+
     public IActionResult Category(int id)
     {
         var category = _context.Categories.FirstOrDefault(c => c.Id == id);
