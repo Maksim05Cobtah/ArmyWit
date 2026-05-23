@@ -4,78 +4,82 @@ using Microsoft.AspNetCore.Mvc;
 using ProductApi.Data;
 using System.Diagnostics;
 
-namespace ArmiVit.Controllers;
-
-public class HomeController : Controller
+namespace ArmiVit.Controllers
 {
-    private readonly AppDbContext _context;
-
-    public HomeController(AppDbContext context)
+    public class HomeController : Controller
     {
-        _context = context;
-    }
+        private readonly AppDbContext _context;
 
-    public IActionResult Index(string? searchTerm)
-    {
-        var productsQuery = _context.Products.AsQueryable();
-
-        if (!string.IsNullOrWhiteSpace(searchTerm))
+        public HomeController(AppDbContext context)
         {
-            productsQuery = productsQuery.Where(p => p.Name.Contains(searchTerm) || p.Description.Contains(searchTerm));
+            _context = context;
         }
 
-        var products = productsQuery.ToList();
-        var categories = _context.Categories.ToList();
-
-        var model = new ProductViewModel
+        public IActionResult Index(string? searchTerm)
         {
-            Categories = categories,
-            Products = products,
-            SearchTerm = searchTerm
-        };
+            // Беремо лише ті товари, які НЕ видалені (IsDeleted == false)
+            var productsQuery = _context.Products.Where(p => !p.IsDeleted).AsQueryable();
 
-        return View(model);
-    }
-    public IActionResult Category(int id)
-    {
-        var category = _context.Categories.FirstOrDefault(c => c.Id == id);
+            if (!string.IsNullOrWhiteSpace(searchTerm))
+            {
+                productsQuery = productsQuery.Where(p => p.Name.Contains(searchTerm) || p.Description.Contains(searchTerm));
+            }
 
-        if (category == null)
-        {
-            return NotFound();
+            var products = productsQuery.ToList();
+            var categories = _context.Categories.Where(x => !x.IsDeleted).ToList();
+
+            var model = new ProductViewModel
+            {
+                Categories = categories,
+                Products = products,
+                SearchTerm = searchTerm
+            };
+
+            return View(model);
         }
 
-        var products = _context.Products
-            .Where(p => p.CategoryId == id)
-            .ToList();
-
-        var model = new ProductViewModel
+        public IActionResult Category(int id)
         {
-            Categories = _context.Categories.ToList(),
-            Products = products
-        };
+            var category = _context.Categories.FirstOrDefault(c => c.Id == id);
 
-        ViewBag.CategoryName = category.Name;
+            if (category == null)
+            {
+                return NotFound();
+            }
 
-        return View(model);
-    }
+            // Тут також показуємо лише активні товари з цієї категорії
+            var products = _context.Products
+                .Where(p => p.CategoryId == id && !p.IsDeleted)
+                .ToList();
 
-    public IActionResult AboutMe()
-    {
-        return View();
-    }
+            var model = new ProductViewModel
+            {
+                Categories = _context.Categories.ToList(),
+                Products = products
+            };
 
-    public IActionResult Privacy()
-    {
-        return View();
-    }
+            ViewBag.CategoryName = category.Name;
 
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
-    {
-        return View(new ErrorViewModel
+            return View(model);
+        }
+
+        public IActionResult AboutMe()
         {
-            RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier
-        });
+            return View();
+        }
+
+        public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel
+            {
+                RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier
+            });
+        }
     }
 }

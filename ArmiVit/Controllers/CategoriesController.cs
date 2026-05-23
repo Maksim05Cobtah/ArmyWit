@@ -19,8 +19,10 @@ namespace Controllers
 
     public IActionResult AddCategories()
     {
-        var categories = _context.Categories.ToList();
-        var model = new CategoryViewModel
+        var categories = _context.Categories
+            .Where(x => !x.IsDeleted)
+            .ToList();
+            var model = new CategoryViewModel
         {
             Categories = categories
         };
@@ -33,20 +35,20 @@ namespace Controllers
         {
             var category = _context.Categories.Find(id);
 
-            _context.Categories.Remove(category);
+            category.IsDeleted = true;
             _context.SaveChanges();
-           return RedirectToAction("AddCategories");
+            return RedirectToAction("AddCategories");
         }
- 
+
         [HttpPost]
         public async Task<IActionResult> AddCategory(CategoryViewModel model)
         {
-          
+
             var category = new Categories
             {
                 Name = model.Name
-            };  
-        
+            };
+
             _context.Categories.Add(category);
             await _context.SaveChangesAsync();
 

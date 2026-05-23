@@ -11,6 +11,7 @@ namespace Controllers
     {
         private readonly AppDbContext _context;
         private readonly IWebHostEnvironment _webHostEnvironment;
+
         public ProductsController(AppDbContext context, IWebHostEnvironment webHostEnvironment)
         {
             _context = context;
@@ -19,14 +20,17 @@ namespace Controllers
 
         public IActionResult AddProducts()
         {
-            var products2 = _context.Products.ToList();
+            // Для адмінки завантажуємо ВСІ товари, щоб бачити кошик видалених
+            var products2 = _context.Products
+            .Where(x => !x.IsDeleted)
+            .ToList();
             var categories = _context.Categories.ToList();
+
             var model = new ProductViewModel
             {
                 Products = products2,
                 Categories = categories
             };
-
 
             return View(model);
         }
@@ -59,23 +63,47 @@ namespace Controllers
                 Quantity = model.Quantity,
                 CategoryId = model.CategoryId,
                 ImagePath = uniqueFileName,
-                Description = model.Description
+                Description = model.Description,
+                IsDeleted = false // Новий товар створюється активним
             };
 
             _context.Products.Add(product);
             await _context.SaveChangesAsync();
 
             return RedirectToAction("AddProducts");
-
         }
+
+        // М'яке видалення
         public IActionResult Delete(int id)
         {
-            var products = _context.Products.Find(id);
+            var product = _context.Products.Find(id);
 
-            _context.Products.Remove(products);
-            _context.SaveChanges();
+            if (product != null)
+            {
+                product.IsDeleted = true; // Замість видалення ставимо прапорець true
+                _context.Products.Update(product);
+                _context.SaveChanges();
+            }
+
             return RedirectToAction("AddProducts");
         }
+
+        // Новий функціонал: Відновлення видаленого товару
+        [HttpPost]
+        public IActionResult Restore(int id)
+        {
+            var product = _context.Products.Find(id);
+
+            if (product != null)
+            {
+                product.IsDeleted = false; // Повертаємо товар назад
+                _context.Products.Update(product);
+                _context.SaveChanges();
+            }
+
+            return RedirectToAction("AddProducts");
+        }
+
         public IActionResult Edit(int id)
         {
             var product = _context.Products.Find(id);
@@ -94,7 +122,7 @@ namespace Controllers
                 Categories = _context.Categories.ToList()
             };
 
-            return View("EditProduct",model);
+            return View("EditProduct", model);
         }
 
         [HttpPost]
@@ -131,7 +159,5 @@ namespace Controllers
 
             return RedirectToAction("AddProducts");
         }
-
-
     }
 }

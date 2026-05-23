@@ -1,4 +1,6 @@
-﻿namespace ArmiVit.Models.ViewsModel
+﻿using ArmiVit.Models;
+
+namespace ArmiVit.Models.ViewsModel
 {
     public class AboutPageViewModel
     {
@@ -6,6 +8,7 @@
 
         public List<Service> Services { get; set; }
 
-        public List<Programs> Programs { get; set; }
+        public List<TrainingProgram> Programs { get; set; }
     }
 }
+

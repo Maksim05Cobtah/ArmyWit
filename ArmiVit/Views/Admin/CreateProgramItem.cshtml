@@ -4,7 +4,7 @@
 
 <form asp-action="CreateProgramItem" method="post">
 
-    <input type="hidden" asp-for="ProgramId" value="@ViewBag.ProgramId" />
+    <input type="hidden" asp-for="TrainingProgramId" value="@ViewBag.ProgramId" />
 
     <div>
         <label>Текст</label>
@@ -15,19 +15,13 @@
 
     <div>
         <label>Тип</label>
-
         <select asp-for="Type" class="form-control">
-
             <option value="Program">Program</option>
-
             <option value="Result">Result</option>
-
         </select>
-
     </div>
 
     <br>
 
     <button type="submit" class="btn btn-success">Додати</button>
-
 </form>
