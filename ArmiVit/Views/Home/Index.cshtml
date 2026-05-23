@@ -14,7 +14,6 @@
 </div>
 
 <div class="container">
-
     <div class="search-box">
         <form id="searchForm" asp-controller="Home" asp-action="Index" method="get" class="search-form">
             <div class="search-group">
@@ -44,32 +43,56 @@
 
     <h2 class="section-title">Популярні товари</h2>
 
+    <!-- ФІЛЬТР ПО ЦІНІ -->
+    <div class="price-filter">
+        <form asp-controller="Home" asp-action="Index" method="get" class="price-form">
+
+            <input type="text"
+                   name="searchTerm"
+                   value="@Model.SearchTerm"
+                   hidden />
+
+            <input type="number"
+                   name="minPrice"
+                   class="price-input"
+                   placeholder="Ціна від" />
+
+            <input type="number"
+                   name="maxPrice"
+                   class="price-input"
+                   placeholder="Ціна до" />
+
+            <button type="submit" class="search-btn">
+                Фільтр
+            </button>
+
+        </form>
+    </div>
+
+
+
     @if (Model.Products != null && Model.Products.Any())
     {
         <div class="products">
             @foreach (var product in Model.Products)
             {
                 <div class="product-card">
+                    @* Тег <a> тепер огортає весь вміст картки *@
+                    <a asp-controller="Home" asp-action="Pigeon" asp-route-id="@product.Id" class="product-item-link">
+                        <div class="img-placeholder">
+                            @if (!string.IsNullOrEmpty(product.ImagePath))
+                            {
+                                <img src="~/images/@product.ImagePath" alt="@product.Name" />
+                            }
+                        </div>
 
-                    <div class="img-placeholder">
-                        @if (!string.IsNullOrEmpty(product.ImagePath))
-                        {
-                            <img src="~/images/@product.ImagePath" alt="@product.Name" />
-                        }
-                    </div>
+                        <h3>@product.Name</h3>
+                        <p>@product.Description</p>
 
-                    <h3>@product.Name</h3>
-
-                    <p>@product.Description</p>
-
-                    <div class="price">
-                        @product.Price ₴
-                    </div>
-
-                    <button>
-                        Купити
-                    </button>
-
+                        <div class="price">
+                            @product.Price ₴
+                        </div>
+                    </a>
                 </div>
             }
         </div>
@@ -82,7 +105,6 @@
     <p class="disclaimer">
         ⚠ Інформація на сайті не є медичною консультацією
     </p>
-
 </div>
 
 <script>
@@ -101,3 +123,17 @@
         });
     }
 </script>
+
+@* Додамо трохи стилів, щоб посилання не псувало дизайн *@
+<style>
+    .product-item-link {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+        height: 100%;
+    }
+    .product-card:hover {
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        cursor: pointer;
+    }
+</style>

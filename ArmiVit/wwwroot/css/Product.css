@@ -1,3 +1,4 @@
+@im /* ================= GOOGLE FONT ================= */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
 
 * {
@@ -18,7 +19,6 @@ body {
 }
 
     /* Анімований фон */
-
     body::before {
         content: "";
         position: absolute;
@@ -103,6 +103,7 @@ body {
     margin-bottom: 35px;
     color: #3e267a;
 }
+
 /* ================= FORM ================= */
 
 .form-glass {
@@ -110,82 +111,129 @@ body {
     flex-direction: column;
 }
 
-/* скляні рядки */
+/* ================= FIELD ================= */
+
 .field {
     display: flex;
     flex-direction: column;
-    padding: 14px 18px;
-    border-radius: 18px;
-    background: rgba(255,255,255,0.3);
-    border: 1px solid rgba(255,255,255,0.4);
-    backdrop-filter: blur(10px);
-    transition: 0.3s;
-    margin-bottom: 20px; /* ВІДСТУП МІЖ ІНПУТАМИ */
+    padding: 16px 20px;
+    border-radius: 28px;
+    background: rgba(255,255,255,0.28);
+    border: 1px solid rgba(255,255,255,0.35);
+    backdrop-filter: blur(14px);
+    transition: 0.35s;
+    margin-bottom: 22px;
+    box-shadow: 0 10px 30px rgba(120,90,200,0.10), inset 0 1px 1px rgba(255,255,255,0.18);
 }
 
     .field:last-child {
-        margin-bottom: 0; /* без відступу для останнього поля */
+        margin-bottom: 0;
     }
 
     .field:hover {
-        background: rgba(255,255,255,0.45);
+        background: rgba(255,255,255,0.40);
+        transform: translateY(-2px);
+        box-shadow: 0 18px 40px rgba(120,90,200,0.18), inset 0 1px 1px rgba(255,255,255,0.25);
     }
 
     .field label {
         font-size: 13px;
-        margin-bottom: 6px;
+        margin-bottom: 8px;
         color: #3e267a;
-        font-weight: 600;
+        font-weight: 700;
+        letter-spacing: 0.3px;
     }
 
-    /* самі інпути */
+    /* ================= INPUTS (ОСНОВНІ + ДВА СТИЛІЗОВАНІ) ================= */
+
     .field input,
     .field textarea,
-    .field select {
-        background: transparent;
-        border: none;
+    .field select,
+    .price-input { /* <-- ОЦІ 2 інпути (ціна від/до або будь-які інші) */
+        width: 100%;
+        background: rgba(255,255,255,0.35);
+        border: 1px solid rgba(255,255,255,0.30);
         outline: none;
         font-size: 15px;
+        font-weight: 500;
         color: #2f1e66;
-        padding: 8px 0;
-        border-radius: 12px;
-        transition: transform 0.3s, box-shadow 0.3s;
+        padding: 14px 18px;
+        border-radius: 22px;
+        transition: all 0.3s ease;
+        box-shadow: inset 0 1px 1px rgba(255,255,255,0.12), 0 6px 18px rgba(120,90,200,0.08);
     }
 
-        /* 3D hover/tilt для інпутів */
+        /* PLACEHOLDER */
+
+        .field input::placeholder,
+        .field textarea::placeholder,
+        .price-input::placeholder {
+            color: rgba(62,38,122,0.55);
+        }
+
+        /* HOVER */
+
         .field input:hover,
         .field textarea:hover,
         .field select:hover,
-        .glass-btn:hover {
-            transform: rotateX(3deg) rotateY(3deg) scale(1.03);
-            box-shadow: 0 0 25px rgba(160,120,255,0.9);
+        .price-input:hover {
+            transform: translateY(-1px) scale(1.01);
+            border-color: rgba(130,90,255,0.35);
+            box-shadow: 0 0 25px rgba(160,120,255,0.18);
         }
 
-/* textarea */
+        /* FOCUS */
+
+        .field input:focus,
+        .field textarea:focus,
+        .field select:focus,
+        .price-input:focus {
+            background: rgba(255,255,255,0.50);
+            border-color: #9b7dff;
+            transform: translateY(-2px);
+            box-shadow: 0 0 0 4px rgba(155,125,255,0.15), 0 14px 35px rgba(130,90,255,0.18);
+        }
+
+    /* SELECT */
+
+    .field select {
+        cursor: pointer;
+        appearance: none;
+    }
+
+    /* FILE */
+
+    .field input[type="file"] {
+        padding: 12px;
+        cursor: pointer;
+    }
+
+/* TEXTAREA */
+
 textarea {
     resize: none;
-    height: 100px;
+    height: 110px;
 }
 
 /* ================= BUTTON ================= */
 
 .glass-btn {
     width: 100%;
-    padding: 16px;
-    border-radius: 18px;
+    padding: 18px;
+    border-radius: 24px;
     border: none;
     cursor: pointer;
     background: linear-gradient(135deg, #a882ff, #ffcfa8);
     color: #2f1e66;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 15px;
     transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 14px 35px rgba(130,90,255,0.25);
 }
 
-    /* 3D hover для кнопки */
     .glass-btn:hover {
-        transform: rotateX(3deg) rotateY(3deg) scale(1.03);
-        box-shadow: 0 15px 40px rgba(130,90,255,0.6);
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 20px 50px rgba(130,90,255,0.35);
     }
 
 /* ================= PRODUCTS ================= */
@@ -249,98 +297,107 @@ textarea {
         margin-bottom: 8px;
     }
 
-.description {
-    font-size: 14px;
-    color: #333;
-    margin-bottom: 10px;
-}
-
 .price {
     font-size: 18px;
     font-weight: 700;
     color: #5a38b3;
-    margin-bottom: 4px;
 }
 
-.quantity {
-    font-size: 14px;
-    color: #444;
-}
-
-/* ================= ACTION BUTTONS (EDIT / DELETE) ================= */
+/* ================= ACTION BUTTONS ================= */
 
 .product-actions {
     display: flex;
     gap: 10px;
-    padding: 18px 22px 28px 22px;
+    padding: 18px 22px 28px;
     align-items: center;
 }
 
-.product-actions form {
-    margin: 0; /* remove default form margin so buttons align */
-}
-
-.product-actions .btn-edit,
-.product-actions .btn-delete {
-    display: inline-flex;
-    gap: 8px;
-    align-items: center;
-    justify-content: center;
-    padding: 8px 12px;
-    border-radius: 12px;
-    border: none;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 14px;
-    text-decoration: none; /* for anchor */
-    transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
-}
-
-.product-actions .btn-edit {
-    background: linear-gradient(135deg, #6ee7b7, #3ab0ff);
-    color: #083344;
-    box-shadow: 0 8px 20px rgba(50,170,255,0.15);
-}
-
-.product-actions .btn-edit:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 14px 36px rgba(50,170,255,0.22);
-}
-
-.product-actions .btn-delete {
-    background: linear-gradient(135deg, #ff8a8a, #ff4d6d);
-    color: #3b0213;
-    box-shadow: 0 8px 20px rgba(255,80,110,0.14);
-    border: 1px solid rgba(255,255,255,0.08);
-}
-
-.product-actions .btn-delete:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 14px 36px rgba(255,80,110,0.22);
-    opacity: 0.98;
-}
-
-/* icon styling inside buttons */
-.product-actions .icon {
-    font-size: 16px;
-    line-height: 1;
-}
-
-/* make sure the anchor looks consistent with button
-   when used as link */
-.product-actions a.btn-edit {
-    display: inline-flex;
-}
-
-/* responsive tweaks */
-@media (max-width: 520px) {
-    .product-actions {
-        gap: 8px;
-        padding: 14px 16px 20px 16px;
+    .product-actions form {
+        margin: 0;
     }
+
     .product-actions .btn-edit,
     .product-actions .btn-delete {
-        padding: 8px 10px;
-        font-size: 13px;
+        display: inline-flex;
+        gap: 8px;
+        align-items: center;
+        justify-content: center;
+        padding: 8px 12px;
+        border-radius: 12px;
+        border: none;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 14px;
+        text-decoration: none;
     }
+
+    .product-actions .btn-edit {
+        background: linear-gradient(135deg, #6ee7b7, #3ab0ff);
+        color: #083344;
+    }
+
+    .product-actions .btn-delete {
+        background: linear-gradient(135deg, #ff8a8a, #ff4d6d);
+        color: #3b0213;
+    }
+
+/* ================= FIX BUTTONS (FILTER / BUY / GENERAL) ================= */
+
+/* всі кнопки форми (включно з фільтром і "Купити") */
+button,
+.search-btn,
+.primary-btn {
+    border: none;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.25s ease;
 }
+
+/* КНОПКА ФІЛЬТРУ (якщо має клас або просто button у формі) */
+.price-filter button,
+.search-btn {
+    padding: 12px 18px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #8b5cf6, #c4b5fd);
+    color: #2f1e66;
+    font-weight: 700;
+    font-size: 14px;
+    box-shadow: 0 10px 25px rgba(139,92,246,0.25);
+}
+
+    .price-filter button:hover,
+    .search-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 35px rgba(139,92,246,0.35);
+    }
+
+/* КНОПКА "КУПИТИ" */
+.product-glass button {
+    padding: 10px 14px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #6ee7b7, #3ab0ff);
+    color: #083344;
+    font-weight: 700;
+    font-size: 13px;
+    box-shadow: 0 8px 20px rgba(58,176,255,0.18);
+}
+
+    .product-glass button:hover {
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: 0 12px 30px rgba(58,176,255,0.28);
+    }
+
+/* головна кнопка (hero) */
+.primary-btn {
+    padding: 14px 22px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #a882ff, #ffcfa8);
+    color: #2f1e66;
+    font-weight: 700;
+    box-shadow: 0 12px 30px rgba(130,90,255,0.25);
+}
+
+    .primary-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 18px 45px rgba(130,90,255,0.35);
+    }

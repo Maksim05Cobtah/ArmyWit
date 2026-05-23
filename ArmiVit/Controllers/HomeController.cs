@@ -1,7 +1,7 @@
 using ArmiVit.Models;
 using ArmiVit.Models.ViewsModel;
 using Microsoft.AspNetCore.Mvc;
-using ProductApi.Data;
+using Data;
 using System.Diagnostics;
 
 namespace ArmiVit.Controllers
@@ -11,11 +11,31 @@ namespace ArmiVit.Controllers
         private readonly AppDbContext _context;
 
         public HomeController(AppDbContext context)
+
         {
             _context = context;
         }
+ public IActionResult Index(string? searchTerm, decimal? minPrice, decimal? maxPrice)
+    {
+        var productsQuery = _context.Products.AsQueryable();
 
-        public IActionResult Index(string? searchTerm)
+        if (!string.IsNullOrWhiteSpace(searchTerm))
+
+        if (minPrice.HasValue)
+        {
+            productsQuery = productsQuery.Where(p => p.Price >= minPrice.Value);
+        }
+
+        // ФІЛЬТР ПО ЦІНІ ДО
+        if (maxPrice.HasValue)
+        {
+            productsQuery = productsQuery.Where(p => p.Price <= maxPrice.Value);
+        }
+
+        var products = productsQuery.ToList();
+        var categories = _context.Categories.ToList();
+
+        var model = new ProductViewModel
         {
             // Беремо лише ті товари, які НЕ видалені (IsDeleted == false)
             var productsQuery = _context.Products.Where(p => !p.IsDeleted).AsQueryable();
@@ -24,6 +44,12 @@ namespace ArmiVit.Controllers
             {
                 productsQuery = productsQuery.Where(p => p.Name.Contains(searchTerm) || p.Description.Contains(searchTerm));
             }
+        return View(model);
+    }
+
+    public IActionResult Category(int id)
+    {
+        var category = _context.Categories.FirstOrDefault(c => c.Id == id);
 
             var products = productsQuery.ToList();
             var categories = _context.Categories.Where(x => !x.IsDeleted).ToList();
