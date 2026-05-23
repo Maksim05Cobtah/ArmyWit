@@ -42,9 +42,6 @@
 
             <h2 class="section-title center">ДОСВІД</h2>
 
-            <p>
-                @Model.About.ExpirienceText1
-            </p>
 
             <div class="quote-box">
 
@@ -92,10 +89,6 @@
 
                 <ul>
 
-                    @foreach (var item in service.Benefits)
-                    {
-                        <li>@item.Text</li>
-                    }
 
                 </ul>
 
@@ -108,10 +101,7 @@
 
                 <ul>
 
-                    @foreach (var item in service.Results)
-                    {
-                        <li>✔ @item.Text</li>
-                    }
+                  
 
                 </ul>
 
@@ -150,21 +140,13 @@
 
                         <ul>
 
-                            @foreach (var item in program.Items.Where(x => x.Type == ProgramItemType.Program))
-                            {
-                                <li>@item.Text</li>
-                            }
-
                         </ul>
 
                         <p><strong>Результат:</strong></p>
 
                         <ul>
 
-                            @foreach (var item in program.Items.Where(x => x.Type == ProgramItemType.Result))
-                            {
-                                <li>✔ @item.Text</li>
-                            }
+                           
 
                         </ul>
 

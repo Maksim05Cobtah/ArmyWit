@@ -1,4 +1,4 @@
-﻿@model ArmiVit.Models.Programs
+﻿@model ArmiVit.Models.TrainingProgram
 
 <h2>Редагувати програму</h2>
 
@@ -31,7 +31,6 @@
 <a asp-action="CreateProgramItem" asp-route-programId="@Model.Id">
     Додати пункт
 </a>
-
 <ul>
 
     @foreach (var item in Model.Items)
