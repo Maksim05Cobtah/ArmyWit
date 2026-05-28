@@ -1,6 +1,6 @@
 using ArmiVit.Models;
 
-namespace ProductApi.Models
+namespace Models
 {
     public class Product
     {

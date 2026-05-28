@@ -1,4 +1,4 @@
-using ProductApi.Models;
+using Models;
 
 namespace ArmiVit.Models
 {

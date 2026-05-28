@@ -1,8 +1,8 @@
 using ArmiVit.Models.ViewsModel;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using ProductApi.Data;
-using ProductApi.Models;
+using Data;
+using Models;
 
 namespace Controllers
 {

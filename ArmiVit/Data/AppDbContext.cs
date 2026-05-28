@@ -1,9 +1,9 @@
 using ArmiVit.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using ProductApi.Models;
+using Models;
 
-namespace ProductApi.Data
+namespace Data
 {
     public class AppDbContext : IdentityDbContext<ApplicationUser>
     {

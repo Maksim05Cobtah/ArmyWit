@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using ProductApi.Data;
+using Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
