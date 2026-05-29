@@ -24,7 +24,9 @@ namespace Controllers
             var products2 = _context.Products
             .Where(x => !x.IsDeleted)
             .ToList();
-            var categories = _context.Categories.ToList();
+            var categories = _context.Categories
+            .Where(x => !x.IsDeleted)
+            .ToList();
 
             var model = new ProductViewModel
             {
@@ -119,7 +121,9 @@ namespace Controllers
                 Quantity = product.Quantity,
                 CategoryId = product.CategoryId,
                 Description = product.Description,
-                Categories = _context.Categories.ToList()
+                Categories = _context.Categories
+                .Where(x => !x.IsDeleted)
+                .ToList()
             };
 
             return View("EditProduct", model);
