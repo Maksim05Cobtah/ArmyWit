@@ -119,5 +119,14 @@ namespace ArmiVit.Controllers
                     HttpContext.TraceIdentifier
             });
         }
+
+
+        public IActionResult Pigeon(int id)
+        {
+            var product = _context.Products.Find(id);
+            return View(product);
+           
+        }
+
     }
 }
