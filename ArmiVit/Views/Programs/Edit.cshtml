@@ -1,0 +1,83 @@
+﻿@model ArmiVit.Models.TrainingProgram
+
+@{
+    ViewData["Title"] = "Налаштування вмісту послуги";
+}
+
+<div class="container mt-4">
+    <h2>Налаштування вмісту для: <span class="text-primary">@Model.Name</span></h2>
+    <a asp-action="Index" class="btn btn-secondary mb-4">← Назад до списку послуг</a>
+
+    <div class="card p-3 mb-4 shadow-sm">
+        <h5>Редагувати шапку картки</h5>
+        <form asp-action="Edit" method="post">
+            <input type="hidden" asp-for="Id" />
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <label class="form-label">Назва</label>
+                    <input asp-for="Name" class="form-control" required />
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label">Тривалість</label>
+                    <input asp-for="Duration" class="form-control" />
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label">Ціна (грн)</label>
+                    <input asp-for="Price" type="number" class="form-control" required />
+                </div>
+                <div class="col-md-2 d-flex align-items-end">
+                    <button type="submit" class="btn btn-success w-100">Зберегти</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <hr />
+
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h3>Текстові пункти картки (списки з галочками)</h3>
+        <a asp-controller="ProgramItems" asp-action="CreateProgramItem" asp-route-programId="@Model.Id" class="btn btn-primary">
+            + Додати новий рядок тексту
+        </a>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <div class="card p-3">
+                <h5 class="text-primary border-bottom pb-2">Секція "У програмі / Включає" (Сині ромби 🔹)</h5>
+                <ul class="list-group list-group-flush">
+                    @foreach (var item in Model.Items.Where(i => i.Type == "Program"))
+                    {
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <span>🔹 @item.Text</span>
+                            <a asp-controller="ProgramItems" asp-action="DeleteProgramItem" asp-route-id="@item.Id" class="text-danger text-decoration-none" onclick="return confirm('Видалити цей пункт?');">Видалити</a>
+                        </li>
+                    }
+                    @if (!Model.Items.Any(i => i.Type == "Program"))
+                    {
+                        <li class="list-group-item text-muted font-italic">Пунктів ще немає. Додайте перший пункт.</li>
+                    }
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+            <div class="card p-3">
+                <h5 class="text-success border-bottom pb-2">Секція "Результат" (Зелені галочки ✅)</h5>
+                <ul class="list-group list-group-flush">
+                    @foreach (var item in Model.Items.Where(i => i.Type == "Result"))
+                    {
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <span>✅ @item.Text</span>
+                            <a asp-controller="ProgramItems" asp-action="DeleteProgramItem" asp-route-id="@item.Id" class="text-danger text-decoration-none" onclick="return confirm('Видалити цей пункт?');">Видалити</a>
+                        </li>
+                    }
+                    @if (!Model.Items.Any(i => i.Type == "Result"))
+                    {
+                        <li class="list-group-item text-muted font-italic">Пунктів ще немає. Додайте перший пункт.</li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

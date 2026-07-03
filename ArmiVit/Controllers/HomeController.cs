@@ -1,7 +1,8 @@
 using ArmiVit.Models;
 using ArmiVit.Models.ViewsModel;
-using Microsoft.AspNetCore.Mvc;
 using Data;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
 namespace ArmiVit.Controllers
@@ -97,9 +98,15 @@ namespace ArmiVit.Controllers
 
         public IActionResult AboutMe()
         {
-            return View();
-        }
+            
+            var programs = _context.TrainingPrograms
+                .Include(p => p.Items)
+                .Where(p => !p.IsDeleted)
+                .ToList();
 
+           
+            return View(programs);
+        }
         public IActionResult Privacy()
         {
             return View();

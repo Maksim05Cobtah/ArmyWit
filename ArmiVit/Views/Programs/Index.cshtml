@@ -1,0 +1,61 @@
+﻿@model List<ArmiVit.Models.TrainingProgram>
+
+@{
+    ViewData["Title"] = "Адмінка - Керування послугами";
+}
+
+<div class="container mt-4">
+    <h2>Керування пакетами та прайсом (Сторінка About Me)</h2>
+
+    <div class="card p-4 mb-4 shadow-sm">
+        <h4 class="mb-3">Створити нову послугу / пакет</h4>
+        <form asp-action="Create" method="post">
+            <div class="mb-3">
+                <label class="form-label">Назва послуги (наприклад: ПАКЕТ «СТАРТ», СУПРОВІД)</label>
+                <input name="Name" class="form-control" required placeholder="Введіть назву..." />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Тривалість (наприклад: 14 днів, 30 днів / або залиш порожнім)</label>
+                <input name="Duration" class="form-control" placeholder="Введіть тривалість..." />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Ціна (ГРН)</label>
+                <input name="Price" type="number" class="form-control" required placeholder="4500" />
+            </div>
+            <button type="submit" class="btn btn-primary">Створити картку послуги</button>
+        </form>
+    </div>
+
+    <h4 class="mb-3">Існуючі послуги на сайті</h4>
+    <table class="table table-bordered table-hover">
+        <thead class="table-light">
+            <tr>
+
+                <th>Тривалість</th>
+                <th>Ціна</th>
+                <th>Дії</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var p in Model)
+            {
+                <tr style="@(p.IsDeleted ? "background-color: #f8d7da; opacity:0.6;" : "")">
+                    <td>@p.Name</td>
+                    <td>@(string.IsNullOrEmpty(p.Duration) ? "—" : p.Duration)</td>
+                    <td>@p.Price.ToString("N0") грн</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@p.Id" class="btn btn-sm btn-warning">Налаштувати тексти (вміст)</a>
+                        @if (!p.IsDeleted)
+                        {
+                            <a asp-action="Delete" asp-route-id="@p.Id" class="btn btn-sm btn-danger" onclick="return confirm('Ви впевнені, що хочете видалити цю послугу?');">Видалити</a>
+                        }
+                        else
+                        {
+                            <span class="badge bg-danger">Видалено (Soft Delete)</span>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

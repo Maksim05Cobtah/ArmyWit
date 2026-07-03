@@ -1,0 +1,37 @@
+﻿@model ArmiVit.Models.ServiceProgramItem
+
+@{
+    ViewData["Title"] = "Додати пункт програми";
+}
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card p-4 shadow-sm">
+                <h3 class="mb-4">Додати новий рядок тексту</h3>
+                
+                <form asp-action="CreateProgramItem" method="post">
+                    <input type="hidden" name="TrainingProgramId" value="@ViewBag.ProgramId" />
+
+                    <div class="mb-3">
+                        <label class="form-label">Текст пункту</label>
+                        <input asp-for="Text" class="form-control" required placeholder="Наприклад: базовий розбір аналізів або корекція харчування" />
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label">У яку секцію картки додати цей текст?</label>
+                        <select asp-for="Type" class="form-select">
+                            <option value="Program">У програмі / Включає (🔹)</option>
+                            <option value="Result">Результат послуги (✅)</option>
+                        </select>
+                    </div>
+
+                    <div class="d-flex gap-2">
+                        <button type="submit" class="btn btn-success flex-grow-1">Додати рядок</button>
+                        <a asp-controller="Programs" asp-action="Edit" asp-route-id="@ViewBag.ProgramId" class="btn btn-secondary">Скасувати</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

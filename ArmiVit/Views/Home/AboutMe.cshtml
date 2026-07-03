@@ -1,167 +1,142 @@
-@model ArmiVit.Models.ViewsModel.AboutPageViewModel
+@model List<ArmiVit.Models.TrainingProgram>
 
 @{
-    ViewData["Title"] = "Про мене";
+    ViewData["Title"] = "Про мене та Послуги";
 }
 
-<div class="about-page">
-
-    <!-- ПРО МЕНЕ -->
-    <section class="section section-about">
-
-        <div class="container about-grid">
-
-            <div class="about-photo">
-                <img src="~/images/angelika.jpg" alt="Анжеліка">
+<div class="container mt-5">
+    <div class="about-section mb-5 p-4 shadow-sm text-center" style="background-color: #f8f9fa; border-radius: 8px;">
+        <h1 class="font-weight-bold mb-3">АНЖЕЛІКА ФЕДЯЙ</h1>
+        <h5 class="text-muted text-uppercase mb-4">Нутриціологиня, медична фахівчиня</h5>
+        
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-start">
+                <p><strong>Про мене:</strong> Мене звати Анжеліка, мені 37 років, я мама двох доньок і медична фахівчиня з багаторічним досвідом. У 2003-2007 роках навчалася в медичному коледжі за спеціальністю "Лікувальна справа".</p>
+                <p><strong>Досвід:</strong> Понад 8 років я поглиблено навчаюся та вдосконалюю свої знання в галузі нутріціології. За цей час здобула декілька кваліфікацій, пройшла численні курси та науково-практичні конференції на базі Асоціації дієтологів України.</p>
+                <p class="text-center font-italic text-primary mt-3">"Тут ти отримаєш від мене: оцінку харчового статусу, індивідуальні програми харчування та інформацію з профілактики дефіцитів."</p>
             </div>
-
-            <div class="about-text">
-
-                <h2 class="section-title">ПРО МЕНЕ</h2>
-
-                <p>
-                    @Model.About.AboutMeText1
-                </p>
-
-                <p>
-                    @Model.About.AboutMeText2
-                </p>
-
-            </div>
-
         </div>
+    </div>
 
-    </section>
+    <h2 class="text-center mb-4 font-weight-bold">ПРАЙС ТА ПАКЕТНІ ПРОПОЗИЦІЇ</h2>
 
-
-    <!-- ДОСВІД -->
-
-    <section class="section section-experience">
-
-        <div class="container">
-
-            <h2 class="section-title center">ДОСВІД</h2>
-
-
-            <div class="quote-box">
-
-                <p>
-                    Моє завдання — вчасно помітити сигнали організму та
-                    скерувати вас до профільного лікаря, якщо це необхідно.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ПОСЛУГИ -->
-
-    <section class="services">
-
-        <h2 class="services-title">ПОСЛУГИ</h2>
-
-        @foreach (var service in Model.Services)
+    <div class="programs-grid">
+        @foreach (var program in Model)
         {
-
-            <div class="service-name-box">
-
-                <span class="service-name">
-                    @service.Name
-                </span>
-
-                <span class="service-time">
-                    @service.Time ХВ
-                </span>
-
-                <p class="service-description">
-                    @service.Description
-                </p>
-
-            </div>
-
-
-            <div class="receive-box">
-
-                <h2 class="receive-title">ТИ ОТРИМАЄШ:</h2>
-
-                <ul>
-
-
-                </ul>
-
-            </div>
-
-
-            <div class="result-box">
-
-                <h2 class="result-title">РЕЗУЛЬТАТ:</h2>
-
-                <ul>
-
-                  
-
-                </ul>
-
-            </div>
-
-
-            <div class="service-price">
-
-                ЦІНА: @service.Price ГРН
-
-            </div>
-
-        }
-
-    </section>
-
-
-    <!-- ПРОГРАМИ -->
-
-    <section class="program-section">
-
-        <h1 class="program-title">СУПРОВІД</h1>
-
-        <div class="programs">
-
-            @foreach (var program in Model.Programs)
-            {
-
-                <div class="program-card">
-
-                    <h2>@program.Name</h2>
-
-                    <div class="program-content">
-
-                        <p><strong>У ПРОГРАМІ:</strong></p>
-
-                        <ul>
-
-                        </ul>
-
-                        <p><strong>Результат:</strong></p>
-
-                        <ul>
-
-                           
-
-                        </ul>
-
-                    </div>
-
-                    <p class="price">
-                        @program.Price ГРН
-                    </p>
-
+            <div class="program-card">
+                <div class="program-header">
+                    <h3 class="mb-0">@program.Name</h3>
+                    @if (!string.IsNullOrEmpty(program.Duration))
+                    {
+                        <span class="program-badge">@program.Duration</span>
+                    }
                 </div>
+                
+                <div class="program-body">
+                    <h6 class="section-subtitle">У програмі / Включає:</h6>
+                    <ul class="program-list">
+                        @foreach (var item in program.Items.Where(i => i.Type == "Program"))
+                        {
+                            <li>🔹 @item.Text</li>
+                        }
+                    </ul>
 
-            }
+                    <hr />
 
-        </div>
-
-    </section>
-
+                    <h6 class="section-subtitle text-success">Результат:</h6>
+                    <ul class="program-list">
+                        @foreach (var item in program.Items.Where(i => i.Type == "Result"))
+                        {
+                            <li>✅ @item.Text</li>
+                        }
+                    </ul>
+                </div>
+                
+                <div class="program-footer">
+                    <h4 class="price-text">@program.Price.ToString("N0") ГРН</h4>
+                    <button class="order-btn">Замовити послугу</button>
+                </div>
+            </div>
+        }
+    </div>
 </div>
+
+<style>
+    /* Стилі для сітки карток послуг на окремій сторінці */
+    .programs-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 30px;
+        margin-bottom: 50px;
+    }
+    .program-card {
+        background: #fff;
+        border: 1px solid #e3e6f0;
+        border-radius: 8px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    }
+    .program-header {
+        background-color: #0d6efd; /* Головний колір картки */
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+    }
+    .program-badge {
+        display: inline-block;
+        padding: 0.25em 0.6em;
+        font-size: 0.75em;
+        font-weight: 700;
+        background-color: #f8f9fa;
+        color: #0d6efd;
+        border-radius: 4px;
+        margin-top: 8px;
+    }
+    .program-body {
+        padding: 20px;
+        flex-grow: 1;
+    }
+    .section-subtitle {
+        text-uppercase: uppercase;
+        font-weight: bold;
+        color: #6c757d;
+        margin-bottom: 10px;
+    }
+    .program-list {
+        list-style: none;
+        padding-left: 0;
+        margin-bottom: 15px;
+    }
+    .program-list li {
+        margin-bottom: 6px;
+    }
+    .program-footer {
+        padding: 20px;
+        text-align: center;
+        background-color: #fafbfe;
+        border-top: 1px solid #efefef;
+    }
+    .price-text {
+        color: #0d6efd;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    .order-btn {
+        background-color: #0d6efd;
+        color: white;
+        border: none;
+        padding: 10px 0;
+        width: 100%;
+        border-radius: 4px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background 0.2s;
+    }
+    .order-btn:hover {
+        background-color: #0b5ed7;
+    }
+</style>
