@@ -21,93 +21,149 @@
 
 <div class="page-wrapper">
 
-    <header>
-        <nav class="navbar navbar-expand-sm custom-navbar mb-4">
-            <div class="container-fluid">
-                <a class="navbar-brand soft-title" asp-controller="Home" asp-action="Index">
-                    ArmiVit
-                </a>
+        <header>
+            <nav class="premium-navbar navbar navbar-expand-lg">
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target=".navbar-collapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                <div class="container-fluid px-4">
 
-                    <div class="navbar-collapse collapse d-sm-inline-flex justify-content-end">
-                        <ul class="navbar-nav gap-2">
+                    <a class="navbar-brand brand" asp-controller="Home" asp-action="Index">
+
+                        <div class="brand-icon">
+                            <i class="bi bi-heart-pulse-fill"></i>
+                        </div>
+
+                        <div class="brand-text">
+                            <h3>ArmiVit</h3>
+                            <span>Здоров'я кожного дня</span>
+                        </div>
+
+                    </a>
+
+                    <button class="navbar-toggler border-0 shadow-none"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#navbar">
+
+                        <i class="bi bi-list"></i>
+
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbar">
+
+                        <ul class="navbar-nav mx-auto">
+
                             <li class="nav-item">
-                                <a class="nav-link soft-text" asp-controller="Home" asp-action="Index">
-                                    Категорії
+                                <a class="nav-link active"
+                                       asp-controller="Home"
+                                       asp-action="Index">
+                                    Головна
                                 </a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link soft-text" asp-controller="Home" asp-action="Privacy">
+                                <a class="nav-link"
+                                       asp-controller="Home"
+                                       asp-action="Privacy">
                                     Про нас
                                 </a>
                             </li>
 
-                            @if (User.Identity != null && User.Identity.IsAuthenticated && User.IsInRole("Admin"))
-                            {
-                                <li class="nav-item">
-                                    <a class="nav-link soft-text" asp-controller="Categories" asp-action="AddCategories">
-                                        Додати категорію
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link soft-text" asp-controller="Products" asp-action="AddProducts">
-                                        Додати продукти
-                                    </a>
-                                </li>
-                            }
-
                         </ul>
+
+                        @if (User.Identity != null && User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+                        {
+                            <div class="admin-buttons">
+
+                                <a asp-controller="Categories"
+                                       asp-action="AddCategories"
+                                       class="admin-btn">
+                                    Категорія
+                                </a>
+
+                                <a asp-controller="Products"
+                                       asp-action="AddProducts"
+                                       class="admin-btn">
+                                    Продукт
+                                </a>
+
+                            </div>
+                        }
+
                     </div>
-            </div>
-        </nav>
-    </header>
+
+                </div>
+
+            </nav>
+        </header>
 
     <main class="content container pb-3">
         @RenderBody()
     </main>
 
-    <footer class="custom-footer">
-        <div class="container">
-            <div class="row align-items-center gy-4">
+        <footer class="premium-footer">
 
-                <div class="col-md-4 text-center text-md-start">
-                    <span class="footer-brand soft-title">ArmiVit</span>
-                </div>
+            <div class="container">
 
-                <div class="col-md-4 text-center footer-links">
-                    <a asp-controller="Home" asp-action="Index" class="soft-text">Категорії</a>
-                    <a asp-controller="Home" asp-action="Privacy" class="soft-text">Про нас</a>
-                </div>
+                <div class="footer-content">
 
-                <div class="col-md-4 text-center text-md-end">
-                    <div class="social-icons">
-                        <a href="#" class="instagram" aria-label="Instagram">
+                    <div class="footer-brand">
+
+                        <div class="footer-logo">
+                            <i class="bi bi-heart-pulse-fill"></i>
+                        </div>
+
+                        <div>
+
+                            <h3>ArmiVit</h3>
+                            <p>Здоров'я кожного дня</p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="footer-links">
+
+                        <a asp-controller="Home" asp-action="Index">
+                            Головна
+                        </a>
+
+                        <a asp-controller="Home" asp-action="Privacy">
+                            Про нас
+                        </a>
+
+                    </div>
+
+                    <div class="footer-social">
+
+                        <a href="#">
                             <i class="bi bi-instagram"></i>
                         </a>
-                        <a href="#" class="telegram" aria-label="Telegram">
+
+                        <a href="#">
                             <i class="bi bi-telegram"></i>
                         </a>
-                        <a href="#" class="facebook" aria-label="Facebook">
+
+                        <a href="#">
                             <i class="bi bi-facebook"></i>
                         </a>
-                        <a href="#" class="viber" aria-label="Viber">
-                            <i class="bi bi-phone"></i> <!-- Можна замінити на SVG Viber -->
+
+                        <a href="#">
+                            <i class="bi bi-phone"></i>
                         </a>
+
                     </div>
+
+                </div>
+
+                <div class="footer-bottom">
+
+                    © @DateTime.Now.Year ArmiVit. Всі права захищені.
+
                 </div>
 
             </div>
 
-            <div class="text-center mt-3 copyright soft-text">
-                © 2026 ArmiVit
-            </div>
-        </div>
-    </footer>
+        </footer>
 
 </div>
 

@@ -26,15 +26,7 @@ body {
         z-index: -1;
     }
 
-@keyframes moveBackground {
-    0% {
-        transform: translate(0, 0) scale(1);
-    }
 
-    100% {
-        transform: translate(-10%, -10%) scale(1.15);
-    }
-}
 
 /* Glass Card */
 .login-container {

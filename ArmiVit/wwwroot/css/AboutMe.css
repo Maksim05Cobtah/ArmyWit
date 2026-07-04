@@ -1,18 +1,5 @@
 
 
-/* БАЗА З ТЕКСТУРОЮ */
-body {
-    font-family: "Montserrat", sans-serif;
-    color: #4f4d63;
-    line-height: 1.7;
-
-    /* КРЕМОВИЙ ТЕКСТУРНИЙ ФОН */
-    background-color: #efe5d8; /* темніший кремовий базовий колір */
-    background-image: url('/images/cream-paper-texture.jpg'); /* пом’ята папір */
-    background-repeat: repeat;
-    background-size: cover;
-}
-
 /* ОБГОРТКА СТОРІНКИ */
 .about-page {
     background: transparent; /* фон body вже текстурований */
