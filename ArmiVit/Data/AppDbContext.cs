@@ -15,6 +15,9 @@ namespace Data
         public DbSet<Categories> Categories { get; set; }
         public DbSet<TrainingProgram> TrainingPrograms { get; set; }
         public DbSet<ServiceProgramItem> ServiceProgramItems { get; set; }
+        public DbSet<CustomSection> CustomSections { get; set; }
+        public DbSet<PageElement> PageElements { get; set; }
+        public DbSet<AboutContent> AboutContents { get; set; }
 
     }
 }
