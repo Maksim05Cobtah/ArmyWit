@@ -42,18 +42,23 @@ namespace Controllers
 
         [HttpPost]
         public async Task<IActionResult> AddCategory(CategoryViewModel model)
-        {
-
-            var category = new Categories
+        { if (model.Name != null)
             {
-                Name = model.Name
-            };
 
-            _context.Categories.Add(category);
-            await _context.SaveChangesAsync();
 
-            return RedirectToAction("AddCategories");
 
+                var category = new Categories
+                {
+                    Name = model.Name
+                };
+
+                _context.Categories.Add(category);
+                await _context.SaveChangesAsync();
+
+                
+            }
+            
+       return RedirectToAction("AddCategories");
 
         }
         [HttpGet]
@@ -78,20 +83,22 @@ namespace Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Edit(CategoryViewModel model)
-        {
-            var category = _context.Categories.Find(model.Id);
-
-            if (category == null)
+        {  if (model.Name != null)
             {
-                return NotFound();
-            }
+                var category = _context.Categories.Find(model.Id);
 
-            category.Name = model.Name;
+                if (category == null)
+                {
+                    return NotFound();
+                }
 
-            _context.Categories.Update(category);
-            _context.SaveChanges();
+                category.Name = model.Name;
 
-            return RedirectToAction("AddCategories");
+                _context.Categories.Update(category);
+                _context.SaveChanges();
+
+                
+            }return RedirectToAction("Edit");
         }
 
     }
