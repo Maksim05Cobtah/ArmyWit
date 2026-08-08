@@ -40,38 +40,42 @@ namespace Controllers
         [HttpPost]
         public async Task<IActionResult> AddProduct(ProductViewModel model)
         {
-            string? uniqueFileName = null;
-
-            if (model.ImageFile != null)
+            if (model.Name == null && model.Price == null && model.ImageFile == null && model.Categories == null)
             {
-                string uploadsFolder = Path.Combine(_webHostEnvironment.WebRootPath, "images");
 
-                if (!Directory.Exists(uploadsFolder))
-                    Directory.CreateDirectory(uploadsFolder);
 
-                uniqueFileName = Guid.NewGuid().ToString() + "_" + model.ImageFile.FileName;
-                string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+                string? uniqueFileName = null;
 
-                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                if (model.ImageFile != null)
                 {
-                    await model.ImageFile.CopyToAsync(fileStream);
+                    string uploadsFolder = Path.Combine(_webHostEnvironment.WebRootPath, "images");
+
+                    if (!Directory.Exists(uploadsFolder))
+                        Directory.CreateDirectory(uploadsFolder);
+
+                    uniqueFileName = Guid.NewGuid().ToString() + "_" + model.ImageFile.FileName;
+                    string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                    using (var fileStream = new FileStream(filePath, FileMode.Create))
+                    {
+                        await model.ImageFile.CopyToAsync(fileStream);
+                    }
                 }
+
+                var product = new Product
+                {
+                    Name = model.Name,
+                    Price = model.Price,
+                    Quantity = model.Quantity,
+                    CategoryId = model.CategoryId,
+                    ImagePath = uniqueFileName,
+                    Description = model.Description,
+                    IsDeleted = false // Новий товар створюється активним
+                };
+
+                _context.Products.Add(product);
+                await _context.SaveChangesAsync();
             }
-
-            var product = new Product
-            {
-                Name = model.Name,
-                Price = model.Price,
-                Quantity = model.Quantity,
-                CategoryId = model.CategoryId,
-                ImagePath = uniqueFileName,
-                Description = model.Description,
-                IsDeleted = false // Новий товар створюється активним
-            };
-
-            _context.Products.Add(product);
-            await _context.SaveChangesAsync();
-
             return RedirectToAction("AddProducts");
         }
 
