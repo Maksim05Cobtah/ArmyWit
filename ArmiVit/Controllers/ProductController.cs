@@ -40,9 +40,11 @@ namespace Controllers
         [HttpPost]
         public async Task<IActionResult> AddProduct(ProductViewModel model)
         {
-            if (model.Name == null && model.Price == null && model.ImageFile == null && model.Categories == null)
+            if (model.Price == null || model.Name == null || model.CategoryId == null || model.ImageFile == null)
             {
-
+            }
+            else
+            {
 
                 string? uniqueFileName = null;
 
@@ -75,7 +77,7 @@ namespace Controllers
 
                 _context.Products.Add(product);
                 await _context.SaveChangesAsync();
-            }
+            } 
             return RedirectToAction("AddProducts");
         }
 
@@ -136,36 +138,41 @@ namespace Controllers
         [HttpPost]
         public async Task<IActionResult> Edit(ProductViewModel model)
         {
-            var product = _context.Products.Find(model.Id);
-
-            if (product == null)
-                return NotFound();
-
-            product.Name = model.Name;
-            product.Price = model.Price;
-            product.Quantity = model.Quantity;
-            product.CategoryId = model.CategoryId;
-            product.Description = model.Description;
-
-            if (model.ImageFile != null)
+            if (model.Price == null || model.Name == null || model.CategoryId == null || model.ImageFile == null)
             {
-                string uploadsFolder = Path.Combine(_webHostEnvironment.WebRootPath, "images");
+            }
+            else
+            {
+                var product = _context.Products.Find(model.Id);
 
-                string uniqueFileName = Guid.NewGuid().ToString() + "_" + model.ImageFile.FileName;
-                string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+                if (product == null)
+                    return NotFound();
 
-                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                product.Name = model.Name;
+                product.Price = model.Price;
+                product.Quantity = model.Quantity;
+                product.CategoryId = model.CategoryId;
+                product.Description = model.Description;
+
+                if (model.ImageFile != null)
                 {
-                    await model.ImageFile.CopyToAsync(fileStream);
+                    string uploadsFolder = Path.Combine(_webHostEnvironment.WebRootPath, "images");
+
+                    string uniqueFileName = Guid.NewGuid().ToString() + "_" + model.ImageFile.FileName;
+                    string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                    using (var fileStream = new FileStream(filePath, FileMode.Create))
+                    {
+                        await model.ImageFile.CopyToAsync(fileStream);
+                    }
+
+                    product.ImagePath = uniqueFileName;
                 }
 
-                product.ImagePath = uniqueFileName;
+                _context.Products.Update(product);
+                await _context.SaveChangesAsync();
             }
-
-            _context.Products.Update(product);
-            await _context.SaveChangesAsync();
-
-            return RedirectToAction("AddProducts");
+            return RedirectToAction("Edit",model.Id);
         }
     }
 }
