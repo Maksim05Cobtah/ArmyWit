@@ -12,7 +12,76 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
 
-<style>
+<style>.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.admin-btn.primary {
+    background-color: #1C2E24;
+    color: #ffffff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.admin-btn.primary:hover {
+    background-color: #274234;
+}
+
+    /* 1. Дозволяємо редагувати всі елементи з атрибутом contenteditable */
+[contenteditable="true"] {
+    outline: 2px dashed #4A90E2;
+    outline-offset: 4px;
+    cursor: text;
+    transition: outline 0.2s ease;
+}
+
+[contenteditable="true"]:focus {
+    outline: 2px solid #2C3E50;
+    background-color: rgba(74, 144, 226, 0.05);
+}
+
+/* 2. Примусово показуємо кнопки управління/видалення на картках */
+.card-controls,
+.cert-delete-btn {
+    display: flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* 3. Оформлення кнопок видалення */
+.admin-btn.danger {
+    background-color: #e74c3c;
+    color: #ffffff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.cert-delete-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: rgba(231, 76, 60, 0.9);
+    color: #fff;
+    border: none;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    font-size: 16px;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 10;
+}
     /* ==========================================
        1. ГЛОБАЛЬНІ СТИЛІ ТА АНІМОВАНИЙ ФОН
        ========================================== */
@@ -1016,291 +1085,181 @@ body.is-admin .cert-delete-btn {
                 </div>
             </div>
         </div>
+   <section id="section-certificates" style="padding: 30px 0;">
+        <div class="about-container">
+            <div class="section-title-badge animate-on-scroll">
+                <h2 class="editable-text">СЕРТИФІКАТИ</h2>
+            </div>
+            
+            <div class="certificates-grid animate-on-scroll" id="certificates-grid">
+                <div class="cert-card" onclick="openCertModal('/images/cert-1.jpg')">
+                    <img src="/images/cert-1.jpg" alt="Сертифікат 1" class="cert-img" />
+                    <button class="cert-delete-btn" onclick="deleteCertificateCard(event, this)">×</button>
+                </div>
+                <div class="cert-card" onclick="openCertModal('/images/cert-2.jpg')">
+                    <img src="/images/cert-2.jpg" alt="Сертифікат 2" class="cert-img" />
+                    <button class="cert-delete-btn" onclick="deleteCertificateCard(event, this)">×</button>
+                </div>
+            </div>
+
+            <div class="disclaimer-bar animate-on-scroll">
+                <p class="editable-text">МОЄ НАВЧАННЯ ТРИВАЄ ПОСТІЙНО</p>
+            </div>
+        </div>
     </section>
 
-<!-- СЕКЦІЯ СЕРТИФІКАТИ -->
-<section id="section-certificates" style="padding: 30px 0;">
-    <div class="about-container">
-        <!-- Заголовок -->
-        <div class="section-title-badge animate-on-scroll" style="background-color: #A695C7; border-radius: 14px; text-align: center; padding: 14px; margin-bottom: 35px;">
-            <h2 class="editable-text" style="color: #ffffff; margin: 0; font-size: 24px; font-weight: 700; letter-spacing: 1px;">СЕРТИФІКАТИ</h2>
-        </div>
-
-        @if (isAdmin)
-        {
-            <!-- Кнопка завантаження (Тільки для адміна) -->
-            <div style="text-align: center; margin-bottom: 25px;">
-                <label for="cert-upload-input" class="cert-upload-btn" style="background-color: #A695C7; color: white; padding: 10px 22px; border-radius: 20px; cursor: pointer; font-weight: 600; display: inline-flex; align-items: center; gap: 8px;">
-                    <span>📷 Додати сертифікат / фото</span>
-                </label>
-                <input type="file" id="cert-upload-input" accept="image/*" multiple style="display: none;" onchange="handleCertUpload(event)">
-            </div> 
-        }
-
-        <!-- Сітка з 6 сертифікатами -->
-        <div class="certificates-grid" id="certificates-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px;">
-            
-            <!-- Сертифікат 1 -->
-            <div class="cert-card" onclick="openCertModal(this)">
-                <img src="/images/cert1.jpg" alt="Сертифікат 1" class="cert-img" onerror="this.src='https://via.placeholder.com/400x300?text=Сертифікат+1'">
-                @if (isAdmin)
-                {
-                    <button class="cert-delete-btn" onclick="deleteCert(event, this)">✕</button>
-                }
-            </div>
-
-            <!-- Сертифікат 2 -->
-            <div class="cert-card" onclick="openCertModal(this)">
-                <img src="/images/cert2.jpg" alt="Сертифікат 2" class="cert-img" onerror="this.src='https://via.placeholder.com/400x300?text=Сертифікат+2'">
-                @if (isAdmin)
-                {
-                    <button class="cert-delete-btn" onclick="deleteCert(event, this)">✕</button>
-                }
-            </div>
-
-            <!-- Сертифікат 3 -->
-            <div class="cert-card" onclick="openCertModal(this)">
-                <img src="/images/cert3.jpg" alt="Сертифікат 3" class="cert-img" onerror="this.src='https://via.placeholder.com/400x300?text=Сертифікат+3'">
-                @if (isAdmin)
-                {
-                    <button class="cert-delete-btn" onclick="deleteCert(event, this)">✕</button>
-                }
-            </div>
-
-            <!-- Сертифікат 4 -->
-            <div class="cert-card" onclick="openCertModal(this)">
-                <img src="/images/cert4.jpg" alt="Сертифікат 4" class="cert-img" onerror="this.src='https://via.placeholder.com/400x300?text=Сертифікат+4'">
-                @if (isAdmin)
-                {
-                    <button class="cert-delete-btn" onclick="deleteCert(event, this)">✕</button>
-                }
-            </div>
-
-            <!-- Сертифікат 5 -->
-            <div class="cert-card" onclick="openCertModal(this)">
-                <img src="/images/cert5.jpg" alt="Сертифікат 5" class="cert-img" onerror="this.src='https://via.placeholder.com/400x300?text=Сертифікат+5'">
-                @if (isAdmin)
-                {
-                    <button class="cert-delete-btn" onclick="deleteCert(event, this)">✕</button>
-                }
-            </div>
-
-            <!-- Сертифікат 6 -->
-            <div class="cert-card" onclick="openCertModal(this)">
-                <img src="/images/cert6.jpg" alt="Сертифікат 6" class="cert-img" onerror="this.src='https://via.placeholder.com/400x300?text=Сертифікат+6'">
-                @if (isAdmin)
-                {
-                    <button class="cert-delete-btn" onclick="deleteCert(event, this)">✕</button>
-                }
-            </div>
-
-        </div>
-    </div>
-</section>
-
-  <!-- 5. СЕКЦІЯ ПОСЛУГИ -->
+   <!-- 5. СЕКЦІЯ ПОСЛУГИ -->
 <section id="section-services" style="padding: 30px 0;">
     <div class="about-container">
-        <!-- Фіолетова плашка заголовка у вашому стилі -->
-        <div class="section-title-badge animate-on-scroll" style="background-color: #A695C7; border-radius: 14px; text-align: center; padding: 14px; margin-bottom: 35px;">
-            <h2 class="editable-text" style="color: #ffffff; margin: 0; font-size: 24px; font-weight: 700; letter-spacing: 1px;">ПОСЛУГИ</h2>
+        <div class="section-title-badge animate-on-scroll">
+            <h2 class="editable-text">ПОСЛУГИ ТА ЦІНИ</h2>
+        </div>
+        
+        <div class="section-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px;">
+            <h2>Мої Послуги</h2>
+            <!-- Кнопка додавання нової послуги -->
+            <button id="addServiceBtn" class="admin-btn primary" onclick="addServiceToGrid('services-grid')">
+                + Додати послугу
+            </button>
         </div>
 
-        <div class="services-grid drag-container" id="services-grid">
-            
-            <!-- Картка 1 -->
-            <div class="service-card draggable-element" draggable="false" style="background: #ffffff; border-radius: 20px; padding: 30px 25px; display: flex; flex-direction: column; justify-content: space-between;">
-                <div>
-                    <h3 class="editable-text" style="font-weight: 800; text-transform: uppercase; margin-bottom: 20px; line-height: 1.3;">ПОГЛИБЛЕНА<br>КОНСУЛЬТАЦІЯ</h3>
-                    
-                    <div class="service-label editable-text" style="color: #9B82A8; font-size: 13px; font-weight: 700; margin-top: 15px; margin-bottom: 8px;">ТИ ОТРИМАЄШ:</div>
-                    <ul class="service-list bullets editable-text" style="margin-bottom: 15px;">
-                        <li>оцінку харчового статусу</li>
-                        <li>індивідуальні програми харчування</li>
-                        <li>профілактику дефіцитів</li>
-                    </ul>
-
-                    <div class="service-label editable-text" style="color: #9B82A8; font-size: 13px; font-weight: 700; margin-top: 15px; margin-bottom: 8px;">РЕЗУЛЬТАТ:</div>
-                    <ul class="service-list checks editable-text">
-                        <li>персональний план дій</li>
-                        <li>розуміння потреб організму</li>
-                    </ul>
-                </div>
-
-                <div style="border-top: 1px solid #f0f0f0; margin-top: 25px; padding-top: 15px;">
-                    <a href="#section-contacts" class="service-price-btn editable-text" style="font-size: 22px; font-weight: 800; color: #2D2731; text-decoration: none; display: inline-block;">1800ГРН</a>
-                </div>
-            </div>
-
-            <!-- Картка 2 -->
-            <div class="service-card draggable-element" draggable="false" style="background: #ffffff; border-radius: 20px; padding: 30px 25px; display: flex; flex-direction: column; justify-content: space-between;">
-                <div>
-                    <h3 class="editable-text" style="font-weight: 800; text-transform: uppercase; margin-bottom: 20px; line-height: 1.3;">СУПРОВІД 14 ДНІВ</h3>
-                    
-                    <div class="service-label editable-text" style="color: #9B82A8; font-size: 13px; font-weight: 700; margin-top: 15px; margin-bottom: 8px;">ТИ ОТРИМАЄШ:</div>
-                    <ul class="service-list bullets editable-text" style="margin-bottom: 15px;">
-                        <li>розбір тарілки</li>
-                        <li>корекція харчування</li>
-                        <li>постійний зворотний зв'язок</li>
-                    </ul>
-
-                    <div class="service-label editable-text" style="color: #9B82A8; font-size: 13px; font-weight: 700; margin-top: 15px; margin-bottom: 8px;">РЕЗУЛЬТАТ:</div>
-                    <ul class="service-list checks editable-text">
-                        <li>правильні харчові рішення</li>
-                        <li>зменшення хаосу в їжі</li>
-                        <li>відчуття підтримки</li>
-                    </ul>
-                </div>
-
-                <div style="border-top: 1px solid #f0f0f0; margin-top: 25px; padding-top: 15px;">
-                    <a href="#section-contacts" class="service-price-btn editable-text" style="font-size: 22px; font-weight: 800; color: #2D2731; text-decoration: none; display: inline-block;">1800ГРН</a>
-                </div>
-            </div>
-
-            <!-- Картка 3 -->
-            <div class="service-card draggable-element" draggable="false" style="background: #ffffff; border-radius: 20px; padding: 30px 25px; display: flex; flex-direction: column; justify-content: space-between;">
-                <div>
-                    <h3 class="editable-text" style="font-weight: 800; text-transform: uppercase; margin-bottom: 20px; line-height: 1.3;">СУПРОВІД 30 ДНІВ</h3>
-                    
-                    <div class="service-label editable-text" style="color: #9B82A8; font-size: 13px; font-weight: 700; margin-top: 15px; margin-bottom: 8px;">ТИ ОТРИМАЄШ:</div>
-                    <ul class="service-list bullets editable-text" style="margin-bottom: 15px;">
-                        <li>детальний розбір харчування</li>
-                        <li>корекція раціону</li>
-                        <li>щомісячний супровід</li>
-                    </ul>
-
-                    <div class="service-label editable-text" style="color: #9B82A8; font-size: 13px; font-weight: 700; margin-top: 15px; margin-bottom: 8px;">РЕЗУЛЬТАТ:</div>
-                    <ul class="service-list checks editable-text">
-                        <li>стабільні зміни без зривів</li>
-                        <li>розуміння свого організму</li>
-                        <li>навички на майбутнє</li>
-                    </ul>
-                </div>
-
-                <div style="border-top: 1px solid #f0f0f0; margin-top: 25px; padding-top: 15px;">
-                    <a href="#section-contacts" class="service-price-btn editable-text" style="font-size: 22px; font-weight: 800; color: #2D2731; text-decoration: none; display: inline-block;">4000ГРН</a>
-                </div>
-            </div>
-
+        <!-- Контейнер сітки послуг (динамічно заповнюється з БД) -->
+        <div class="services-grid animate-on-scroll" id="services-grid">
+            <!-- Сюди функція loadServicesFromDB() додаватиме картки оригінального вигляду -->
         </div>
     </div>
 </section>
-
+        <!-- Контейнер для карток (зараз порожній) -->
+        <div class="services-grid animate-on-scroll" id="services-grid"></div>
+    </div>
+</section>
     <!-- 6. СЕКЦІЯ СУПРОВІД -->
     <section id="section-support" style="padding: 30px 0;">
         <div class="about-container">
-            <div class="section-title-badge animate-on-scroll">
-                <h2 class="editable-text">СУПРОВІД</h2>
-            </div>
-            <div class="support-box animate-on-scroll drag-container" id="support-grid">
-                <div class="support-card-item draggable-element" draggable="false">
-                    <h3 class="editable-text">ОСОБИСТИЙ СУПРОВІД</h3>
+            <h2 class="section-title-plain editable-text animate-on-scroll">СУПРОВІД</h2>
+
+            <div class="support-box animate-on-scroll" id="support-grid">
+                <div class="support-card-item draggable-element">
+                    <div class="card-controls">
+                        <button class="admin-btn danger" onclick="removeCard(this)">Видалити</button>
+                    </div>
+                    <h3 class="editable-text">ІНДИВІДУАЛЬНИЙ</h3>
                     <div class="program-badge editable-text">1 МІСЯЦЬ</div>
-                    <ul class="service-list bullets editable-text" style="width: 100%;">
-                        <li>Щоденний контроль раціону</li>
-                        <li>Корекція менторінгу та звичок</li>
-                        <li>Постійний зв'язок у месенджері</li>
+                    <ul class="service-list checks" style="width: 100%; text-align: left; margin-bottom: 30px;">
+                        <li class="editable-text">Особисте спілкування</li>
+                        <li class="editable-text">Гнучке меню під ваші вподобання</li>
+                        <li class="editable-text">Аналіз результатів щотижня</li>
                     </ul>
-                    <a href="#section-contacts" class="animated-btn editable-text">ЗАПИСАТИСЯ</a>
+                    <a href="#section-contacts" class="animated-btn editable-text">ОБРАТИ ПЛАН</a>
                 </div>
-                <div class="support-card-item draggable-element" draggable="false">
-                    <h3 class="editable-text">ПРЕМІУМ СУПРОВІД</h3>
-                    <div class="program-badge editable-text">3 МІСЯЦІ</div>
-                    <ul class="service-list bullets editable-text" style="width: 100%;">
-                        <li>Повний аналіз лабораторних досліджень</li>
-                        <li>Розробка довгострокової стратегії</li>
-                        <li>Пріоритетний зв'язок 24/7</li>
+
+                <div class="support-card-item draggable-element">
+                    <div class="card-controls">
+                        <button class="admin-btn danger" onclick="removeCard(this)">Видалити</button>
+                    </div>
+                    <h3 class="editable-text">ГРУПОВИЙ</h3>
+                    <div class="program-badge editable-text">3 ТИЖНІ</div>
+                    <ul class="service-list checks" style="width: 100%; text-align: left; margin-bottom: 30px;">
+                        <li class="editable-text">Ком'юніті однодумців</li>
+                        <li class="editable-text">Загальний чат підтримки</li>
+                        <li class="editable-text">Тижневі вебінари Q&A</li>
                     </ul>
-                    <a href="#section-contacts" class="animated-btn editable-text">ЗАПИСАТИСЯ</a>
+                    <a href="#section-contacts" class="animated-btn editable-text">ПРИЄДНАТИСЯ</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 7. СЕКЦІЯ ПАКЕТНІ ПРОПОЗИЦІЇ -->
+    <!-- 7. ПАКЕТНІ ПРОПОЗИЦІЇ -->
     <section id="section-packages" style="padding: 30px 0;">
         <div class="about-container">
-            <div class="section-title-badge animate-on-scroll">
-                <h2 class="editable-text">ПАКИ ТА КОМПЛЕКСИ</h2>
-            </div>
-            <div class="content-card package-content-wrapper animate-on-scroll">
-                <div class="package-main-badge editable-text">КОМПЛЕКСНИЙ ПАКЕТ "ЗДОРОВИЙ СТАРТ"</div>
-                <div class="package-details-group">
-                    <span class="package-tag editable-text">ВСЕ ВКУПІ</span>
-                    <ul class="service-list bullets editable-text">
-                        <li>Консультація нутриціолога</li>
-                        <li>Аналіз харчового щоденника</li>
-                        <li>Персоналізована програма на 4 тижні</li>
-                        <li>2 тижні підтримки після консультації</li>
-                    </ul>
-                    <div class="package-price-text editable-text">3 500 грн</div>
-                    <a href="#section-contacts" class="animated-btn editable-text" style="margin-top: 24px; width: 100%;">ЗАМОВИТИ ПАКЕТ</a>
+            <div class="content-card animate-on-scroll">
+                <div class="package-content-wrapper">
+                    <div class="package-main-badge editable-text">ПАКЕТ "ВСЕ ВКУПІ"</div>
+                    <div class="package-details-group">
+                        <span class="package-tag editable-text">VIP СТАРАННЯ</span>
+                        <ul class="service-list checks">
+                            <li class="editable-text">Повний розбір організму та аналізів</li>
+                            <li class="editable-text">Персональний супровід 2 місяці</li>
+                            <li class="editable-text">Індивідуальна книга рецептів</li>
+                        </ul>
+                        <div class="package-price-text editable-text">8 000 UAH</div>
+                        <a href="#section-contacts" class="animated-btn editable-text" style="margin-top: 24px;">ЗАМОВИТИ ПАКЕТ</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- 8. СЕКЦІЯ КОНТАКТИ -->
-    <section id="section-contacts" style="padding: 30px 0 60px 0;">
+    <section id="section-contacts" style="padding: 30px 0 80px 0;">
         <div class="about-container">
             <div class="section-title-badge animate-on-scroll">
                 <h2 class="editable-text">КОНТАКТИ</h2>
             </div>
-            <div class="content-card animate-on-scroll">
-                <div class="contacts-grid drag-container" id="contacts-grid">
-                    <a href="https://instagram.com" target="_blank" class="contact-item instagram draggable-element" draggable="false">
-                        <div class="contact-icon-box">
-                            <i data-lucide="instagram"></i>
-                        </div>
-                        <div>
-                            <div class="contact-label editable-text">INSTAGRAM</div>
-                            <div class="contact-value editable-text">@@anjelika_fedyay</div>
-                        </div>
-                    </a>
-                    <a href="https://facebook.com" target="_blank" class="contact-item facebook draggable-element" draggable="false">
-                        <div class="contact-icon-box">
-                            <i data-lucide="facebook"></i>
-                        </div>
-                        <div>
-                            <div class="contact-label editable-text">FACEBOOK</div>
-                            <div class="contact-value editable-text">Анжеліка Федяй</div>
-                        </div>
-                    </a>
-                    <a href="tel:+380000000000" class="contact-item phone draggable-element" draggable="false">
-                        <div class="contact-icon-box">
-                            <i data-lucide="phone"></i>
-                        </div>
-                        <div>
-                            <div class="contact-label editable-text">ТЕЛЕФОН</div>
-                            <div class="contact-value editable-text">+380 (XX) XXX-XX-XX</div>
-                        </div>
-                    </a>
-                    <a href="mailto:example@gmail.com" class="contact-item email draggable-element" draggable="false">
-                        <div class="contact-icon-box">
-                            <i data-lucide="mail"></i>
-                        </div>
-                        <div>
-                            <div class="contact-label editable-text">EMAIL</div>
-                            <div class="contact-value editable-text">a.fedyay@@gmail.com</div>
-                        </div>
-                    </a>
-                </div>
+
+            <div class="contacts-grid animate-on-scroll">
+                <a href="https://instagram.com" target="_blank" class="contact-item instagram">
+                    <div class="contact-icon-box">
+                        <i data-lucide="instagram"></i>
+                    </div>
+                    <div>
+                        <div class="contact-label editable-text">Instagram</div>
+                        <div class="contact-value editable-text">anjelika_fedyay</div>
+                    </div>
+                </a>
+
+                <a href="https://facebook.com" target="_blank" class="contact-item facebook">
+                    <div class="contact-icon-box">
+                        <i data-lucide="facebook"></i>
+                    </div>
+                    <div>
+                        <div class="contact-label editable-text">Facebook</div>
+                        <div class="contact-value editable-text">Анжеліка Федяй</div>
+                    </div>
+                </a>
+
+                <a href="tel:+380000000000" class="contact-item phone">
+                    <div class="contact-icon-box">
+                        <i data-lucide="phone"></i>
+                    </div>
+                    <div>
+                        <div class="contact-label editable-text">Телефон</div>
+                        <div class="contact-value editable-text">+38 (000) 000-00-00</div>
+                    </div>
+                </a>
+
+                <a href="mailto:example@gmail.com" class="contact-item email">
+                    <div class="contact-icon-box">
+                        <i data-lucide="mail"></i>
+                    </div>
+                    <div>
+                        <div class="contact-label editable-text">Email</div>
+                        <div class="contact-value editable-text">fedyay@gmail.com</div>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
 
 </div>
 
+<!-- МОДАЛЬНЕ ВІКНО ПЕРЕГЛЯДУ СЕРТИФІКАТА -->
+<div id="cert-modal" class="cert-modal" onclick="closeCertModal()">
+    <span class="cert-modal-close">&times;</span>
+    <img class="cert-modal-content" id="cert-modal-img">
+</div>
+
+<!-- SCRIPTS ДЛЯ ФУНКЦІОНАЛУ Конструктора/Редактора -->
 <script>
-    // Ініціалізація Lucide Іконок
     document.addEventListener("DOMContentLoaded", function () {
-        if (window.lucide) {
+        if (typeof lucide !== 'undefined') {
             lucide.createIcons();
         }
         initScrollAnimations();
     });
 
-    // Анімація елементів при скролі
+    /* Анімації при скролі */
     function initScrollAnimations() {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -1313,54 +1272,47 @@ body.is-admin .cert-delete-btn {
         document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
     }
 
-    // Тимчасова змінна для завантаження зображення
-    let activeImageTarget = null;
-
-    function triggerImageChange(imgElement) {
-        if (!document.body.classList.contains('is-edit-mode')) return;
-        activeImageTarget = imgElement;
-        const uploader = document.getElementById('global-image-uploader');
-        if (uploader) uploader.click();
-    }
-
-    function handleImageUpload(event) {
-        const file = event.target.files[0];
-        if (file && activeImageTarget) {
-            const reader = new FileReader();
-            reader.onload = function (e) {
-                activeImageTarget.src = e.target.result;
-            };
-            reader.readAsDataURL(file);
-        }
-    }
-
-    // Режим редагування (Edit Mode)
-    let isEditMode = false;
-    let selectedElement = null;
-
+    /* Управління адмін-панеллю */
     function toggleAdminPanel(show) {
         const sidebar = document.getElementById('react-admin-sidebar');
         if (sidebar) sidebar.style.display = show ? 'block' : 'none';
     }
 
+    function scrollToSection(id) {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function toggleSectionVisibility(e, id) {
+        e.stopPropagation();
+        const section = document.getElementById(id);
+        if (section) {
+            section.style.display = section.style.display === 'none' ? 'block' : 'none';
+            e.target.style.opacity = section.style.display === 'none' ? '0.3' : '1';
+        }
+    }
+
+    /* Перемикання режиму редагування */
+    let isEditMode = false;
+    let selectedElement = null;
+
     function toggleEditMode() {
         isEditMode = !isEditMode;
         document.body.classList.toggle('is-edit-mode', isEditMode);
+        document.body.classList.toggle('admin-mode', isEditMode);
         
         const btnText = document.getElementById('edit-btn-text');
-        const btn = document.getElementById('toggle-edit-mode-btn');
+        const editBtn = document.getElementById('toggle-edit-mode-btn');
         
-        if (btnText && btn) {
-            if (isEditMode) {
-                btnText.innerText = "Вимкнути редагування";
-                btn.classList.add('active');
-                enableContentEditing(true);
-            } else {
-                btnText.innerText = "Увімкнути редагування";
-                btn.classList.remove('active');
-                enableContentEditing(false);
-                document.getElementById('inspector-panel').classList.remove('active');
-            }
+        if (isEditMode) {
+            btnText.innerText = 'Вимкнути редагування';
+            editBtn.classList.add('active');
+            enableContentEditing(true);
+        } else {
+            btnText.innerText = 'Увімкнути редагування';
+            editBtn.classList.remove('active');
+            enableContentEditing(false);
+            hideInspector();
         }
     }
 
@@ -1369,173 +1321,277 @@ body.is-admin .cert-delete-btn {
         editableTexts.forEach(el => {
             el.contentEditable = enable ? "true" : "false";
             if (enable) {
-                el.addEventListener('focus', handleElementFocus);
+                el.addEventListener('click', handleElementClick);
             } else {
-                el.removeEventListener('focus', handleElementFocus);
+                el.removeEventListener('click', handleElementClick);
             }
         });
-
-        const draggables = document.querySelectorAll('.draggable-element');
-        draggables.forEach(el => {
-            el.draggable = enable;
-            if (enable) {
-                el.addEventListener('dragstart', handleDragStart);
-                el.addEventListener('dragend', handleDragEnd);
-            } else {
-                el.removeEventListener('dragstart', handleDragStart);
-                el.removeEventListener('dragend', handleDragEnd);
-            }
-        });
-
-        initDragContainers(enable);
     }
 
-    function handleElementFocus(e) {
-        selectedElement = e.target;
-        const inspector = document.getElementById('inspector-panel');
-        if (inspector) {
-            inspector.classList.add('active');
-            const style = window.getComputedStyle(selectedElement);
-            document.getElementById('inspector-size').value = parseInt(style.fontSize) || 16;
-        }
+    /* Інспектор стилів */
+    function handleElementClick(e) {
+        if (!isEditMode) return;
+        e.stopPropagation();
+        selectedElement = e.currentTarget;
+        
+        const panel = document.getElementById('inspector-panel');
+        panel.classList.add('active');
+
+        // Встановлюємо стежені значення
+        const computedStyle = window.getComputedStyle(selectedElement);
+        document.getElementById('inspector-size').value = parseInt(computedStyle.fontSize);
     }
 
-    function applyStyleToSelected(property, value) {
+    function applyStyleToSelected(styleProp, value) {
         if (selectedElement) {
-            selectedElement.style[property] = value;
+            selectedElement.style[styleProp] = value;
         }
     }
 
-    function scrollToSection(id) {
-        const sec = document.getElementById(id);
-        if (sec) {
-            sec.scrollIntoView({ behavior: 'smooth' });
-        }
+    function hideInspector() {
+        const panel = document.getElementById('inspector-panel');
+        if (panel) panel.classList.remove('active');
     }
 
-    function toggleSectionVisibility(event, id) {
-        event.stopPropagation();
-        const sec = document.getElementById(id);
-        if (sec) {
-            sec.style.display = sec.style.display === 'none' ? 'block' : 'none';
-        }
+    /* Завантаження зображень */
+    let activeImageTarget = null;
+    function triggerImageChange(imgEl) {
+        if (!isEditMode) return;
+        activeImageTarget = imgEl;
+        document.getElementById('global-image-uploader').click();
     }
 
-    // Drag and Drop Функціонал
-    function handleDragStart(e) {
-        this.classList.add('dragging');
-    }
-
-    function handleDragEnd(e) {
-        this.classList.remove('dragging');
-    }
-
-    function initDragContainers(enable) {
-        const containers = document.querySelectorAll('.drag-container');
-        containers.forEach(container => {
-            if (enable) {
-                container.addEventListener('dragover', handleDragOver);
-            } else {
-                container.removeEventListener('dragover', handleDragOver);
-            }
-        });
-    }
-
-    function handleDragOver(e) {
-        e.preventDefault();
-        const afterElement = getDragAfterElement(this, e.clientY);
-        const draggable = document.querySelector('.dragging');
-        if (draggable) {
-            if (afterElement == null) {
-                this.appendChild(draggable);
-            } else {
-                this.insertBefore(draggable, afterElement);
-            }
-        }
-    }
-
-    function getDragAfterElement(container, y) {
-        const draggableElements = [...container.querySelectorAll('.draggable-element:not(.dragging)')];
-        return draggableElements.reduce((closest, child) => {
-            const box = child.getBoundingClientRect();
-            const offset = y - box.top - box.height / 2;
-            if (offset < 0 && offset > closest.offset) {
-                return { offset: offset, element: child };
-            } else {
-                return closest;
-            }
-        }, { offset: Number.NEGATIVE_INFINITY }).element;
-    }
-
-
-
-    // Завантаження зображень через input
-function handleCertUpload(event) {
-    const files = event.target.files;
-    const grid = document.getElementById('certificates-grid');
-
-    if (files && files.length > 0) {
-        Array.from(files).forEach(file => {
+    function handleImageUpload(e) {
+        const file = e.target.files[0];
+        if (file && activeImageTarget) {
             const reader = new FileReader();
-            
-            reader.onload = function(e) {
-                const card = document.createElement('div');
-                card.className = 'cert-card';
-                card.setAttribute('onclick', 'openCertModal(this)');
-                
-                card.innerHTML = `
-                    <img src="${e.target.result}" alt="Сертифікат" class="cert-img">
-                    <button class="cert-delete-btn" onclick="deleteCert(event, this)">✕</button>
-                `;
-                
-                grid.appendChild(card);
+            reader.onload = function (evt) {
+                activeImageTarget.src = evt.target.result;
             };
-            
             reader.readAsDataURL(file);
+        }
+    }
+
+    /* Модальне вікно сертифікатів */
+    function openCertModal(src) {
+        if (isEditMode) return;
+        const modal = document.getElementById('cert-modal');
+        const modalImg = document.getElementById('cert-modal-img');
+        modal.style.display = "flex";
+        modalImg.src = src;
+    }
+
+    function closeCertModal() {
+        document.getElementById('cert-modal').style.display = "none";
+    }
+
+   
+
+    function addCardToGrid(e, gridId) {
+        e.stopPropagation();
+        const grid = document.getElementById(gridId);
+        if (!grid) return;
+
+        const newCard = document.createElement('div');
+        newCard.className = 'service-card draggable-element';
+        newCard.innerHTML = `
+            <div class="card-controls">
+                <button class="admin-btn danger" onclick="removeCard(this)">Видалити</button>
+            </div>
+            <div>
+                <div class="service-label editable-text" contenteditable="${isEditMode}">КАТЕГОРІЯ</div>
+                <h3 class="editable-text" contenteditable="${isEditMode}">НОВА ПОСЛУГА</h3>
+                <ul class="service-list bullets">
+                    <li class="editable-text" contenteditable="${isEditMode}">Пункт опису послуги</li>
+                </ul>
+            </div>
+            <a href="#section-contacts" class="service-price-btn editable-text" contenteditable="${isEditMode}">0 UAH</a>
+        `;
+        grid.appendChild(newCard);
+        if (isEditMode) enableContentEditing(true);
+    }// Додавання нової картки в секцію "ПОСЛУГИ ТА ЦІНИ"
+async function addServiceToGrid(gridId) {
+    // Шукаємо елемент за переданим ID або за замовчуванням 'services-grid'
+    const grid = document.getElementById(gridId) || document.getElementById('services-grid');
+    if (!grid) return;
+
+    // Шаблонні дані для нового запису в БД
+    const newServiceData = {
+        name: "НОВА ПОСЛУГА",
+        description: "Введіть опис або пункт послуги",
+        time: 60,
+        price: 1000.00
+    };
+
+    try {
+        // 1. Відправляємо запит у базу даних
+        const response = await fetch('/Services/CreateService', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(newServiceData)
         });
+
+        const result = await response.json();
+
+        if (result.success) {
+            // 2. Створюємо картку за вашою структурою HTML
+            const newCard = document.createElement('div');
+            newCard.className = 'service-card draggable-element';
+            newCard.setAttribute('data-id', result.id);
+
+            // Режим редагування: якщо isEditMode true, робимо поля доступними для вводу
+            const editableAttr = (typeof isEditMode !== 'undefined' && isEditMode) ? 'contenteditable="true"' : 'contenteditable="false"';
+
+            newCard.innerHTML = `
+                <div class="card-controls">
+                    <button class="admin-btn danger" onclick="removeCard(this)">Видалити</button>
+                </div>
+                <div>
+                    <div class="service-label editable-text" ${editableAttr}>ПОСЛУГА</div>
+                    <h3 class="editable-text" ${editableAttr}>${newServiceData.name}</h3>
+                    <ul class="service-list bullets">
+                        <li class="editable-text" ${editableAttr}>${newServiceData.description}</li>
+                    </ul>
+                </div>
+                <a href="#section-contacts" class="service-price-btn editable-text" ${editableAttr}>1 000 UAH</a>
+            `;
+
+            // 3. Додаємо нову картку в сітку
+            grid.appendChild(newCard);
+
+            // Якщо режим редагування активний, оновлюємо слухачі подій
+            if (typeof enableContentEditing === 'function' && isEditMode) {
+                enableContentEditing(true);
+            }
+        } else {
+            alert("Помилка при створенні в БД: " + result.message);
+        }
+    } catch (error) {
+        console.error("Помилка мережі:", error);
+    }
+}// Автоматичний виклики при завантаженні сторінки
+document.addEventListener('DOMContentLoaded', () => {
+    loadServicesFromDB();
+});
+
+// 1. ПІДВАНТАЖЕННЯ ДАНИХ З БАЗИ
+async function loadServicesFromDB() {
+    const grid = document.getElementById('services-grid');
+    if (!grid) return;
+
+    try {
+        const response = await fetch('/Services/GetAll');
+        const services = await response.json();
+
+        grid.innerHTML = ''; // Очищаємо контейнер
+
+        services.forEach(service => {
+            renderServiceCard(service);
+        });
+    } catch (error) {
+        console.error("Помилка завантаження послуг:", error);
     }
 }
 
-// Видалення сертифіката
-function deleteCert(event, btn) {
-    event.stopPropagation(); // Щоб не відкривалося модальне вікно при кліку на хрестик
-    const card = btn.closest('.cert-card');
-    if (card) {
-        card.remove();
+// Функція генерації HTML-картки
+function renderServiceCard(service) {
+    const grid = document.getElementById('services-grid');
+    const editableAttr = (typeof isEditMode !== 'undefined' && isEditMode) ? 'contenteditable="true"' : 'contenteditable="false"';
+
+    const card = document.createElement('div');
+    card.className = 'service-card draggable-element';
+    card.setAttribute('data-id', service.id);
+
+    card.innerHTML = `
+        <div class="card-controls">
+            <button class="admin-btn danger" onclick="removeCard(this, ${service.id})">Видалити</button>
+        </div>
+        <div>
+            <div class="service-label editable-text" ${editableAttr}>ПОСЛУГА</div>
+            <h3 class="editable-text service-name" ${editableAttr}>${service.name}</h3>
+            <ul class="service-list bullets">
+                <li class="editable-text service-desc" ${editableAttr}>${service.description}</li>
+            </ul>
+        </div>
+        <a href="#section-contacts" class="service-price-btn editable-text service-price" ${editableAttr}>${service.price} UAH</a>
+    `;
+
+    // Слухаємо зміни в тексті для автозбереження
+    card.querySelectorAll('.editable-text').forEach(element => {
+        element.addEventListener('blur', () => saveCardChanges(card));
+    });
+
+    grid.appendChild(card);
+}
+
+// 2. ДОДАВАННЯ НОВОЇ КАРТКИ В БД ТА НА СТОРІНКУ
+async function addServiceToGrid(gridId) {
+    const newServiceData = {
+        name: "НОВА ПОСЛУГА",
+        description: "Опис послуги",
+        time: 60,
+        price: 1000.00
+    };
+
+    try {
+        const response = await fetch('/Services/CreateService', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(newServiceData)
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+            newServiceData.id = result.id;
+            renderServiceCard(newServiceData); // Додаємо на сторінку
+        }
+    } catch (error) {
+        console.error("Помилка додавання:", error);
     }
 }
 
-// Відкриття фото у модальному вікні
-function openCertModal(card) {
-    const img = card.querySelector('.cert-img');
-    const modal = document.getElementById('cert-modal');
-    const modalImg = document.getElementById('cert-modal-img');
-    
-    if (img && modal && modalImg) {
-        modalImg.src = img.src;
-        modal.style.display = 'flex';
+// 3. ЗБЕРЕЖЕННЯ ЗМІН ПІСЛЯ РЕДАГУВАННЯ ТЕКСТУ
+async function saveCardChanges(cardElement) {
+    const id = cardElement.getAttribute('data-id');
+    if (!id) return;
+
+    const name = cardElement.querySelector('.service-name')?.innerText.trim() || "";
+    const description = cardElement.querySelector('.service-desc')?.innerText.trim() || "";
+    const priceRaw = cardElement.querySelector('.service-price')?.innerText.replace('UAH', '').trim() || "0";
+    const price = parseFloat(priceRaw) || 0;
+
+    const payload = { name, description, price };
+
+    try {
+        await fetch(`/Services/UpdateService/${id}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        });
+    } catch (error) {
+        console.error("Помилка збереження змін:", error);
     }
 }
 
-// Закриття модального вікна
-function closeCertModal() {
-    document.getElementById('cert-modal').style.display = 'none';
-}
+// 4. ВИДАЛЕННЯ З БАЗИ ТА СТОРІНКИ
+async function removeCard(buttonElement, id) {
+    if (!confirm("Ви впевнені, що хочете видалити цю послугу?")) return;
 
+    if (id) {
+        try {
+            const response = await fetch(`/Services/DeleteService/${id}`, { method: 'DELETE' });
+            const result = await response.json();
 
-function deleteCert(event, btn) {
-    event.stopPropagation(); // Зупиняємо відкриття модального вікна
-
-    // Перевіряємо, чи користувач є адміном (наприклад, за наявністю класу адміна на body або контейнері)
-    const isAdmin = document.body.classList.contains('admin-mode') || document.body.classList.contains('is-admin');
-
-    if (!isAdmin) {
-        return; // Якщо це звичайний користувач — функція просто не спрацює
-    }
-
-    const card = btn.closest('.cert-card');
-    if (card && confirm('Ви дійсно хочете видалити цей сертифікат?')) {
-        card.remove();
+            if (result.success) {
+                buttonElement.closest('.service-card').remove();
+            }
+        } catch (error) {
+            console.error("Помилка видалення:", error);
+        }
+    } else {
+        buttonElement.closest('.service-card').remove();
     }
 }
+
 </script>

@@ -1,11 +1,12 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using ArmiVit.Models;
 using Data;
+using ArmiVit.Models;
 
 namespace ArmiVit.Controllers
 {
+    [Route("[controller]")]
     public class ServicesController : Controller
     {
         private readonly AppDbContext _context;
@@ -15,93 +16,55 @@ namespace ArmiVit.Controllers
             _context = context;
         }
 
-        // GET: Services
-        public async Task<IActionResult> Index()
+        // GET: /Services/GetAll
+        [HttpGet("GetAll")]
+        public async Task<IActionResult> GetAll()
         {
             var services = await _context.Services.ToListAsync();
-            return View(services);
+            return Json(services);
         }
 
-        // GET: Services/CreateService
-        public IActionResult CreateService()
+        // POST: /Services/CreateService
+        [HttpPost("CreateService")]
+        public async Task<IActionResult> CreateService([FromBody] Service model)
         {
-            return View(new Service());
+            if (!ModelState.IsValid)
+                return BadRequest(new { success = false, message = "Некоректні дані" });
+
+            _context.Services.Add(model);
+            await _context.SaveChangesAsync();
+
+            return Json(new { success = true, id = model.Id });
         }
 
-        // POST: Services/CreateService
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> CreateService(Service model)
+        // PUT: /Services/UpdateService/5
+        [HttpPut("UpdateService/{id}")]
+        public async Task<IActionResult> UpdateService(int id, [FromBody] Service model)
         {
-            if (ModelState.IsValid)
-            {
-                _context.Services.Add(model);
-                await _context.SaveChangesAsync();
-
-                return RedirectToAction(nameof(Index));
-            }
-
-            return View(model);
-        }
-
-        // GET: Services/EditService?name=НазваПослуги
-        public async Task<IActionResult> EditService(string name)
-        {
-            if (string.IsNullOrEmpty(name))
-            {
-                return BadRequest("Назву послуги не вказано.");
-            }
-
-            var service = await _context.Services.FirstOrDefaultAsync(s => s.Name == name);
+            var service = await _context.Services.FindAsync(id);
             if (service == null)
-            {
-                return NotFound($"Послугу з назвою \"{name}\" не знайдено.");
-            }
+                return NotFound(new { success = false, message = "Послугу не знайдено" });
 
-            return View(service);
+            service.Name = model.Name;
+            service.Description = model.Description;
+            service.Price = model.Price;
+
+            await _context.SaveChangesAsync();
+            return Json(new { success = true });
         }
 
-        // POST: Services/EditService
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> EditService(Service model)
+        // DELETE: /Services/DeleteService/5
+        [HttpDelete("DeleteService/{id}")]
+        public async Task<IActionResult> DeleteService(int id)
         {
-            if (ModelState.IsValid)
-            {
-                var existingService = await _context.Services.FirstOrDefaultAsync(s => s.Name == model.Name);
-                if (existingService == null)
-                {
-                    return NotFound();
-                }
+            var service = await _context.Services.FindAsync(id);
+            if (service == null)
+                return NotFound(new { success = false, message = "Послугу не знайдено" });
 
-                existingService.Description = model.Description;
-                existingService.Time = model.Time;
-                existingService.Price = model.Price;
+            _context.Services.Remove(service);
+            await _context.SaveChangesAsync();
 
-                await _context.SaveChangesAsync();
-
-                return RedirectToAction(nameof(Index));
-            }
-
-            return View(model);
-        }
-
-        // POST: Services/DeleteService
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteService(string name)
-        {
-            if (!string.IsNullOrEmpty(name))
-            {
-                var service = await _context.Services.FirstOrDefaultAsync(s => s.Name == name);
-                if (service != null)
-                {
-                    _context.Services.Remove(service);
-                    await _context.SaveChangesAsync();
-                }
-            }
-
-            return RedirectToAction(nameof(Index));
+            return Json(new { success = true });
         }
     }
 }

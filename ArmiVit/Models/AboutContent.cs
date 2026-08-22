@@ -8,5 +8,7 @@
         public string AboutText { get; set; } = "Про мене: Мені звати Анжеліка...";
         public string AboutQuote { get; set; } = "Тут ти отримаєш від мене...";
         public string CertificatesTitle { get; set; } = "Мої сертифікати та дипломи";
+        public string Key { get; set; } = string.Empty;
+        public string Content { get; set; } = string.Empty;
     }
 }
