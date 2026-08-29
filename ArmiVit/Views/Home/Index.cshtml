@@ -53,6 +53,34 @@
     </div>
 
     <h2 class="section-title">Популярні товари</h2>
+    <div class="products">
+        @foreach (var product in Model.Products)
+            {
+                @if (product.IsPopular == true)
+              {  <div class="product-card">
+                    @* Тег <a> тепер огортає весь вміст картки *@
+                    <a asp-controller="Home" asp-action="Pigeon" asp-route-id="@product.Id" class="product-item-link">
+                        <div class="img-placeholder">
+                            @if (!string.IsNullOrEmpty(product.ImagePath))
+                            {
+                                <img src="~/images/@product.ImagePath" alt="@product.Name" />
+                            }
+                        </div>
+
+                        <h3>@product.Name</h3>
+                        <p>@product.Description</p>
+
+                        <div class="price">
+                            @product.Price ₴
+                        </div>
+                    </a>
+                </div>}
+            }
+
+
+
+
+    </div>
 
     <!-- ФІЛЬТР ПО ЦІНІ -->
     <div class="price-filter">
