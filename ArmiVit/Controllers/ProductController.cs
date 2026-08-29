@@ -72,7 +72,9 @@ namespace Controllers
                     CategoryId = model.CategoryId,
                     ImagePath = uniqueFileName,
                     Description = model.Description,
-                    IsDeleted = false // Новий товар створюється активним
+                    IsDeleted = false, // Новий товар створюється активним
+                    IsPopular = model.IsPopular,
+
                 };
 
                 _context.Products.Add(product);
@@ -126,6 +128,7 @@ namespace Controllers
                 Price = product.Price,
                 Quantity = product.Quantity,
                 CategoryId = product.CategoryId,
+                IsPopular = product.IsPopular,
                 Description = product.Description,
                 Categories = _context.Categories
                 .Where(x => !x.IsDeleted)
