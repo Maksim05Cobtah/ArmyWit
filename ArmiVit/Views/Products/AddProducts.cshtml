@@ -12,7 +12,6 @@
 
         <form method="post" asp-action="AddProduct" enctype="multipart/form-data">
 
-
             @Html.AntiForgeryToken()
 
             <div class="field">
@@ -23,6 +22,12 @@
             <div class="field">
                 <label>Ціна</label>
                 <input asp-for="Price" type="number" step="0.01" placeholder="₴ 0.00" required />
+            </div>
+
+            <!-- ПОЛЕ ДЛЯ ОПИСУ ПРОДУКТУ -->
+            <div class="field">
+                <label>Опис продукту</label>
+                <textarea asp-for="Description" rows="4" placeholder="Введіть опис товару..."></textarea>
             </div>
 
             <div class="field">
@@ -40,10 +45,10 @@
                     }
                 </select>
             </div>
-            <div  class="field">
-                <label>Популярний</label>
-                <input asp-for ="IsPopular" type="checkbox" />
 
+            <div class="field">
+                <label>Популярний</label>
+                <input asp-for="IsPopular" type="checkbox" />
             </div>
 
             <button type="submit" class="glass-btn">
@@ -56,48 +61,54 @@
 
 </section>
 
-
 <section class="products-container">
 
     <div class="products-grid">
 
         @foreach (var item in Model.Products)
         {
-            @if(item.IsDeleted ==false)
-         {   <div class="product-glass">
+            @if (item.IsDeleted == false)
+            {
+                <div class="product-glass">
 
-                @if (!string.IsNullOrEmpty(item.ImagePath))
-                {
-                    <div class="product-image">
-                        <img src="~/images/@item.ImagePath" />
+                    @if (!string.IsNullOrEmpty(item.ImagePath))
+                    {
+                        <div class="product-image">
+                            <img src="~/images/@item.ImagePath" />
+                        </div>
+                    }
+
+                    <div class="product-content">
+                        <h3>@item.Name</h3>
+
+                        <!-- ВІДОБРАЖЕННЯ ОПИСУ В КАРТЦІ -->
+                        @if (!string.IsNullOrEmpty(item.Description))
+                        {
+                            <p class="product-description">@item.Description</p>
+                        }
+
+                        <div class="price">
+                            @item.Price ₴
+                        </div>
                     </div>
-                }
 
-                <div class="product-content">
-                    <h3>@item.Name</h3>
+                    <div class="product-actions">
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn-edit" title="Редагувати">
+                            <span class="icon">✏️</span>
+                            <span>Редагувати</span>
+                        </a>
 
-                    <div class="price">
-                        @item.Price ₴
+                        <form method="post" asp-action="Delete" asp-route-id="@item.Id" onsubmit="return confirm('Точно видалити цей товар?')">
+                            @Html.AntiForgeryToken()
+                            <button type="submit" class="btn-delete" title="Видалити">
+                                <span class="icon">🗑️</span>
+                                <span>Видалити</span>
+                            </button>
+                        </form>
                     </div>
+
                 </div>
-
-                <div class="product-actions">
-                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn-edit" title="Редагувати">
-                        <span class="icon">✏️</span>
-                        <span>Редагувати</span>
-                    </a>
-
-                    <form method="post" asp-action="Delete" asp-route-id="@item.Id" onsubmit="return confirm('Точно видалити цей товар?')">
-                        @Html.AntiForgeryToken()
-                        <button type="submit" class="btn-delete" title="Видалити">
-                            <span class="icon">🗑️</span>
-                            <span>Видалити</span>
-                        </button>
-                    </form>
-                </div>
-
-            </div>}
-
+            }
         }
 
     </div>
