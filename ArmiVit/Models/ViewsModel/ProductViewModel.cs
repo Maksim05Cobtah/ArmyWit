@@ -12,6 +12,7 @@ namespace ArmiVit.Models.ViewsModel
         public int CategoryId { get; set; }
         public string Description { get; set; }
         public IFormFile? ImageFile { get; set; }
+        public bool IsPopular { get; set; }
 
         public string? SearchTerm { get; set; }
 

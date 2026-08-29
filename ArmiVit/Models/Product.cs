@@ -11,7 +11,7 @@ namespace Models
         public int Quantity { get; set; }
         public string? ImagePath { get; set; }
         public string? Description { get; set; }
-
+        public bool IsPopular { get; set; }
         public Categories Category { get; set; }
 
         public bool IsDeleted { get; set; } = false;
