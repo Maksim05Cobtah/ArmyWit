@@ -1,28 +1,69 @@
-﻿@model ArmiVit.Models.ViewsModel.CategoryViewModel
+﻿@model ArmiVit.Models.ViewsModel.ProductViewModel
 
 @{
-    ViewData["Title"] = "Редагувати категорію";
+    ViewData["Title"] = "Додати товар";
 }
 
 <section class="product-section">
     <div class="glass-card form-glass">
 
-        <h2 class="title">Редагувати категорію</h2>
+        <h2 class="title">Додати новий товар</h2>
 
-        <form method="post" asp-action="Edit">
+        <form method="post" asp-action="Create" enctype="multipart/form-data">
 
             @Html.AntiForgeryToken()
 
-            <!-- прихований Id -->
+            <!-- Приховане поле Id для випадку редагування -->
             <input type="hidden" asp-for="Id" />
 
             <div class="field">
-                <label>Назва категорії</label>
-                <input asp-for="Name"  reqired/>
+                <label>Назва товару</label>
+                <input asp-for="Name" required />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <div class="field">
+                <label>Ціна (₴)</label>
+                <input asp-for="Price" type="number" step="0.01" required />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+
+            <div class="field">
+                <label>Кількість на складі</label>
+                <input asp-for="Quantity" type="number" required />
+                <span asp-validation-for="Quantity" class="text-danger"></span>
+            </div>
+
+            <div class="field">
+                <label>Категорія</label>
+                <select asp-for="CategoryId" asp-items="@(new SelectList(Model.Categories, "Id", "Name"))" required>
+                    <option value="">-- Оберіть категорію --</option>
+                </select>
+                <span asp-validation-for="CategoryId" class="text-danger"></span>
+            </div>
+
+            <!-- ПОЛЕ ДЛЯ ВВЕДЕННЯ ОПИСУ -->
+            <div class="field">
+                <label>Опис товару</label>
+                <textarea asp-for="Description" rows="5" placeholder="Введіть детальний опис товару..."></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+
+            <div class="field">
+                <label>Зображення товару</label>
+                <input asp-for="ImageFile" type="file" accept="image/*" />
+                <span asp-validation-for="ImageFile" class="text-danger"></span>
+            </div>
+
+            <div class="field checkbox-field">
+                <label>
+                    <input asp-for="IsPopular" type="checkbox" />
+                    Популярний товар
+                </label>
             </div>
 
             <button type="submit" class="glass-btn">
-                Зберегти
+                Зберегти товар
             </button>
 
         </form>
