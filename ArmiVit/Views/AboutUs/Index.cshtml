@@ -1,0 +1,22 @@
+﻿@model ArmiVit.Models.ViewsModel.AboutMeViewModel;
+
+<form class="about-form" asp-controller="AboutUs" asp-action="SaveInfo" enctype="multipart/form-data">
+
+    <div class="form-group">
+        <label>Про мене</label>
+        <input type="text" placeholder="Розкажіть про себе..." asp-for="AboutMe" />
+    </div>
+
+    <div class="form-group">
+        <label>Досвід</label>
+        <input type="text" placeholder="Ваш досвід..." asp-for="Experience" />
+    </div>
+
+    <div class="form-group">
+        <label>Зображення</label>
+        <input type="file" accept="image/*" asp-for="MainImage"/>
+    </div>
+
+    <button type="submit">Зберегти</button>
+
+</form>

@@ -301,3 +301,144 @@ section {
   }
 }
 }
+
+
+
+/* ================= ABOUT FORM ================= */
+
+.about-form {
+    max-width: 650px;
+    margin: 60px auto;
+    padding: 45px;
+    border-radius: 30px;
+    backdrop-filter: blur(35px);
+    -webkit-backdrop-filter: blur(35px);
+    background: linear-gradient( 135deg, rgba(255,255,255,0.25), rgba(255,255,255,0.10), rgba(255,255,255,0.25) );
+    border: 1px solid rgba(255,255,255,0.4);
+    box-shadow: 0 25px 80px rgba(100,70,200,0.35), inset 0 0 30px rgba(255,255,255,0.2);
+    animation: gradientShift 6s ease infinite;
+}
+
+    /* ================= FORM GROUP ================= */
+
+    .about-form .form-group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 25px;
+    }
+
+    /* ================= LABEL ================= */
+
+    .about-form label {
+        font-size: 14px;
+        font-weight: 700;
+        color: #3e267a;
+        margin-bottom: 10px;
+        letter-spacing: 0.3px;
+    }
+
+    /* ================= INPUT ================= */
+
+    .about-form input[type="text"],
+    .about-form textarea {
+        width: 100%;
+        padding: 16px 20px;
+        border-radius: 22px;
+        background: rgba(255,255,255,0.35);
+        border: 1px solid rgba(255,255,255,0.4);
+        outline: none;
+        font-family: 'Inter', sans-serif;
+        font-size: 15px;
+        font-weight: 500;
+        color: #2f1e66;
+        transition: all 0.3s ease;
+        box-shadow: inset 0 1px 1px rgba(255,255,255,0.15), 0 6px 18px rgba(120,90,200,0.08);
+    }
+
+        .about-form input::placeholder,
+        .about-form textarea::placeholder {
+            color: rgba(62,38,122,0.55);
+        }
+
+        /* ================= FOCUS ================= */
+
+        .about-form input[type="text"]:focus,
+        .about-form textarea:focus {
+            background: rgba(255,255,255,0.55);
+            border-color: #9b7dff;
+            transform: translateY(-2px);
+            box-shadow: 0 0 0 4px rgba(155,125,255,0.15), 0 14px 35px rgba(130,90,255,0.18);
+        }
+
+    /* ================= FILE INPUT ================= */
+
+    .about-form input[type="file"] {
+        width: 100%;
+        padding: 15px;
+        border-radius: 22px;
+        background: rgba(255,255,255,0.35);
+        border: 1px solid rgba(255,255,255,0.4);
+        color: #3e267a;
+        font-size: 14px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+        .about-form input[type="file"]:hover {
+            background: rgba(255,255,255,0.55);
+            border-color: #9b7dff;
+        }
+
+        .about-form input[type="file"]::file-selector-button {
+            padding: 10px 18px;
+            margin-right: 15px;
+            border: none;
+            border-radius: 14px;
+            background: linear-gradient(135deg, #a882ff, #ffcfa8);
+            color: #2f1e66;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+            .about-form input[type="file"]::file-selector-button:hover {
+                transform: scale(1.05);
+            }
+
+    /* ================= SUBMIT BUTTON ================= */
+
+    .about-form button[type="submit"] {
+        width: 100%;
+        padding: 18px;
+        margin-top: 10px;
+        border: none;
+        border-radius: 24px;
+        background: linear-gradient(135deg, #a882ff, #ffcfa8);
+        color: #2f1e66;
+        font-family: 'Inter', sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 14px 35px rgba(130,90,255,0.25);
+    }
+
+        .about-form button[type="submit"]:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(130,90,255,0.35);
+        }
+
+/* ================= MOBILE ================= */
+
+@media(max-width: 768px) {
+    .about-form {
+        width: 94%;
+        padding: 25px;
+        margin: 35px auto;
+    }
+
+        .about-form input[type="text"],
+        .about-form textarea {
+            padding: 14px 16px;
+        }
+}

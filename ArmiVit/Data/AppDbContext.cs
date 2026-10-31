@@ -13,5 +13,7 @@ namespace Data
         public DbSet<Product> Products { get; set; }
 
         public DbSet<Categories> Categories { get; set; }
+        public DbSet<Images> Images { get; set; }
+        public DbSet<AboutPage> AboutPages { get; set; }
     }
 }
