@@ -8,6 +8,7 @@
 
         public string ExperienceText1 { get; set; }
 
-        public Images Images { get; set; } 
+        public Images Images { get; set; }
+
     }
 }

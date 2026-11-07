@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ArmiVit.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20261031085052_SDAD")]
-    partial class SDAD
+    [Migration("20261107075612__IsDeleted")]
+    partial class _IsDeleted
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -102,10 +102,6 @@ namespace ArmiVit.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("AboutMeText2")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("ExperienceText1")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -135,6 +131,31 @@ namespace ArmiVit.Migrations
                     b.ToTable("Categories");
                 });
 
+            modelBuilder.Entity("ArmiVit.Models.GetIn", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("ServiceId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Texts")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ServiceId");
+
+                    b.ToTable("GetIns");
+                });
+
             modelBuilder.Entity("ArmiVit.Models.Images", b =>
                 {
                     b.Property<int>("id")
@@ -156,6 +177,51 @@ namespace ArmiVit.Migrations
                         .IsUnique();
 
                     b.ToTable("Images");
+                });
+
+            modelBuilder.Entity("ArmiVit.Models.Result", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("ServiceId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Texts")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ServiceId");
+
+                    b.ToTable("Results");
+                });
+
+            modelBuilder.Entity("ArmiVit.Models.Service", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Price")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Services");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -331,6 +397,17 @@ namespace ArmiVit.Migrations
                     b.ToTable("Products");
                 });
 
+            modelBuilder.Entity("ArmiVit.Models.GetIn", b =>
+                {
+                    b.HasOne("ArmiVit.Models.Service", "Service")
+                        .WithMany("GetIns")
+                        .HasForeignKey("ServiceId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Service");
+                });
+
             modelBuilder.Entity("ArmiVit.Models.Images", b =>
                 {
                     b.HasOne("ArmiVit.Models.AboutPage", null)
@@ -338,6 +415,17 @@ namespace ArmiVit.Migrations
                         .HasForeignKey("ArmiVit.Models.Images", "AboutPageId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("ArmiVit.Models.Result", b =>
+                {
+                    b.HasOne("ArmiVit.Models.Service", "Service")
+                        .WithMany("Results")
+                        .HasForeignKey("ServiceId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Service");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -411,6 +499,13 @@ namespace ArmiVit.Migrations
             modelBuilder.Entity("ArmiVit.Models.Categories", b =>
                 {
                     b.Navigation("Products");
+                });
+
+            modelBuilder.Entity("ArmiVit.Models.Service", b =>
+                {
+                    b.Navigation("GetIns");
+
+                    b.Navigation("Results");
                 });
 #pragma warning restore 612, 618
         }

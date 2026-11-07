@@ -17,6 +17,104 @@
         <input type="file" accept="image/*" asp-for="MainImage"/>
     </div>
 
+    <h2>Послуги</h2>
+
+    <div>
+        <input type="button" id="addSpecification"> Додати послугу </input>
+        <div id="specificationsContainer"></div>
+    </div>
+
+
     <button type="submit">Зберегти</button>
 
 </form>
+
+<script>
+    const services = @Html.Raw(Model?.Services != null ? Json.Serialize(Model.Services) : "[]");
+
+    let siteind = services.length;
+
+    const addSpecificationButton = document.getElementById("addSpecification");
+    const specificationsContainer = document.getElementById("specificationsContainer");
+
+
+
+    for (let i = 0; i < services.length; i++) {
+        const service = services[i];
+
+        if (service.isDeleted == false){
+            continue;
+        }
+
+        const specification = document.createElement("div");
+        specification.className = "specification-row";
+
+        specification.innerHTML = `
+            <section class="product-section">
+                <h3>Контактна інформація</h3>
+                <div class="product-field">
+                    <label>Включає</label>
+                    <a href="#" class="add-propiries-GetIns" id="">+</a>
+                </div>
+                <div class="product-field">
+                    <label> Результат </label>
+                    <a href="#" class="add-propiries-Results" id="">+</a>
+                </div>
+                <a href="#" class="delete-specification delete-dynamic-row">×</a>
+            </section>
+        `;
+
+        specificationsContainer.appendChild(specification);
+
+    }
+
+    addSpecificationButton.addEventListener("click", function () {
+        const specification = document.createElement("div");
+        specification.className = "specification-row";
+
+        specification.innerHTML = `
+            <section class="product-section">
+                <h3>Контактна інформація</h3>
+                <div class="product-field"id="product-field-for-gins">
+                    <label>Включає</label>
+                    <input type="button" href="#" class="add-propiries-GetIns" id="add-propiries-GetIns">+</input>
+                </div>
+                <div class="product-field"id="product-field-for-res">
+                    <label> Результат </label>
+                    <input type="button" href="#" class="add-propiries-Results" id="add-propiries-Results">+</input>
+                </div>
+                <input type="button" href="#" class="delete-specification delete-dynamic-row">×</input>
+            </section>
+        `;
+
+        specificationsContainer.appendChild(specification);
+        siteind++;
+         document.getElementById("add-propiries-GetIns").addEventListener("click", function (){
+        const container = document.getElementById("product-field-for-gins");
+        const newRow = document.createElement("div");
+        newRow.className = "specification-row";
+        newRow.innerHTML = `<input name="Services.GetIns[${siteind}].Texts" />`;
+        container.appendChild(newRow);
+    })
+
+     document.getElementById("add-propiries-Results").addEventListener("click", function (){
+       const container = document.getElementById("product-field-for-res");
+        const newRow = document.createElement("div");
+        newRow.className = "specification-row";
+        newRow.innerHTML = `<input name="Services.Results[0].Texts" />`;
+        container.appendChild(newRow);
+    })
+    });
+
+   
+
+
+     document.addEventListener("click", function (e) {
+        if (e.target.classList.contains("delete-dynamic-row")) {
+            e.preventDefault();
+            const row = e.target.closest(".specification-row");
+            if (row) {
+                row.remove();
+            }
+        }})
+</script>

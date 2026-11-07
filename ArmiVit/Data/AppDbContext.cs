@@ -15,5 +15,9 @@ namespace Data
         public DbSet<Categories> Categories { get; set; }
         public DbSet<Images> Images { get; set; }
         public DbSet<AboutPage> AboutPages { get; set; }
+        public DbSet<Service> Services { get; set; }
+        public DbSet<Result> Results { get; set; }
+        public DbSet<GetIn> GetIns { get; set; }
     }
 }
+

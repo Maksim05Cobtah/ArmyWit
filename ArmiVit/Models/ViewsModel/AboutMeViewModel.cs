@@ -10,5 +10,7 @@ namespace ArmiVit.Models.ViewsModel
 
         public string AboutMe { get; set; }
         public string Experience { get; set; }
+
+        public Service Services { get; set; }
     }
 }

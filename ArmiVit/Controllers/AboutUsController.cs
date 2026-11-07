@@ -52,12 +52,14 @@ namespace ArmiVit.Controllers
             if (_context.AboutPages.Any())
             {
                 var aboutPage = await _context.AboutPages.OrderBy(x => x.Id).Include(a => a.Images).LastOrDefaultAsync();
+           //     var services = _context.Services.Where(x => x.IsDeleted != true).ToList();
 
                 return View(new AboutMeViewModel
                 {
                     AboutMe = aboutPage.AboutMeText1,
                     Experience = aboutPage.ExperienceText1,
-                    ImagePath = aboutPage.Images.ImgPath
+                    ImagePath = aboutPage.Images.ImgPath,
+                   
                 });
             }
             return View();

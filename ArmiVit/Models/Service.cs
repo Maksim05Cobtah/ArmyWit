@@ -2,12 +2,10 @@
 {
     public class Service
     {
-        public string Name { get; set; }
-
-        public string Description { get; set; }
-
-        public int Time { get; set; }
-
-        public decimal Price { get; set; }
+        public int Id { get; set; }
+        public List<Result> Results { get; set; } = new List<Result>();
+        public List<GetIn> GetIns { get; set; } = new List<GetIn>();
+        public string Price { get; set; }
+        public bool IsDeleted { get; set; }
     }
 }

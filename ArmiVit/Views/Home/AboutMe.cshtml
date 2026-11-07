@@ -59,59 +59,6 @@
 
         <h2 class="services-title">ПОСЛУГИ</h2>
 
-        @foreach (var service in Model.Services)
-        {
-
-            <div class="service-name-box">
-
-                <span class="service-name">
-                    @service.Name
-                </span>
-
-                <span class="service-time">
-                    @service.Time ХВ
-                </span>
-
-                <p class="service-description">
-                    @service.Description
-                </p>
-
-            </div>
-
-
-            <div class="receive-box">
-
-                <h2 class="receive-title">ТИ ОТРИМАЄШ:</h2>
-
-                <ul>
-
-
-                </ul>
-
-            </div>
-
-
-            <div class="result-box">
-
-                <h2 class="result-title">РЕЗУЛЬТАТ:</h2>
-
-                <ul>
-
-                  
-
-                </ul>
-
-            </div>
-
-
-            <div class="service-price">
-
-                ЦІНА: @service.Price ГРН
-
-            </div>
-
-        }
-
     </section>
 
 
