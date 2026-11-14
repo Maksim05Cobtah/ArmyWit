@@ -209,14 +209,18 @@ namespace ArmiVit.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int>("AboutPageId")
+                        .HasColumnType("int");
+
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
                     b.Property<string>("Price")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("AboutPageId");
 
                     b.ToTable("Services");
                 });
@@ -425,6 +429,17 @@ namespace ArmiVit.Migrations
                     b.Navigation("Service");
                 });
 
+            modelBuilder.Entity("ArmiVit.Models.Service", b =>
+                {
+                    b.HasOne("ArmiVit.Models.AboutPage", "AboutPage")
+                        .WithMany("Services")
+                        .HasForeignKey("AboutPageId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("AboutPage");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -491,6 +506,8 @@ namespace ArmiVit.Migrations
                 {
                     b.Navigation("Images")
                         .IsRequired();
+
+                    b.Navigation("Services");
                 });
 
             modelBuilder.Entity("ArmiVit.Models.Categories", b =>

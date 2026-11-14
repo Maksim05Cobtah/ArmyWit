@@ -4,17 +4,17 @@
 
     <div class="form-group">
         <label>Про мене</label>
-        <input type="text" placeholder="Розкажіть про себе..." asp-for="AboutMe" />
+        <input type="text" placeholder="Розкажіть про себе..." asp-for="AboutMe" required />
     </div>
 
     <div class="form-group">
         <label>Досвід</label>
-        <input type="text" placeholder="Ваш досвід..." asp-for="Experience" />
+        <input type="text" placeholder="Ваш досвід..." asp-for="Experience" required />
     </div>
 
     <div class="form-group">
         <label>Зображення</label>
-        <input type="file" accept="image/*" asp-for="MainImage"/>
+        <input type="file" accept="image/*" asp-for="MainImage" required />
     </div>
 
     <h2>Послуги</h2>
@@ -31,90 +31,122 @@
 
 <script>
     const services = @Html.Raw(Model?.Services != null ? Json.Serialize(Model.Services) : "[]");
-
-    let siteind = services.length;
+    console.log(services)
 
     const addSpecificationButton = document.getElementById("addSpecification");
     const specificationsContainer = document.getElementById("specificationsContainer");
 
-
+    let serviceslen = services.length;
 
     for (let i = 0; i < services.length; i++) {
         const service = services[i];
 
-        if (service.isDeleted == false){
+        if (service.isDeleted) {
             continue;
         }
 
         const specification = document.createElement("div");
         specification.className = "specification-row";
 
-        specification.innerHTML = `
+        specification.innerHTML += `
             <section class="product-section">
-                <h3>Контактна інформація</h3>
-                <div class="product-field">
-                    <label>Включає</label>
-                    <a href="#" class="add-propiries-GetIns" id="">+</a>
+                <h3>Послуга #${i + 1}</h3>
+                <div class="product-field getins-container">`
+                 for (let i = 0; i < service.getIns.length; i++) {
+       specification.innerHTML += `
+           <p>${service.getIns[i].texts}</p>`
+        }
+    specification.innerHTML +=
+                    `<label>Включає</label>
+                    <button type="button" class="add-propiries-GetIns" data-service-index="${i}">+</button>
                 </div>
-                <div class="product-field">
-                    <label> Результат </label>
-                    <a href="#" class="add-propiries-Results" id="">+</a>
+                <div class="product-field results-container">
+                    <label>Результат</label>
+                    <button type="button" class="add-propiries-Results" data-service-index="${i}">+</button>
                 </div>
-                <a href="#" class="delete-specification delete-dynamic-row">×</a>
+                <button type="button" class="delete-specification delete-dynamic-row">×</button>
             </section>
-        `;
+        `; 
 
         specificationsContainer.appendChild(specification);
-
     }
 
+   
+
     addSpecificationButton.addEventListener("click", function () {
+        const currentIndex = serviceslen;
+
+        let getInIndex = 0;
+        let resultIndex = 0;
+
         const specification = document.createElement("div");
         specification.className = "specification-row";
 
         specification.innerHTML = `
             <section class="product-section">
-                <h3>Контактна інформація</h3>
-                <div class="product-field"id="product-field-for-gins">
+                <h3>Нова послуга</h3>
+                <input name="Services[${currentIndex}].Price" required placeholder="Ціна" />
+                <div class="product-field getins-container">
                     <label>Включає</label>
-                    <input type="button" href="#" class="add-propiries-GetIns" id="add-propiries-GetIns">+</input>
+                    <button type="button" class="add-propiries-GetIns" data-service-index="${currentIndex}">+</button>
                 </div>
-                <div class="product-field"id="product-field-for-res">
-                    <label> Результат </label>
-                    <input type="button" href="#" class="add-propiries-Results" id="add-propiries-Results">+</input>
+                <div class="product-field results-container">
+                    <label>Результат</label>
+                    <button type="button" class="add-propiries-Results" data-service-index="${currentIndex}">+</button>
                 </div>
-                <input type="button" href="#" class="delete-specification delete-dynamic-row">×</input>
+                <button type="button" class="delete-specification delete-dynamic-row">×</button>
             </section>
         `;
 
         specificationsContainer.appendChild(specification);
-        siteind++;
-         document.getElementById("add-propiries-GetIns").addEventListener("click", function (){
-        const container = document.getElementById("product-field-for-gins");
-        const newRow = document.createElement("div");
-        newRow.className = "specification-row";
-        newRow.innerHTML = `<input name="Services.GetIns[${siteind}].Texts" />`;
-        container.appendChild(newRow);
-    })
-
-     document.getElementById("add-propiries-Results").addEventListener("click", function (){
-       const container = document.getElementById("product-field-for-res");
-        const newRow = document.createElement("div");
-        newRow.className = "specification-row";
-        newRow.innerHTML = `<input name="Services.Results[0].Texts" />`;
-        container.appendChild(newRow);
-    })
+        serviceslen++; 
     });
 
-   
-
-
-     document.addEventListener("click", function (e) {
+    document.addEventListener("click", function (e) {
         if (e.target.classList.contains("delete-dynamic-row")) {
             e.preventDefault();
             const row = e.target.closest(".specification-row");
             if (row) {
                 row.remove();
             }
-        }})
+        }
+
+        if (e.target.classList.contains("add-propiries-GetIns")) {
+            e.preventDefault();
+            const serviceIndex = e.target.getAttribute("data-service-index");
+            const section = e.target.closest(".product-section");
+            const container = section.querySelector(".getins-container");
+
+            const currentCount = container.querySelectorAll("input").length;
+
+            const newRow = document.createElement("div");
+            newRow.className = "specification-row-item";
+            newRow.innerHTML = `<input name="Services[${serviceIndex}].GetIns[${currentCount}].Texts" required placeholder="Включає..." />`;
+            container.insertBefore(newRow, e.target); 
+        }
+
+        if (e.target.classList.contains("add-propiries-Results")) {
+            e.preventDefault();
+            const serviceIndex = e.target.getAttribute("data-service-index");
+            const section = e.target.closest(".product-section");
+            const container = section.querySelector(".results-container");
+
+            const currentCount = container.querySelectorAll("input").length;
+
+            const newRow = document.createElement("div");
+            newRow.className = "specification-row-item";
+            newRow.innerHTML = `<input name="Services[${serviceIndex}].Results[${currentCount}].Texts" required placeholder="Результат..." />`;
+            container.insertBefore(newRow, e.target);
+        }
+    });
+
+        document.addEventListener("click", function (e) {
+        if (e.target.classList.contains("delete-dynamic-row")) {
+            e.preventDefault();
+            const row = e.target.closest(".specification-row");
+            if (row) {
+                row.remove();
+            }
+        }
+    });
 </script>

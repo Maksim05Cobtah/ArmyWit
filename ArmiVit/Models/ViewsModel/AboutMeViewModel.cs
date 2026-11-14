@@ -1,6 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
-
-namespace ArmiVit.Models.ViewsModel
+﻿namespace ArmiVit.Models.ViewsModel
 {
     public class AboutMeViewModel
     {
@@ -10,7 +8,6 @@ namespace ArmiVit.Models.ViewsModel
 
         public string AboutMe { get; set; }
         public string Experience { get; set; }
-
-        public Service Services { get; set; }
+        public List<Service> Services { get; set; } = new List<Service>();
     }
 }

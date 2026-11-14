@@ -3,6 +3,7 @@ using ArmiVit.Models.ViewsModel;
 using Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Runtime.InteropServices;
 
 namespace ArmiVit.Controllers
 {
@@ -51,18 +52,56 @@ namespace ArmiVit.Controllers
         {
             if (_context.AboutPages.Any())
             {
-                var aboutPage = await _context.AboutPages.OrderBy(x => x.Id).Include(a => a.Images).LastOrDefaultAsync();
-           //     var services = _context.Services.Where(x => x.IsDeleted != true).ToList();
-
+                var aboutPage = await _context.AboutPages.Include(a => a.Images).Include(a => a.Services).ThenInclude(r=>r.Results).Include(a => a.Services).ThenInclude(r=>r.GetIns).OrderBy(x => x.Id).LastOrDefaultAsync();
+                //     var services = _context.Services.Where(x => x.IsDeleted != true).ToList();
+                await _context.SaveChangesAsync();
                 return View(new AboutMeViewModel
                 {
                     AboutMe = aboutPage.AboutMeText1,
                     Experience = aboutPage.ExperienceText1,
                     ImagePath = aboutPage.Images.ImgPath,
-                   
-                });
-            }
+                    Services = aboutPage.Services
+            });
+
+        }
+            var conf = new AboutPage
+            {
+                AboutMeText1 = String.Empty,
+                ExperienceText1 = String.Empty,
+                Services = new List<Service>(),
+            };
+            _context.AboutPages.Add(conf);
+            await _context.SaveChangesAsync();
             return View();
+        }
+
+        [HttpPost]
+        public async Task<int> GetLastSaveId()
+        {
+            var lastsave = await _context.AboutPages.OrderBy(x => x.Id).LastAsync();
+            return lastsave.Id;
+        }
+
+
+        [HttpPost]
+        public async Task<IActionResult> SaveServices(List<Service> services)
+        {
+            foreach (var service in services)
+            {
+                service.AboutPageId = await GetLastSaveId();
+                if (service.Id == 0)
+                {
+                    _context.Services.Add(service);
+                }
+                else
+                {
+                    _context.Services.Update(service);
+                }
+            }
+
+            
+
+            return Ok();
         }
 
         [HttpPost]
@@ -70,21 +109,23 @@ namespace ArmiVit.Controllers
         {
 
             var img = await SaveImageAsync(model.MainImage, null, "ABTUS");
+
+            await SaveServices(model.Services);
             
             var conf = new AboutPage
             {
                 AboutMeText1 = model.AboutMe,
-                ExperienceText1 = model.Experience
-                
+                ExperienceText1 = model.Experience,
+                Services = model.Services,
             };
             _context.AboutPages.Add(conf);
-          await  _context.SaveChangesAsync();
+       
 
             var aboutPage = _context.AboutPages.OrderBy(x=>x.Id).LastOrDefaultAsync();
 
             conf.Images = new Images { ImgPath = img, AboutPageId = aboutPage.Id };
 
-           await _context.SaveChangesAsync();
+ 
 
             return RedirectToAction("Index");
         }

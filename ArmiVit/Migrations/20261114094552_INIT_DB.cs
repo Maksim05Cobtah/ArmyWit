@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace ArmiVit.Migrations
 {
     /// <inheritdoc />
-    public partial class _IsDeleted : Migration
+    public partial class INIT_DB : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -79,20 +79,6 @@ namespace ArmiVit.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Services",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Price = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Services", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Images",
                 columns: table => new
                 {
@@ -106,6 +92,27 @@ namespace ArmiVit.Migrations
                     table.PrimaryKey("PK_Images", x => x.id);
                     table.ForeignKey(
                         name: "FK_Images_AboutPages_AboutPageId",
+                        column: x => x.AboutPageId,
+                        principalTable: "AboutPages",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Services",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    AboutPageId = table.Column<int>(type: "int", nullable: false),
+                    Price = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Services", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Services_AboutPages_AboutPageId",
                         column: x => x.AboutPageId,
                         principalTable: "AboutPages",
                         principalColumn: "Id",
@@ -271,8 +278,8 @@ namespace ArmiVit.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Texts = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ServiceId = table.Column<int>(type: "int", nullable: false),
+                    Texts = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
@@ -345,6 +352,11 @@ namespace ArmiVit.Migrations
                 name: "IX_Results_ServiceId",
                 table: "Results",
                 column: "ServiceId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Services_AboutPageId",
+                table: "Services",
+                column: "AboutPageId");
         }
 
         /// <inheritdoc />
@@ -384,13 +396,13 @@ namespace ArmiVit.Migrations
                 name: "AspNetUsers");
 
             migrationBuilder.DropTable(
-                name: "AboutPages");
-
-            migrationBuilder.DropTable(
                 name: "Categories");
 
             migrationBuilder.DropTable(
                 name: "Services");
+
+            migrationBuilder.DropTable(
+                name: "AboutPages");
         }
     }
 }
