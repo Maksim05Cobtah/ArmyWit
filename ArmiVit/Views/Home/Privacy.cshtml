@@ -1,6 +1,41 @@
-﻿@{
-    ViewData["Title"] = "Privacy Policy";
-}
-<h1>@ViewData["Title"]</h1>
+﻿@using ArmiVit.Models.ViewsModel
+@model AboutPageViewModel
 
-<p>Use this page to detail your site's privacy policy.</p>
+@{
+    ViewData["Title"] = "Про мене";
+}
+
+<section class="about-page">
+
+    <!-- Верхній блок -->
+    <div class="about-top">
+
+        <div class="about-main-title">
+            <h1 class="mainH1">ПРО МЕНЕ</h1>
+        </div>
+        <div class="MainDiv">
+            <div class="about-photo">
+            
+                <img src="/images/hhhhhhh.PNG" />
+            </div>
+
+            <div class="about-main-text">
+                <p>@Model.About.AboutMeText1</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Блок досвіду -->
+    <div class="about-experience">
+
+        <div class="about-main-title">
+            <h2 class="mainH2">ДОСВІД</h2>
+        </div>
+
+        <div class="about-experience-text">
+            <p>@Model.About.ExperienceText1</p>
+        </div>
+
+    </div>
+
+</section>

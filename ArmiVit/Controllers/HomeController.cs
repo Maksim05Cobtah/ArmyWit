@@ -3,6 +3,7 @@ using ArmiVit.Models.ViewsModel;
 using Microsoft.AspNetCore.Mvc;
 using Data;
 using System.Diagnostics;
+using Microsoft.EntityFrameworkCore;
 
 namespace ArmiVit.Controllers
 {
@@ -92,7 +93,7 @@ namespace ArmiVit.Controllers
 
             ViewBag.CategoryName = category.Name;
 
-            return View(model);
+            return View(model); 
         }
 
         public IActionResult AboutMe()
@@ -102,7 +103,14 @@ namespace ArmiVit.Controllers
 
         public IActionResult Privacy()
         {
-            return View();
+            var about = _context.AboutPages.Include(c => c.Images).FirstOrDefault();
+            var aboutme = new AboutPageViewModel()
+            {
+                About = about
+
+            };
+
+            return View(aboutme);
         }
 
         [ResponseCache(

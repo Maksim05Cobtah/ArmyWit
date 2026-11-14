@@ -2,7 +2,13 @@
 
 /* ОБГОРТКА СТОРІНКИ */
 .about-page {
-    background: transparent; /* фон body вже текстурований */
+    background-image: linear-gradient(rgb(255 189 173 / 20%), rgb(255 140 140 / 18%)), url(/images/images.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 50px;
+    border-radius: 20px;
+    margin-top: 4vh; /* фон body вже текстурований */
 }
 
 /* КОНТЕЙНЕР */
@@ -284,6 +290,9 @@ section {
   color: #b3afc4;
 }
 
+
+   
+
 /* Адаптивність для мобільних */
 @media (max-width: 700px) {
   .programs {
@@ -302,10 +311,42 @@ section {
 }
 }
 
+.about-main-title {
+    background-color: rgba(255,255,255,.18);
+    padding: 20px;
+    border-radius: 10px;
+}
 
+.about-main-text {
+    margin-left: 1vw;
+    margin-top: 2vh;
+    font-size: 1.5rem;
+    width: 70%;
+}
 
+.mainH1 {
+    font-weight: 900;
+}
+
+.mainH2{
+    font-weight: 900;
+}
+
+.about-photo{
+    width:28%;
+    margin-top: 2vh;
+    margin-bottom:2vh;
+}
+
+.MainDiv{
+    display:flex;
+}
+
+.about-experience-text{
+    font-size: 1.5rem;
+    margin-left: 1vh;
+}
 /* ================= ABOUT FORM ================= */
-
 .about-form {
     max-width: 650px;
     margin: 60px auto;
