@@ -1,4 +1,251 @@
+/* =========================================================
+   ФОРМА: стилі для динамічних полів і кнопок «Послуги»
+   ДОДАЙ В КІНЕЦЬ CSS-файлу, де вже є блок .about-form.
+   HTML і JS не змінюються.
+   ========================================================= */
 
+/* ---------- Заголовок «Послуги» ---------- */
+.about-form h2 {
+    margin: 36px 0 18px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: .2px;
+    color: #3e267a;
+}
+
+/* ---------- Кнопка «Додати послугу» ----------
+   У розмітці це порожній <input type="button"> + текст поруч.
+   Тому: input розтягнуто на всю ширину і зроблено прозорим клікабельним шаром,
+   а вигляд кнопки (пунктирна «пілюля») малює ::before батьківського блоку.   */
+.about-form > div:has(> #addSpecification) {
+    position: relative;
+    isolation: isolate;
+    font: 700 16px/56px 'Inter', sans-serif; /* line-height 56px = висота кнопки */
+    text-align: center;
+    color: #3e267a;
+}
+
+    .about-form > div:has(> #addSpecification)::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 56px;
+        z-index: -1;
+        box-sizing: border-box;
+        border-radius: 24px;
+        border: 2px dashed rgba(155, 125, 255, .7);
+        background: rgba(255, 255, 255, .35);
+        transition: all .3s ease;
+    }
+
+.about-form #addSpecification {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: 56px;
+    margin: 0 0 -56px; /* текст «Додати послугу» опиняється під ним */
+    padding: 0;
+    border: 0;
+    background: transparent;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+.about-form > div:has(> #addSpecification:hover)::before {
+    background: linear-gradient(135deg, #a882ff, #ffcfa8);
+    border-color: transparent;
+    transform: translateY(-2px);
+    box-shadow: 0 14px 35px rgba(130, 90, 255, .3);
+}
+
+.about-form > div:has(> #addSpecification:active)::before {
+    transform: scale(.99);
+}
+
+.about-form > div:has(> #addSpecification:focus-visible)::before {
+    outline: 3px solid rgba(155, 125, 255, .5);
+    outline-offset: 3px;
+}
+
+/* Контейнер із послугами (скидає успадкований line-height від кнопки) */
+.about-form #specificationsContainer {
+    display: grid;
+    gap: 20px;
+    margin-top: 22px;
+    font: 400 15px/1.45 'Inter', sans-serif;
+    text-align: left;
+}
+
+/* ---------- Картка однієї послуги ---------- */
+.about-form .product-section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 26px 24px 24px;
+    border-radius: 26px;
+    background: linear-gradient(135deg, rgba(255,255,255,.38), rgba(255,255,255,.18));
+    border: 1px solid rgba(255, 255, 255, .55);
+    box-shadow: 0 14px 40px rgba(110, 80, 200, .15), inset 0 0 20px rgba(255, 255, 255, .2);
+}
+
+    .about-form .product-section h3 {
+        margin: 0;
+        padding-right: 48px; /* місце під кнопку «×» */
+        font-family: 'Inter', sans-serif;
+        font-size: 1.15rem;
+        font-weight: 800;
+        line-height: 1.2;
+        color: #3e267a;
+    }
+
+    /* ---------- Поля (Ціна, Включає..., Результат...) ---------- */
+    .about-form .product-section input {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 14px 18px;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, .4);
+        border: 1px solid rgba(255, 255, 255, .5);
+        outline: none;
+        font-family: 'Inter', sans-serif;
+        font-size: 15px;
+        font-weight: 500;
+        color: #2f1e66;
+        transition: all .3s ease;
+        box-shadow: inset 0 1px 1px rgba(255,255,255,.15), 0 6px 18px rgba(120,90,200,.08);
+    }
+
+        .about-form .product-section input::placeholder {
+            color: rgba(62, 38, 122, .55);
+        }
+
+        .about-form .product-section input:focus {
+            background: rgba(255, 255, 255, .6);
+            border-color: #9b7dff;
+            transform: translateY(-2px);
+            box-shadow: 0 0 0 4px rgba(155,125,255,.15), 0 14px 35px rgba(130,90,255,.18);
+        }
+
+/* ---------- Блоки «Включає» / «Результат» ---------- */
+.about-form .product-field {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+    .about-form .product-field label {
+        order: -1; /* підпис завжди зверху */
+        margin: 0;
+        font-size: 14px;
+        font-weight: 700;
+        color: #3e267a;
+    }
+
+.about-form .specification-row-item {
+    margin: 0;
+}
+
+/* Уже збережені пункти (<p>) — як «чіпси» */
+.about-form .product-field p {
+    margin: 0;
+    padding: 11px 16px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, .5);
+    border: 1px solid rgba(255, 255, 255, .6);
+    font-size: 14.5px;
+    font-weight: 500;
+    color: #2f1e66;
+}
+
+/* ---------- Кнопки «+» (широкі, пунктирні) ---------- */
+.about-form .add-propiries-GetIns,
+.about-form .add-propiries-Results {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 46px;
+    padding: 0 0 3px;
+    border: 2px dashed rgba(155, 125, 255, .65);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, .3);
+    font: 600 26px/1 'Inter', sans-serif;
+    color: #6b45d6;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+    .about-form .add-propiries-GetIns:hover,
+    .about-form .add-propiries-Results:hover {
+        background: linear-gradient(135deg, #a882ff, #ffcfa8);
+        border-color: transparent;
+        color: #2f1e66;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 24px rgba(130, 90, 255, .25);
+    }
+
+    .about-form .add-propiries-GetIns:focus-visible,
+    .about-form .add-propiries-Results:focus-visible,
+    .about-form .delete-specification:focus-visible {
+        outline: 3px solid rgba(155, 125, 255, .5);
+        outline-offset: 2px;
+    }
+
+/* ---------- Кнопка видалення «×» ---------- */
+.about-form .delete-specification {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    padding: 0 0 2px;
+    border-radius: 50%;
+    border: 1px solid rgba(214, 60, 100, .25);
+    background: rgba(255, 255, 255, .55);
+    font: 500 22px/1 'Inter', sans-serif;
+    color: #c2365f;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+    .about-form .delete-specification:hover {
+        background: #ff6b8a;
+        border-color: transparent;
+        color: #fff;
+        transform: rotate(90deg);
+        box-shadow: 0 8px 20px rgba(255, 107, 138, .35);
+    }
+
+/* ---------- Телефон ---------- */
+@media (max-width: 768px) {
+    .about-form h2 {
+        margin-top: 28px;
+        font-size: 1.3rem;
+    }
+
+    .about-form .product-section {
+        padding: 22px 16px 18px;
+        gap: 16px;
+        border-radius: 22px;
+    }
+
+        .about-form .product-section h3 {
+            font-size: 1.05rem;
+        }
+
+        .about-form .product-section input {
+            padding: 13px 16px;
+        }
+}
 
 /* ОБГОРТКА СТОРІНКИ */
 .about-page {
@@ -289,6 +536,9 @@ section {
   margin-top: 20px;
   color: #b3afc4;
 }
+
+
+
 
 
    
