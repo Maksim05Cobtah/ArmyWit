@@ -483,3 +483,322 @@ section {
             padding: 14px 16px;
         }
 }
+/* =========================================================
+   ПРО МЕНЕ — сторінка за зразком (префікс .ab-)
+   Мобільна версія за замовчуванням, десктоп — від 900px
+   ========================================================= */
+
+.ab {
+    /* --- Налаштування: змінюй тут --- */
+    --ab-photo: url('/images/hhhhhhh.PNG'); /* фото (і для фону-привида) */
+    --ab-bg: #f4f2ee; /* фон аркуша */
+    --ab-lav: #bdb7e2; /* фіолетові смуги */
+    --ab-ink: #2d2c3a; /* основний текст */
+    --ab-title-ink: #3a384d; /* колір заголовків */
+    --ab-font-title: 'Underdog', 'Oswald', 'Impact', sans-serif;
+    --ab-font-text: 'Montserrat', system-ui, sans-serif;
+    /* --- Розміри (плавні, підлаштовуються під екран) --- */
+    --ab-pad: clamp(16px, 4vw, 48px);
+    --ab-photo-w: clamp(128px, 36vw, 320px);
+    --ab-gap: clamp(14px, 3vw, 36px);
+    --ab-band-h: clamp(52px, 9vw, 88px);
+    --ab-lift: clamp(22px, 5vw, 44px); /* наскільки фото виступає над смугою */
+
+    width: 100%;
+    max-width: 1040px;
+    margin: 4vh auto 0;
+    padding: 0; /* перебиває глобальне section { padding: 90px 0 } */
+}
+
+/* ---------- Аркуш ---------- */
+.ab-sheet {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background: var(--ab-bg);
+    border-radius: 20px;
+    box-shadow: 0 18px 45px rgba(63, 61, 86, .18);
+    padding-bottom: clamp(28px, 5vw, 56px);
+    font-family: var(--ab-font-text);
+    color: var(--ab-ink);
+}
+
+    /* Бліде фото-привид на фоні */
+    .ab-sheet::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background: var(--ab-photo) no-repeat 78% 30% / auto 85%;
+        filter: grayscale(1);
+        opacity: .1;
+        mix-blend-mode: multiply;
+        pointer-events: none;
+    }
+
+/* ---------- Смуги ---------- */
+.ab-bar {
+    background: var(--ab-lav);
+}
+
+.ab-title {
+    margin: 0;
+    font-family: var(--ab-font-title);
+    font-weight: 400;
+    font-size: clamp(1.25rem, 6vw, 3.4rem);
+    line-height: 1;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: var(--ab-title-ink);
+}
+
+/* ---------- ПРО МЕНЕ ---------- */
+.ab-hero {
+    display: grid;
+    grid-template-columns: var(--ab-pad) var(--ab-photo-w) var(--ab-gap) minmax(0, 1fr) var(--ab-pad);
+    grid-template-rows: var(--ab-band-h) auto;
+    padding-top: calc(var(--ab-lift) + clamp(14px, 3vw, 36px));
+    margin-bottom: clamp(28px, 5vw, 56px);
+}
+
+.ab-bar--hero {
+    grid-column: 1 / -1;
+    grid-row: 1;
+}
+
+.ab-hero .ab-title {
+    grid-column: 4;
+    grid-row: 1;
+    align-self: center;
+}
+
+/* Нахилене фото, що виступає за смугу */
+.ab-photo {
+    grid-column: 2;
+    grid-row: 1 / 3;
+    position: relative;
+    z-index: 2;
+    margin: calc(var(--ab-lift) * -1) 0 0;
+    transform: rotate(-4deg);
+}
+
+    .ab-photo img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 3 / 4;
+        object-fit: cover;
+        object-position: top center;
+        border-radius: 4px;
+        box-shadow: 0 10px 24px rgba(0, 0, 0, .22);
+    }
+
+.ab-intro {
+    grid-column: 4;
+    grid-row: 2;
+    margin: clamp(12px, 2.5vw, 26px) 0 0;
+    font-size: clamp(.8rem, 3.5vw, 1.3rem);
+    line-height: 1.5;
+    white-space: pre-line; /* зберігає абзаци з тексту */
+}
+
+/* ---------- ДОСВІД ---------- */
+.ab-bar--exp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: var(--ab-band-h);
+}
+
+.ab-exp {
+    display: grid;
+    gap: clamp(18px, 4vw, 28px);
+    padding: clamp(18px, 3.5vw, 32px) var(--ab-pad) 0;
+}
+
+.ab-exp-text {
+    margin: 0;
+    font-size: clamp(.8rem, 3.3vw, 1.1rem);
+    line-height: 1.55;
+    white-space: pre-line;
+}
+
+/* ---------- Повідомлення зі скріпкою ---------- */
+.ab-bubble {
+    position: relative;
+    width: min(88%, 360px);
+    margin: 0 0 0 clamp(0px, 2vw, 12px);
+    padding: 14px 20px 10px 16px;
+    background: #fff;
+    border-radius: 14px 14px 14px 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: clamp(.78rem, 3.3vw, .95rem);
+    line-height: 1.35;
+    color: #111;
+    filter: drop-shadow(0 6px 14px rgba(0, 0, 0, .2));
+}
+
+    /* Хвостик бульбашки */
+    .ab-bubble::after {
+        content: "";
+        position: absolute;
+        left: -11px;
+        bottom: 0;
+        width: 12px;
+        height: 14px;
+        background: #fff;
+        clip-path: polygon(100% 0, 100% 100%, 0 100%);
+    }
+
+    .ab-bubble p {
+        margin: 0;
+    }
+
+        .ab-bubble p + p {
+            margin-top: .8em;
+        }
+
+.ab-bubble__lead {
+    font-weight: 700;
+}
+
+.ab-bubble__time {
+    display: block;
+    margin-top: 6px;
+    text-align: right;
+    font-size: .7em;
+    color: #9a9a9a;
+}
+
+/* Скріпка */
+.ab-clip {
+    position: absolute;
+    top: -16px;
+    right: 10px;
+    z-index: 3;
+    width: clamp(26px, 8vw, 36px);
+    height: auto;
+    transform: rotate(7deg);
+    filter: drop-shadow(1px 3px 2px rgba(0, 0, 0, .3));
+    pointer-events: none;
+}
+
+/* =========================================================
+   ДЕСКТОП
+   ========================================================= */
+@media (min-width: 900px) {
+    .ab-sheet::before {
+        background-position: 100% 20%;
+        background-size: auto 100%;
+    }
+
+    .ab-intro {
+        max-width: 34em;
+    }
+
+    .ab-exp {
+        grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+        gap: 56px;
+        align-items: start;
+    }
+
+    .ab-bubble {
+        width: 100%;
+        max-width: 380px;
+        margin: 10px 0 0;
+        padding: 18px 26px 12px 20px;
+    }
+
+    .ab-clip {
+        right: 16px;
+        top: -20px;
+    }
+}
+
+/* Дуже вузькі телефони */
+@media (max-width: 360px) {
+    .ab-bubble {
+        width: 100%;
+    }
+}
+/* =========================================================
+   ПЕРШИЙ ЕКРАН (обкладинка) — префікс .cv-
+   Ширина така сама, як у нижньої секції (.ab) — до 1040px.
+   Телефон / вузький блок: фото зверху, кремовий підпис знизу.
+   Широкий блок (від 760px): фото ліворуч, підпис праворуч.
+   Усі розміри рахуються від ширини самого блоку (cqw).
+   ========================================================= */
+
+.cv {
+    --cv-crea=m: #fdf9dc;
+    --cv-lav: #bdb7e2;
+    --cv-font: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+    container-type: inline-size; /* дозволяє одиниці cqw та @container */
+    width: 100%;
+    max-width: 1040px; /* як у .ab */
+    margin: 4vh auto clamp(14px, 3vw, 28px);
+    padding: 0; /* перебиває глобальне section { padding: 90px 0 } */
+}
+
+.cv__card {
+    overflow: hidden;
+    background: var(--cv-cream);
+    border-radius: 20px;
+    box-shadow: 0 18px 45px rgba(63, 61, 86, .18);
+}
+
+/* ---------- Телефон: фото зверху, підпис знизу ---------- */
+.cv__img {
+    display: block;
+    width: 100%;
+    height: auto; /* природні пропорції — напис не обрізається */
+    filter: grayscale(1);
+    border-radius: 15px 15px 0px 0px;
+}
+
+.cv__panel {
+    padding: 7cqw 4cqw 18cqw;
+    text-align: center;
+    background-color: #ffffff87;
+    border-radius: 0px 0px 15px 15px;
+}
+
+.cv__role {
+    margin: 0;
+    font-family: var(--cv-font);
+    font-weight: 800;
+    font-size: 5.6cqw;
+    line-height: 1.4;
+    letter-spacing: .01em;
+    text-transform: uppercase;
+    color: var(--cv-lav);
+}
+
+    .cv__role span {
+        display: block;
+    }
+
+/* ---------- Комп'ютер: фото ліворуч, підпис праворуч ---------- */
+@container (min-width: 760px) {
+    .cv__card {
+        display: grid;
+        grid-template-columns: minmax(0, 44%) minmax(0, 1fr);
+    }
+
+    .cv__panel {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 4cqw;
+        background-color: #ffffff87;
+    }
+
+    .cv__role {
+        font-size: 3.1cqw;
+    }
+}
+
+/* Невеликий проміжок між обкладинкою і карткою «Про мене» */
+.cv + .ab {
+    margin-top: 0;
+}

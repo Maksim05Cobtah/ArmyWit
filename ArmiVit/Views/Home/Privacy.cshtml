@@ -5,37 +5,71 @@
     ViewData["Title"] = "Про мене";
 }
 
-<section class="about-page">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Underdog&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="~/css/about.css" asp-append-version="true" />
 
-    <!-- Верхній блок -->
-    <div class="about-top">
+<section class="cv">
+    <img class="cv__img" src="/images/hhhhhhh.PNG" alt="Анжеліка Федяй — нутриціологиня, медична фахівчиня" />
 
-        <div class="about-main-title">
-            <h1 class="mainH1">ПРО МЕНЕ</h1>
-        </div>
-        <div class="MainDiv">
-            <div class="about-photo">
-            
-                <img src="/images/hhhhhhh.PNG" />
-            </div>
-
-            <div class="about-main-text">
-                <p>@Model.About.AboutMeText1</p>
-            </div>
-        </div>
+    <div class="cv__panel">
+        <p class="cv__role">
+            <span>Нутриціологиня,</span>
+            <span>медична фахівчиня</span>
+        </p>
     </div>
+</section>
 
-    <!-- Блок досвіду -->
-    <div class="about-experience">
 
-        <div class="about-main-title">
-            <h2 class="mainH2">ДОСВІД</h2>
+<section class="ab">
+
+    <div class="ab-sheet">
+
+        <!-- ===== ПРО МЕНЕ ===== -->
+        <div class="ab-hero">
+            <div class="ab-bar ab-bar--hero" aria-hidden="true"></div>
+
+            <h1 class="ab-title">Про мене</h1>
+
+            <figure class="ab-photo">
+                <img src="@Model.About.Images.ImgPath" alt="Анжеліка Федяй" />
+            </figure>
+
+            <p class="ab-intro">@Model.About.AboutMeText1</p>
         </div>
 
-        <div class="about-experience-text">
-            <p>@Model.About.ExperienceText1</p>
+        <!-- ===== ДОСВІД ===== -->
+        <div class="ab-bar ab-bar--exp">
+            <h2 class="ab-title">Досвід</h2>
+        </div>
+
+        <div class="ab-exp">
+            <p class="ab-exp-text">@Model.About.ExperienceText1</p>
+
+            <!-- Повідомлення зі скріпкою -->
+            <aside class="ab-bubble">
+                <svg class="ab-clip" viewBox="0 0 32 100" aria-hidden="true" focusable="false">
+                    <defs>
+                        <linearGradient id="abClipGrad" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0" stop-color="#dfe1e6" />
+                            <stop offset=".5" stop-color="#8a8e98" />
+                            <stop offset="1" stop-color="#cdd0d7" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M10 30V78a8 8 0 0 0 16 0V18a11 11 0 0 0-22 0V72"
+                          fill="none" stroke="url(#abClipGrad)" stroke-width="3.2"
+                          stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M10 30V78a8 8 0 0 0 16 0V18a11 11 0 0 0-22 0V72"
+                          fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="1"
+                          stroke-linecap="round" stroke-linejoin="round" transform="translate(-.7 -.7)" />
+                </svg>
+
+                <p class="ab-bubble__lead">Моє завдання — вчасно помітити сигнали організму та скерувати вас до профільного лікаря, якщо це необхідно</p>
+                <p>Якщо під час роботи я бачу показники або симптоми, що виходять за межі нутриціологічної корекції, я рекомендую консультацію профільного спеціаліста»</p>
+                <span class="ab-bubble__time">12:35</span>
+            </aside>
         </div>
 
     </div>
-
 </section>
